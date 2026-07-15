@@ -684,16 +684,22 @@
 
 /* ── GALLERY — Action Videos (Light Theme Gradient Overlays) ── */
 [data-theme="light"] .video-placeholder::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.85) 100%) !important;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.15) 0%, rgba(8, 8, 10, 0.5) 100%) !important;
 }
 [data-theme="light"] .video-wrap:hover .video-placeholder::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.75) 100%) !important;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.1) 0%, rgba(8, 8, 10, 0.4) 100%) !important;
+}
+[data-theme="light"] .video-placeholder > div:not(.play-btn) {
+  color: #fafafa !important;
+}
+[data-theme="light"] .video-placeholder > div:not(.play-btn):last-child {
+  color: #a1a1aa !important;
 }
 [data-theme="light"] .video-placeholder .play-btn {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  color: #0d0d11 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  background: rgba(16, 16, 20, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #fafafa !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 [data-theme="light"] .video-wrap:hover .play-btn {
   background: var(--clr-red) !important;
@@ -770,76 +776,108 @@
   outline: none !important;
 }
 
-/* ── FOOTER — Light Theme Polishes & Color Mapping ── */
+/* ── FOOTER — Stay permanently dark, matching Dark Theme exactly ── */
 [data-theme="light"] .footer {
-  background: #f8f8fa !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background: #08080a !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+  --clr-void:        #08080a;
+  --clr-bg:          #0d0d11;
+  --clr-bg-2:        #121217;
+  --clr-bg-card:     #171720;
+  --clr-bg-glass:    rgba(13, 13, 17, 0.88);
+  --clr-bg-elevated: #20202b;
+  --clr-white:       #fafafa;
+  --clr-white-90:    rgba(250, 250, 250, 0.9);
+  --clr-white-70:    rgba(250, 250, 250, 0.7);
+  --clr-white-40:    rgba(250, 250, 250, 0.4);
+  --clr-white-15:    rgba(250, 250, 250, 0.05);
+  --clr-silver:      #a1a1aa;
+  --clr-silver-light:#e4e4e7;
+  --clr-silver-dim:  #52525b;
+  --clr-platinum:    #f4f4f5;
+  --clr-border:        rgba(255, 255, 255, 0.07);
+  --clr-border-md:     rgba(255, 255, 255, 0.14);
+  --clr-border-glow:   rgba(239, 68, 68, 0.4);
+  --clr-border-silver: rgba(161, 161, 170, 0.15);
 }
-[data-theme="light"] .footer .footer-logo .logo-text,
-[data-theme="light"] .footer .logo-text {
-  color: #0d0d11 !important;
+
+/* Force light text, borders, input, and social buttons inside Light-Theme Footer */
+[data-theme="light"] .footer .logo-text,
+[data-theme="light"] .footer .footer-logo .logo-text {
+  color: #ffffff !important;
 }
-[data-theme="light"] .footer .footer-logo .logo-text span,
-[data-theme="light"] .footer .logo-text span {
-  color: var(--clr-red) !important;
+[data-theme="light"] .footer .logo-text span,
+[data-theme="light"] .footer .footer-logo .logo-text span {
+  color: #ff4b4b !important;
 }
 [data-theme="light"] .footer-desc {
-  color: #2e2e36 !important;
+  color: #a1a1aa !important;
+}
+[data-theme="light"] .footer-col-title {
+  color: #fafafa !important;
+}
+[data-theme="light"] .footer-link {
+  color: #a1a1aa !important;
+}
+[data-theme="light"] .footer-link:hover {
+  color: #ff5a5a !important;
+}
+[data-theme="light"] .footer-contact-item {
+  color: #a1a1aa !important;
+}
+[data-theme="light"] .footer-contact-item .icon {
+  color: #ff5a5a !important;
+}
+[data-theme="light"] .footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.07) !important;
+}
+[data-theme="light"] .footer-copy {
+  color: #52525b !important;
+}
+[data-theme="light"] .footer-policies a {
+  color: #a1a1aa !important;
+}
+[data-theme="light"] .footer-policies a:hover {
+  color: #ff5a5a !important;
 }
 [data-theme="light"] .footer .social-btn {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
-  color: #2e2e36 !important;
+  background: #171720 !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  color: #a1a1aa !important;
 }
 [data-theme="light"] .footer .social-btn:hover {
   background: rgba(239, 68, 68, 0.05) !important;
-  border-color: var(--clr-red-light) !important;
-  color: var(--clr-red) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #ff5a5a !important;
 }
-[data-theme="light"] .footer-col-title {
-  color: #0d0d11 !important;
+[data-theme="light"] .footer-newsletter-form input {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #fafafa !important;
 }
-[data-theme="light"] .footer-link {
-  color: #2e2e36 !important;
+[data-theme="light"] .footer-newsletter-form input::placeholder {
+  color: #52525b !important;
 }
-[data-theme="light"] .footer-link:hover {
-  color: var(--clr-red) !important;
+[data-theme="light"] .footer-newsletter-form input:focus {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: #ff5a5a !important;
+  box-shadow: 0 0 10px rgba(255, 75, 75, 0.15) !important;
 }
-[data-theme="light"] .footer-contact-item {
-  color: #2e2e36 !important;
-}
-[data-theme="light"] .footer-contact-item .icon {
-  color: var(--clr-red) !important;
-}
-[data-theme="light"] .footer-bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.15) !important;
-}
-[data-theme="light"] .footer-copy {
-  color: #5c5c66 !important;
-}
-[data-theme="light"] .footer-policies a {
-  color: #2e2e36 !important;
-}
-[data-theme="light"] .footer-policies a:hover {
-  color: var(--clr-red) !important;
-}
+
 [data-theme="light"] .back-to-top {
-  background: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
-  color: var(--clr-red) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  background: #ef4444 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #fafafa !important;
 }
 [data-theme="light"] .back-to-top:hover {
-  background: var(--clr-red) !important;
-  border-color: var(--clr-red) !important;
+  background: #ff5a5a !important;
   color: #ffffff !important;
-  box-shadow: var(--shadow-red-lg) !important;
 }
 [data-theme="light"] .back-to-top-link {
-  color: #2e2e36 !important;
+  color: #a1a1aa !important;
 }
 [data-theme="light"] .back-to-top-link:hover {
-  color: var(--clr-red-light) !important;
+  color: #ff5a5a !important;
 }
 
 /* ── SCROLLBAR (Light theme) ──────────────────────────────────── */
