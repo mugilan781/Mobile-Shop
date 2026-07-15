@@ -392,20 +392,12 @@ function initCheckoutModal() {
 
   // Listen globally for Buy clicks
   document.body.addEventListener('click', (e) => {
-    // Match buy buttons: either href matches gallery.html but text is "Buy"/"Order", or class is .buy-btn
     const link = e.target.closest('a') || e.target.closest('button');
     if (!link) return;
 
+    // Only intercept if class is 'buy-btn' or it's a specific "Buy" CTA inside a card (not generic redirects)
     const isBuyLink = link.classList.contains('buy-btn') || 
-                      link.getAttribute('href') === 'gallery.html' ||
-                      link.textContent.trim().toLowerCase() === 'buy' ||
-                      link.textContent.trim().toLowerCase() === 'order now' ||
-                      link.textContent.trim().toLowerCase() === 'shop now';
-
-    // If it's a gallery filter btn, ignore
-    if (link.classList.contains('filter-btn')) return;
-    // If it's header nav active, ignore
-    if (link.classList.contains('nav-link')) return;
+                      (link.textContent.trim().toLowerCase() === 'buy' && (link.closest('.product-card') || link.closest('.featured-item-content') || link.closest('article')));
 
     if (isBuyLink) {
       e.preventDefault();
