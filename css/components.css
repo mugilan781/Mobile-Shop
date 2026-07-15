@@ -165,22 +165,42 @@
 }
 
 .navbar-profile-btn {
-  background: none;
-  border: none;
-  color: var(--clr-silver);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  border-radius: var(--r-sm);
-  transition: all var(--tr-base);
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  padding: 0;
 }
 
-.navbar-profile-btn:hover {
+.navbar-profile-btn svg {
+  width: 21px;
+  height: 21px;
+  stroke: rgba(255, 255, 255, 0.9);
+  transition: stroke 0.3s ease;
+}
+
+.navbar-profile-btn:hover,
+.navbar-profile-btn[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--clr-red-light);
   color: var(--clr-red-light);
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 4px rgba(255, 75, 75, 0.4));
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 75, 75, 0.25);
+}
+
+.navbar-profile-btn:hover svg,
+.navbar-profile-btn[aria-expanded="true"] svg {
+  stroke: var(--clr-red-light);
 }
 
 .profile-dropdown {
@@ -245,46 +265,37 @@
 
 /* Mobile drawer profile menu adaptations */
 .mobile-profile-wrapper {
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.mobile-profile-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  padding: var(--sp-4);
-  font-family: var(--font-display);
-  font-size: var(--fs-base);
-  font-weight: 500;
-  color: var(--clr-silver);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: all var(--tr-base);
-}
-
-.mobile-profile-btn:hover {
-  background: rgba(239, 68, 68, 0.05);
-  color: var(--clr-red-light);
+  justify-content: center;
+  position: relative;
+  width: auto;
 }
 
 .mobile-profile-wrapper .profile-dropdown {
-  position: static;
-  width: 100%;
-  margin-top: 0.25rem;
-  box-shadow: none;
-  border: none;
-  background: rgba(255, 255, 255, 0.02);
-  display: none;
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 180px;
+  background: rgba(16, 16, 20, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--r-md);
+  padding: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .mobile-profile-wrapper .profile-dropdown.open {
-  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
 }
 
 /* Tablet / Mobile visibility */
@@ -297,6 +308,13 @@
   .mobile-profile-section {
     display: none !important;
   }
+}
+
+@media (max-width: 768px) {
+  .footer { text-align: center; }
+  .footer-logo { justify-content: center; }
+  .footer-social { justify-content: center; }
+  .footer-contact-item { justify-content: center; text-align: center; }
 }
 
 /* ── SCROLL PROGRESS ──────────────────────────────────────────── */
@@ -1338,6 +1356,26 @@
 }
 
 .footer-policies a:hover { color: var(--clr-red-light); }
+
+/* Footer Newsletter Form */
+.footer-newsletter-form input {
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--r-sm) !important;
+  color: var(--clr-white) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  width: 100%;
+  transition: all var(--tr-base);
+}
+
+.footer-newsletter-form input:focus {
+  border-color: var(--clr-red-light) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 75, 75, 0.15);
+}
 
 /* ── INFO / FEATURE CARDS ─────────────────────────────────────── */
 .feature-card {
