@@ -567,6 +567,14 @@
 /* ── GALLERY FEATURED PRODUCT VISUAL — light gradient in light mode ── */
 [data-theme="light"] .featured-product-visual { background: linear-gradient(135deg, #f4f4f6, #f0f0f2); }
 
+/* ── AUTHENTICATION BRAND LOGO — standard brand colors in light theme ── */
+[data-theme="light"] .auth-branding .logo-text {
+  color: #111111 !important;
+}
+[data-theme="light"] .auth-branding .logo-text span {
+  color: #ff4b4b !important;
+}
+
 /* ── SOCIAL LOGIN BUTTONS (auth pages) — dark on light bg ─────── */
 [data-theme="light"] .social-login-btn {
   background: rgba(0,0,0,0.03);
@@ -897,7 +905,32 @@
   color: #0d0d11;
 }
 
-/* ── MAP FILTER (Light theme) ──────────────────────────────────── */
 [data-theme="light"] .map-wrap iframe {
   filter: var(--clr-map-filter);
+}
+
+/* ── PRODUCT BADGES (Light Theme visibility tuning) ──────────────── */
+[data-theme="light"] .badge-zinc {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+[data-theme="light"] .badge-red {
+  background: #fef2f2 !important;
+  color: #ef4444 !important;
+  border: 1px solid #fecaca !important;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.03) !important;
+}
+[data-theme="light"] .badge-new {
+  background: #f0fdf4 !important;
+  color: #10b981 !important;
+  border: 1px solid #bbf7d0 !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.03) !important;
+}
+[data-theme="light"] .badge-hot {
+  background: #fef2f2 !important;
+  color: #ef4444 !important;
+  border: 1px solid #fecaca !important;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.03) !important;
 }
