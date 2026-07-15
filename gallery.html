@@ -25,7 +25,7 @@
 
     .featured-product-visual {
       aspect-ratio: 1;
-      background: linear-gradient(135deg, #101726, #0A0F1D);
+      background: linear-gradient(135deg, #141010, #08080c);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -61,7 +61,7 @@
     .brand-filter-card:hover {
       transform: translateY(-6px) scale(1.01);
       border-color: var(--clr-border-glow);
-      box-shadow: 0 16px 40px rgba(37,99,235,0.1);
+      box-shadow: 0 16px 40px rgba(239, 68, 68, 0.08);
     }
 
     .customer-build-card {
@@ -82,7 +82,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #101726, #0A0F1D);
+      background: linear-gradient(135deg, #141010, #08080c);
     }
 
     .customer-build-visual img {
@@ -96,9 +96,89 @@
       padding: 1.25rem;
     }
 
+    /* Premium Video Wrap Overrides */
+    .video-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--clr-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+      transition: all var(--tr-base);
+      cursor: pointer;
+    }
+    
+    .video-wrap:hover {
+      transform: translateY(-5px);
+      border-color: rgba(239, 68, 68, 0.25);
+      box-shadow: 0 15px 35px rgba(239, 68, 68, 0.08), 0 0 1px rgba(239, 68, 68, 0.2) inset;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform var(--tr-base);
+    }
+
+    .video-wrap:hover .video-placeholder {
+      transform: scale(1.05);
+    }
+
+    .video-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 8, 10, 0.3) 0%, rgba(8, 8, 10, 0.75) 100%);
+      z-index: 1;
+      transition: all var(--tr-base);
+    }
+
+    .video-wrap:hover .video-placeholder::before {
+      background: linear-gradient(180deg, rgba(8, 8, 10, 0.2) 0%, rgba(8, 8, 10, 0.65) 100%);
+    }
+
+    .video-placeholder > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-placeholder .play-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(16, 16, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-white);
+      font-size: 1rem;
+      transition: all var(--tr-base);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      padding-left: 3px;
+    }
+
+    .video-wrap:hover .play-btn {
+      background: var(--clr-red);
+      border-color: var(--clr-red);
+      color: var(--clr-white);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-red);
+    }
+
     @media (max-width: 767px) {
       .featured-product { grid-template-columns: 1fr; }
       .featured-product-info { padding: 0 1.5rem 2rem; }
+      .video-wrap { aspect-ratio: 4/3; }
     }
   </style>
 </head>
@@ -192,8 +272,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="cases" data-full="images/product-case.png">
-        <img src="images/product-case.png" alt="ArmourX Rugged Case" />
+      <div class="gallery-item" data-category="cases" data-full="images/case-rugged.png">
+        <img src="images/case-rugged.png" alt="ArmourX Rugged Case" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">ArmourX Rugged Case</div>
@@ -201,8 +281,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="cases" data-full="images/product-case.png">
-        <img src="images/product-case.png" alt="Crystal Clear Case" />
+      <div class="gallery-item" data-category="cases" data-full="images/case-transparent.png">
+        <img src="images/case-transparent.png" alt="Crystal Clear Case" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">Crystal Clear Case</div>
@@ -221,8 +301,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="chargers" data-full="images/product-charger.png">
-        <img src="images/product-charger.png" alt="Braided USB-C Cable" />
+      <div class="gallery-item" data-category="chargers" data-full="images/charger-cable.png">
+        <img src="images/charger-cable.png" alt="Braided USB-C Cable" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">Braided USB-C Cable</div>
@@ -230,8 +310,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="chargers" data-full="images/product-charger.png">
-        <img src="images/product-charger.png" alt="20,000 mAh Power Bank" />
+      <div class="gallery-item" data-category="chargers" data-full="images/charger-powerbank.png">
+        <img src="images/charger-powerbank.png" alt="20,000 mAh Power Bank" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">20,000 mAh Power Bank</div>
@@ -241,8 +321,8 @@
       </div>
 
       <!-- Earbuds -->
-      <div class="gallery-item" data-category="earbuds" data-full="images/product-earbuds.png">
-        <img src="images/product-earbuds.png" alt="ProBuds ANC X1" />
+      <div class="gallery-item" data-category="earbuds" data-full="images/earbuds-black.png">
+        <img src="images/earbuds-black.png" alt="ProBuds ANC X1" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">ProBuds ANC X1</div>
@@ -250,8 +330,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="earbuds" data-full="images/product-earbuds.png">
-        <img src="images/product-earbuds.png" alt="SoundMax Elite TWS" />
+      <div class="gallery-item" data-category="earbuds" data-full="images/earbuds-white.png">
+        <img src="images/earbuds-white.png" alt="SoundMax Elite TWS" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">SoundMax Elite TWS</div>
@@ -270,8 +350,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="protectors" data-full="images/product-protector.png">
-        <img src="images/product-protector.png" alt="Privacy Screen Glass" />
+      <div class="gallery-item" data-category="protectors" data-full="images/protector-privacy.png">
+        <img src="images/protector-privacy.png" alt="Privacy Screen Glass" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">Privacy Screen Glass</div>
@@ -290,8 +370,8 @@
           </div>
         </div>
       </div>
-      <div class="gallery-item" data-category="repairs" data-full="images/hero-repairs.png">
-        <img src="images/hero-repairs.png" alt="Battery Replacement" />
+      <div class="gallery-item" data-category="repairs" data-full="images/service-battery.png">
+        <img src="images/service-battery.png" alt="Battery Replacement" />
         <div class="gallery-item-overlay">
           <div class="gallery-item-info">
             <div class="gallery-item-name">Battery Replacement</div>
@@ -408,7 +488,7 @@
     <div class="grid-3">
       <div class="customer-build-card reveal delay-1">
         <div class="customer-build-visual">
-          <img src="images/product-case.png" alt="Arjun's Tech Setup" />
+          <img src="images/setup-arjun.png" alt="Arjun's Tech Setup" />
         </div>
         <div class="customer-build-info">
           <div style="font-weight:700;color:var(--clr-white);font-size:0.9rem;">Arjun's Tech Setup</div>
@@ -418,7 +498,7 @@
       </div>
       <div class="customer-build-card reveal delay-2">
         <div class="customer-build-visual">
-          <img src="images/product-charger.png" alt="Priya's iPhone Setup" />
+          <img src="images/setup-priya.png" alt="Priya's iPhone Setup" />
         </div>
         <div class="customer-build-info">
           <div style="font-weight:700;color:var(--clr-white);font-size:0.9rem;">Priya's iPhone Setup</div>
@@ -451,16 +531,16 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
       <div class="video-wrap reveal-left">
-        <div class="video-placeholder">
+        <div class="video-placeholder" style="background-image: url('images/video-tour.png');">
           <div class="play-btn" role="button" tabindex="0" aria-label="Play store tour video">▶</div>
-          <div style="font-size:1rem;font-weight:600;color:var(--clr-white);">Store Tour 2025</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--clr-white);margin-top:0.5rem;">Store Tour 2025</div>
           <div style="font-size:0.8rem;color:var(--clr-silver);">3:42 min</div>
         </div>
       </div>
       <div class="video-wrap reveal-right">
-        <div class="video-placeholder">
+        <div class="video-placeholder" style="background-image: url('images/video-repair.png');">
           <div class="play-btn" role="button" tabindex="0" aria-label="Play repair process video">▶</div>
-          <div style="font-size:1rem;font-weight:600;color:var(--clr-white);">Screen Repair Process</div>
+          <div style="font-size:1rem;font-weight:600;color:var(--clr-white);margin-top:0.5rem;">Screen Repair Process</div>
           <div style="font-size:0.8rem;color:var(--clr-silver);">5:14 min</div>
         </div>
       </div>
