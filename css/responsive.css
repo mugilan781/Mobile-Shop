@@ -27,9 +27,8 @@
     --section-py: clamp(3rem, 6vw, 4.25rem);
   }
 
-  /* Navbar */
   .navbar-nav    { display: none; }
-  .navbar-actions { display: none; }
+  .navbar-profile-wrapper.desktop-profile { display: none; }
   .menu-toggle   { display: flex; }
 
   /* Typography */

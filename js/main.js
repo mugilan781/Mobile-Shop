@@ -506,6 +506,64 @@ function initServicePreselector() {
   }
 }
 
+/* ── Profile Dropdown Menu ────────────────────────────────────── */
+function initProfileDropdown() {
+  const setupDropdown = (toggleId, dropdownId) => {
+    const toggle = document.getElementById(toggleId);
+    const dropdown = document.getElementById(dropdownId);
+    if (!toggle || !dropdown) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isCurrentlyOpen = dropdown.classList.contains('open');
+      
+      // Close all profile dropdowns first
+      document.querySelectorAll('.profile-dropdown').forEach(d => {
+        d.classList.remove('open');
+      });
+      document.querySelectorAll('.navbar-profile-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isCurrentlyOpen) {
+        dropdown.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  };
+
+  // Setup desktop and mobile instances
+  setupDropdown('profileMenuToggle', 'profileDropdown');
+  setupDropdown('mobileProfileMenuToggle', 'mobileProfileDropdown');
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    const isDropdownClick = e.target.closest('.navbar-profile-wrapper');
+    if (!isDropdownClick) {
+      document.querySelectorAll('.profile-dropdown').forEach(d => {
+        d.classList.remove('open');
+      });
+      document.querySelectorAll('.navbar-profile-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Close when selecting an option
+  document.querySelectorAll('.profile-dropdown-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.profile-dropdown').forEach(d => {
+        d.classList.remove('open');
+      });
+      document.querySelectorAll('.navbar-profile-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+}
+
 /* ── Init All ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
@@ -523,6 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPricingTabs();
   initCheckoutModal();
   initServicePreselector();
+  initProfileDropdown();
 });
 
 // Expose toast globally

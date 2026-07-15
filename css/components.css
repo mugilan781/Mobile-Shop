@@ -157,7 +157,147 @@
   color: var(--clr-red-light);
 }
 
-.navbar-actions { display: flex; align-items: center; gap: var(--sp-3); }
+/* Profile Menu & Dropdown */
+.navbar-profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-profile-btn {
+  background: none;
+  border: none;
+  color: var(--clr-silver);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--r-sm);
+  transition: all var(--tr-base);
+}
+
+.navbar-profile-btn:hover {
+  color: var(--clr-red-light);
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 4px rgba(255, 75, 75, 0.4));
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.75rem;
+  background: rgba(16, 16, 20, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--r-md);
+  width: 180px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.profile-dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.profile-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  color: var(--clr-silver);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--r-sm);
+  transition: all var(--tr-base);
+}
+
+.profile-dropdown-item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  stroke: var(--clr-silver);
+  transition: stroke var(--tr-base);
+}
+
+.profile-dropdown-item:hover {
+  background: rgba(255, 75, 75, 0.08);
+  color: var(--clr-red-light);
+}
+
+.profile-dropdown-item:hover svg {
+  stroke: var(--clr-red-light);
+}
+
+/* Mobile drawer profile menu adaptations */
+.mobile-profile-wrapper {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.mobile-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: var(--sp-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--clr-silver);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--tr-base);
+}
+
+.mobile-profile-btn:hover {
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--clr-red-light);
+}
+
+.mobile-profile-wrapper .profile-dropdown {
+  position: static;
+  width: 100%;
+  margin-top: 0.25rem;
+  box-shadow: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.02);
+  display: none;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.mobile-profile-wrapper .profile-dropdown.open {
+  display: flex;
+}
+
+/* Tablet / Mobile visibility */
+@media (max-width: 768px) {
+  .navbar-profile-wrapper.desktop-profile {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-profile-section {
+    display: none !important;
+  }
+}
 
 /* ── SCROLL PROGRESS ──────────────────────────────────────────── */
 .scroll-progress {
