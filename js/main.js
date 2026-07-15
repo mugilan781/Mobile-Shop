@@ -117,19 +117,22 @@ function initBackToTop() {
 
 /* ── Stats Counter Animation ──────────────────────────────────── */
 function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
+  const counters = document.querySelectorAll('[data-count], [data-target]');
   if (!counters.length) return;
 
   const animateCounter = (el) => {
-    const target = parseInt(el.dataset.count, 10);
+    const isFloat = el.dataset.decimals !== undefined;
+    const rawVal = el.dataset.count || el.dataset.target;
+    const target = isFloat ? parseFloat(rawVal) : parseInt(rawVal, 10);
+    const decimals = isFloat ? parseInt(el.dataset.decimals, 10) : 0;
     const suffix = el.dataset.suffix || '';
-    const duration = 2000;
+    const duration = 1500;
     const step = target / (duration / 16);
     let current = 0;
 
     const update = () => {
       current = Math.min(current + step, target);
-      el.textContent = Math.floor(current).toLocaleString() + suffix;
+      el.textContent = (isFloat ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
       if (current < target) requestAnimationFrame(update);
     };
 
@@ -143,7 +146,7 @@ function initCounters() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
 
   counters.forEach(el => observer.observe(el));
 }

@@ -98,53 +98,168 @@ function initHeroSlider() {
   startAutoplay();
 }
 
-/* ── Mini Slider (Reviews / Testimonials) ─────────────────────── */
+/* ── Mini Slider (Reviews / Testimonials Carousel) ────────────── */
 function initTestimonialSlider() {
-  const sliders = document.querySelectorAll('.testimonials-slider');
+  const wrapper = document.querySelector('.testimonials-carousel-wrapper');
+  if (!wrapper) return;
 
-  sliders.forEach(slider => {
-    const track = slider.querySelector('.testimonials-track');
-    const slides = slider.querySelectorAll('.testimonial-slide');
-    if (!track || slides.length < 2) return;
+  const slider = wrapper.querySelector('.testimonials-slider');
+  const track = wrapper.querySelector('.testimonials-track');
+  const slides = Array.from(wrapper.querySelectorAll('.testimonial-slide'));
+  const prevBtn = wrapper.querySelector('.carousel-arrow.prev');
+  const nextBtn = wrapper.querySelector('.carousel-arrow.next');
+  const dotsContainer = wrapper.querySelector('.carousel-dots');
 
-    let current = 0;
-    let perView = window.innerWidth >= 768 ? 2 : 1;
+  if (!slider || !track || !slides.length) return;
 
-    function update() {
-      perView = window.innerWidth >= 768 ? 2 : 1;
-      const slideWidth = slides[0].offsetWidth;
-      const gap = 32;
-      track.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
+  let currentIndex = 0;
+  let autoplayInterval = null;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let perView = 3;
+
+  function getPerView() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 3;
+    if (width >= 768) return 2;
+    return 1;
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, slides.length - perView);
+  }
+
+  function updateLayout() {
+    perView = getPerView();
+    const maxIdx = getMaxIndex();
+    if (currentIndex > maxIdx) {
+      currentIndex = maxIdx;
     }
 
-    const prevBtn = slider.parentElement.querySelector('.testi-prev');
-    const nextBtn = slider.parentElement.querySelector('.testi-next');
+    // Set flex styles dynamically
+    slides.forEach(slide => {
+      slide.style.width = `calc((100% - (1.5rem * (${perView} - 1))) / ${perView})`;
+      slide.style.marginRight = '1.5rem';
+      slide.style.flex = '0 0 auto';
+    });
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const maxIndex = Math.max(0, slides.length - perView);
-        current = Math.min(current + 1, maxIndex);
-        update();
+    // Reset last slide margin
+    if (slides.length) {
+      slides[slides.length - 1].style.marginRight = '0';
+    }
+
+    updatePosition();
+    buildDots();
+  }
+
+  function updatePosition() {
+    if (!slides.length) return;
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = 24; // 1.5rem in px
+    const offset = currentIndex * (slideWidth + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    // Update dots active class
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
       });
     }
+  }
 
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        current = Math.max(0, current - 1);
-        update();
+  function buildDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    
+    // Total scroll positions
+    const maxIdx = getMaxIndex();
+    for (let i = 0; i <= maxIdx; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
+      dot.addEventListener('click', () => {
+        goTo(i);
+        startAutoplay();
       });
+      dotsContainer.appendChild(dot);
     }
+  }
 
-    window.addEventListener('resize', update, { passive: true });
-    update();
+  function goTo(index) {
+    const maxIdx = getMaxIndex();
+    if (index > maxIdx) {
+      currentIndex = 0; // Infinite loop forward
+    } else if (index < 0) {
+      currentIndex = maxIdx; // Infinite loop backward
+    } else {
+      currentIndex = index;
+    }
+    updatePosition();
+  }
 
-    // Auto
-    setInterval(() => {
-      const maxIndex = Math.max(0, slides.length - perView);
-      current = current >= maxIndex ? 0 : current + 1;
-      update();
-    }, 4500);
+  function next() { goTo(currentIndex + 1); }
+  function prev() { goTo(currentIndex - 1); }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayInterval = setInterval(next, 4000);
+  }
+
+  function stopAutoplay() {
+    if (autoplayInterval) clearInterval(autoplayInterval);
+  }
+
+  // Event listeners
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prev();
+      startAutoplay();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      next();
+      startAutoplay();
+    });
+  }
+
+  // Touch swipe support
+  slider.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchEndX = touchStartX; // reset
+    stopAutoplay();
+  }, { passive: true });
+
+  slider.addEventListener('touchmove', (e) => {
+    touchEndX = e.touches[0].clientX;
+  }, { passive: true });
+
+  slider.addEventListener('touchend', () => {
+    const swipeDistance = touchStartX - touchEndX;
+    if (Math.abs(swipeDistance) > 50) {
+      if (swipeDistance > 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+    startAutoplay();
   });
+
+  // Hover listeners to pause autoplay
+  wrapper.addEventListener('mouseenter', stopAutoplay);
+  wrapper.addEventListener('mouseleave', startAutoplay);
+
+  // Initial setup
+  updateLayout();
+  startAutoplay();
+
+  // Recalculate on resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(updateLayout, 100);
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
