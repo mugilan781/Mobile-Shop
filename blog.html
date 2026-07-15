@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="NexCell Blog — Read the latest mobile tech reviews, accessories guides, and expert repair advice from our technicians." />
+  <title>Blog & Tech Insights — NexCell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    /* Hero Banner styles */
+    .blog-hero {
+      position: relative;
+      padding: 9rem 0 5rem;
+      text-align: center;
+      background: var(--clr-void);
+      overflow: hidden;
+    }
+
+    /* Featured Article Styles */
+    .featured-section {
+      padding: 3rem 0;
+      background: var(--clr-bg);
+    }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--tr-base);
+    }
+    .featured-card:hover {
+      border-color: var(--clr-border-glow);
+      box-shadow: 0 15px 35px rgba(255, 75, 75, 0.05);
+    }
+    .featured-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      overflow: hidden;
+    }
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .featured-card:hover .featured-img {
+      transform: scale(1.03);
+    }
+    .featured-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Grid Layout */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+      .featured-content {
+        padding: 2rem;
+      }
+    }
+    @media (max-width: 576px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* General Blog Card */
+    .blog-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--clr-border-glow);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+    .blog-card-img-wrap {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #0a0a0f;
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover .blog-card-img {
+      transform: scale(1.05);
+    }
+    .blog-card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--clr-silver-dim);
+      margin-bottom: 0.75rem;
+    }
+    .blog-category {
+      color: var(--clr-red-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .blog-card-title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--clr-white);
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      transition: color 0.2s;
+    }
+    .blog-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .blog-card-title a:hover {
+      color: var(--clr-red-light);
+    }
+    .blog-card-excerpt {
+      font-size: 0.85rem;
+      color: var(--clr-silver);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: auto;
+      min-height: 44px;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--clr-white);
+      font-weight: 500;
+      min-width: 0;
+      flex: 1 1 0;
+      overflow: hidden;
+    }
+    .blog-author span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .blog-card-footer > a,
+    .blog-card-footer > .btn {
+      flex-shrink: 0;
+    }
+    .blog-author-avatar {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: rgba(255, 75, 75, 0.1);
+      border: 1px solid rgba(255, 75, 75, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-red-light);
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* Category Cards */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+    .cat-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--tr-base);
+    }
+    .cat-card:hover, .cat-card.active {
+      border-color: var(--clr-red-light);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(255, 75, 75, 0.08);
+      background: rgba(255, 75, 75, 0.02);
+    }
+    .cat-card svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--clr-silver);
+      stroke-width: 2px;
+      fill: none;
+      margin-bottom: 0.75rem;
+      transition: stroke 0.2s;
+    }
+    .cat-card:hover svg, .cat-card.active svg {
+      stroke: var(--clr-red-light);
+    }
+    .cat-card-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--clr-white);
+    }
+
+    /* Popular Tags */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .tag-chip {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      color: var(--clr-silver);
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--tr-base);
+    }
+    .tag-chip:hover, .tag-chip.active {
+      border-color: var(--clr-red-light);
+      color: var(--clr-white);
+      background: rgba(255, 75, 75, 0.04);
+    }
+
+    /* Horizontal Trending Cards */
+    .trending-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .trending-item {
+      display: flex;
+      gap: 1rem;
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      transition: all var(--tr-base);
+      cursor: pointer;
+    }
+    .trending-item:hover {
+      border-color: var(--clr-border-glow);
+      transform: translateX(3px);
+    }
+    .trending-img-wrap {
+      width: 100px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .trending-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .trending-body {
+      padding: 0.75rem 1rem 0.75rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .trending-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--clr-white);
+      line-height: 1.3;
+      margin-bottom: 0.25rem;
+    }
+    .trending-meta {
+      font-size: 0.72rem;
+      color: var(--clr-silver-dim);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo">
+          <img src="images/logo.png" alt="NexCell Logo" style="height: 30px; width: auto; object-fit: contain; flex-shrink: 0;" />
+          <div class="logo-text">Nex<span>Cell</span></div>
+        </a>
+        <ul class="navbar-nav" role="list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <!-- Profile Menu -->
+        <div class="navbar-profile-wrapper desktop-profile">
+          <button class="navbar-profile-btn" id="profileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
+            <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="login.html" class="profile-dropdown-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+              <span>Login</span>
+            </a>
+            <a href="signup.html" class="profile-dropdown-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="17" y1="11" x2="23" y2="11"></line>
+              </svg>
+              <span>Sign Up</span>
+            </a>
+          </div>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <div class="mobile-profile-section" style="padding: 1rem 0.5rem 0; border-top: 1px solid var(--clr-border); margin-top: 1rem; display: flex; justify-content: center;">
+        <div class="navbar-profile-wrapper mobile-profile-wrapper">
+          <button class="navbar-profile-btn" id="mobileProfileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
+            <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <div class="profile-dropdown" id="mobileProfileDropdown">
+            <a href="login.html" class="profile-dropdown-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+              <span>Login</span>
+            </a>
+            <a href="signup.html" class="profile-dropdown-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="17" y1="11" x2="23" y2="11"></line>
+              </svg>
+              <span>Sign Up</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══ HERO SECTION ══ -->
+  <section class="blog-hero bg-grid" aria-label="Blog hero banner">
+    <div class="glow-blue" style="top:-100px;left:-100px;" aria-hidden="true"></div>
+    <div class="glow-cyan" style="bottom:-100px;right:10%;" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1.5rem;">
+        <a href="index.html">Home</a> / <span>Blog</span>
+      </nav>
+      <div class="section-tag" style="margin:0 auto 1.5rem;">BLOG</div>
+      <h1 style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;margin-bottom:1.5rem;">
+        Latest Mobile Tech &<br /><span class="grad-text">Repair Insights</span>
+      </h1>
+      <p style="color:var(--clr-silver);font-size:1.05rem;line-height:1.7;max-width:580px;margin:0 auto;">
+        Expert tutorials, accessories reviews, and hardware diagnostic guides brought to you by the NexCell technician team.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FEATURED ARTICLE ══ -->
+  <section class="featured-section" id="featured-article" aria-label="Featured article">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <h2 class="section-title" style="text-align:left;">Featured Article</h2>
+      </div>
+      <div id="featured-placeholder">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MAIN CONTENT (Grid, Sidebar, Categories, Tags) ══ -->
+  <section class="section" style="background:var(--clr-bg-2);" aria-label="Latest articles and tools">
+    <div class="container">
+      <div style="display:grid; grid-template-columns: 2.3fr 1fr; gap:3rem;" class="about-story-grid">
+        <!-- Left Side: Articles Grid -->
+        <div>
+          <h3 class="section-title" style="text-align:left; margin-bottom:1.5rem; font-size:1.75rem;">Latest Articles</h3>
+          <div class="blog-grid" id="articles-grid">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Right Side: Sidebar -->
+        <aside style="display:flex; flex-direction:column; gap:3rem;">
+          <!-- Categories -->
+          <div>
+            <h4 style="font-family:var(--font-head); font-size:1.25rem; font-weight:700; color:var(--clr-white); margin-bottom:1rem;">Categories</h4>
+            <div class="cat-grid" id="categories-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Trending -->
+          <div>
+            <h4 style="font-family:var(--font-head); font-size:1.25rem; font-weight:700; color:var(--clr-white); margin-bottom:1rem;">Trending Posts</h4>
+            <div class="trending-list" id="trending-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Popular Tags -->
+          <div>
+            <h4 style="font-family:var(--font-head); font-size:1.25rem; font-weight:700; color:var(--clr-white); margin-bottom:1rem;">Popular Tags</h4>
+            <div class="tag-container" id="tags-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER SECTION ══ -->
+  <section class="section" style="background:var(--clr-bg);" aria-label="Newsletter subscription">
+    <div class="container">
+      <div class="newsletter-section" style="max-width:800px; margin:0 auto;">
+        <h3 class="section-title" style="margin-bottom:0.75rem;">Stay Informed</h3>
+        <p style="color:var(--clr-silver); margin-bottom:2rem; max-width:540px; margin-left:auto; margin-right:auto;">
+          Subscribe to our newsletter for exclusive hardware tips, discount coupons, and updates on accessory launches.
+        </p>
+        <form class="footer-newsletter-form" onsubmit="event.preventDefault(); showToast('🎉 Subscribed successfully!', 'success');" style="display:flex; max-width:500px; margin:0 auto; gap:0.5rem; flex-wrap:wrap; justify-content:center;">
+          <input type="email" placeholder="Your email address" required style="flex:1; min-width:260px;" />
+          <button type="submit" class="btn btn-primary" style="padding:0.75rem 2rem;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA SECTION ══ -->
+  <section class="section bg-grid" style="position:relative; background:var(--clr-void); overflow:hidden;" aria-label="Book repairs">
+    <div class="glow-red" style="top:-100px; right:-100px;" aria-hidden="true"></div>
+    <div class="container" style="text-align:center;">
+      <h3 style="font-family:var(--font-head); font-size:2.25rem; font-weight:800; color:var(--clr-white); margin-bottom:1rem;">
+        Need Professional <span class="grad-text">Device Repair?</span>
+      </h3>
+      <p style="color:var(--clr-silver); max-width:580px; margin:0 auto 2rem; line-height:1.75;">
+        Cracked screens, battery drain, liquid damage, or charging ports failure — our expert technicians fix them all with certified components in under 2 hours.
+      </p>
+      <div style="display:flex; gap:1.25rem; justify-content:center; flex-wrap:wrap;">
+        <a href="services.html#book-repair" class="btn btn-primary btn-lg">Book Service</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- COLUMN 1 — BRAND -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="NexCell Logo" style="height: 28px; width: auto; object-fit: contain; flex-shrink: 0;" />
+            <span class="logo-text" style="color: #FFFFFF; font-weight: 700;">Nex<span style="color: #FF4B4B;">Cell</span></span>
+          </div>
+          <p class="footer-desc">Your premium destination for mobile accessories and expert repair services.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2 — QUICK LINKS -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="home2.html" class="footer-link">Home 2</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3 — CONTACT -->
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:6px; vertical-align:middle; color:var(--clr-red-light); flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>123, Tech Street,<br>Anna Nagar,<br>Chennai – 600040</span>
+          </div>
+          <div class="footer-contact-item" style="margin-top:0.75rem;">
+            <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:6px; vertical-align:middle; color:var(--clr-red-light); flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+91 99400 12345</span>
+          </div>
+          <div class="footer-contact-item" style="margin-top:0.75rem;">
+            <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:6px; vertical-align:middle; color:var(--clr-red-light); flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>hello@nexcell.in</span>
+          </div>
+        </div>
+
+        <!-- COLUMN 4 — NEWSLETTER -->
+        <div>
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="footer-desc" style="margin-bottom:1rem;">Subscribe to receive exclusive offers, new arrivals, and repair tips.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); showToast('🎉 Subscribed successfully!', 'success');" style="display:flex; flex-direction:column; gap:0.5rem;">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit" class="btn btn-primary btn-sm" style="width:100%; justify-content:center; padding:0.65rem;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="footer-bottom" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-top:1px solid var(--clr-border); padding-top:1.5rem; margin-top:2.5rem;">
+        <p class="footer-copy" style="margin:0;">© 2026 NexCell. All rights reserved.</p>
+        <div class="footer-policies" style="display:flex; gap:1.5rem; align-items:center;">
+          <a href="#" style="color:var(--clr-silver); font-size:0.82rem; text-decoration:none; transition:color var(--tr-base);" onmouseover="this.style.color='var(--clr-red-light)';" onmouseout="this.style.color='var(--clr-silver)';">Privacy Policy</a>
+          <a href="#" style="color:var(--clr-silver); font-size:0.82rem; text-decoration:none; transition:color var(--tr-base);" onmouseover="this.style.color='var(--clr-red-light)';" onmouseout="this.style.color='var(--clr-silver)';">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/blog-data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Categories configurations
+    const CATEGORIES = [
+      { id: "all", title: "All News", icon: `<svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>` },
+      { id: "battery", title: "Battery", icon: `<svg viewBox="0 0 24 24"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect><line x1="22" y1="11" x2="22" y2="13"></line></svg>` },
+      { id: "charging", title: "Charging", icon: `<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>` },
+      { id: "phone repairs", title: "Repairs", icon: `<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>` },
+      { id: "accessories", title: "Accessories", icon: `<svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>` },
+      { id: "buying guides", title: "Guides", icon: `<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>` },
+      { id: "iphone", title: "iPhone", icon: `<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>` },
+      { id: "android", title: "Android", icon: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path></svg>` }
+    ];
+
+    // Popular Tags configuration
+    const POPULAR_TAGS = [
+      "MagSafe", "USB-C", "Power Bank", "iPhone", "Samsung", "Android", "Fast Charging", "Repair Tips", "Screen Guard", "Battery"
+    ];
+
+    // App state
+    let activeCategory = "all";
+    let activeTag = null;
+
+    // Initialize Page Content
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCategories();
+      renderTags();
+      renderBlogPosts();
+      renderTrendingPosts();
+    });
+
+    function renderCategories() {
+      const container = document.getElementById("categories-container");
+      container.innerHTML = CATEGORIES.map(cat => `
+        <div class="cat-card ${cat.id === activeCategory ? 'active' : ''}" onclick="selectCategory('${cat.id}')">
+          ${cat.icon}
+          <div class="cat-card-title">${cat.title}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderTags() {
+      const container = document.getElementById("tags-container");
+      container.innerHTML = POPULAR_TAGS.map(tag => `
+        <span class="tag-chip ${tag === activeTag ? 'active' : ''}" onclick="selectTag('${tag}')">
+          #${tag}
+        </span>
+      `).join('');
+    }
+
+    function selectCategory(catId) {
+      activeCategory = catId;
+      activeTag = null; // Clear tag filter
+      renderCategories();
+      renderTags();
+      renderBlogPosts();
+    }
+
+    function selectTag(tag) {
+      activeTag = activeTag === tag ? null : tag; // Toggle tag
+      activeCategory = "all"; // Clear category filter
+      renderCategories();
+      renderTags();
+      renderBlogPosts();
+    }
+
+    function renderBlogPosts() {
+      const featuredPlaceholder = document.getElementById("featured-placeholder");
+      const gridContainer = document.getElementById("articles-grid");
+
+      // Filter logic
+      let filtered = BLOG_DATA;
+      if (activeCategory !== "all") {
+        filtered = BLOG_DATA.filter(post => post.category.toLowerCase() === activeCategory.toLowerCase());
+      } else if (activeTag) {
+        // Tag filter (simple string match on title, excerpt, or category)
+        filtered = BLOG_DATA.filter(post => 
+          post.title.toLowerCase().includes(activeTag.toLowerCase()) || 
+          post.excerpt.toLowerCase().includes(activeTag.toLowerCase()) ||
+          post.category.toLowerCase().includes(activeTag.toLowerCase())
+        );
+      }
+
+      if (filtered.length === 0) {
+        gridContainer.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem; color:var(--clr-silver-dim);">No articles found matching the filter.</div>`;
+        featuredPlaceholder.innerHTML = "";
+        return;
+      }
+
+      // Feature the first element of filtered list
+      const featured = filtered[0];
+      featuredPlaceholder.innerHTML = `
+        <div class="featured-card">
+          <div class="featured-img-wrap">
+            <img src="${featured.image}" alt="${featured.title}" class="featured-img" />
+          </div>
+          <div class="featured-content">
+            <div class="blog-meta">
+              <span class="blog-category">${featured.category}</span>
+              <span>•</span>
+              <span>${featured.date}</span>
+              <span>•</span>
+              <span>${featured.readTime}</span>
+            </div>
+            <h3 style="font-family:var(--font-head); font-size:1.75rem; font-weight:800; color:var(--clr-white); margin-bottom:1rem; line-height:1.3;">
+              <a href="blog-details.html?id=${featured.id}" style="color:inherit; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--clr-red-light)';" onmouseout="this.style.color='inherit';">${featured.title}</a>
+            </h3>
+            <p style="color:var(--clr-silver); line-height:1.6; margin-bottom:1.5rem; font-size:0.95rem;">
+              ${featured.excerpt}
+            </p>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div class="blog-author">
+                <div class="blog-author-avatar">${featured.author.name.charAt(0)}</div>
+                <span>By ${featured.author.name}</span>
+              </div>
+              <a href="blog-details.html?id=${featured.id}" class="btn btn-outline btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Render remaining 6-7 items in the grid
+      const gridItems = filtered.slice(1);
+      if (gridItems.length === 0) {
+        gridContainer.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--clr-silver-dim); font-size:0.9rem;">Check back soon for more articles in this category!</div>`;
+      } else {
+        gridContainer.innerHTML = gridItems.map(post => `
+          <article class="blog-card">
+            <div class="blog-card-img-wrap">
+              <img src="${post.image}" alt="${post.title}" class="blog-card-img" />
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-category">${post.category}</span>
+                <span>•</span>
+                <span>${post.date}</span>
+              </div>
+              <h4 class="blog-card-title">
+                <a href="blog-details.html?id=${post.id}">${post.title}</a>
+              </h4>
+              <p class="blog-card-excerpt">${post.excerpt}</p>
+              <div class="blog-card-footer">
+                <div class="blog-author">
+                  <div class="blog-author-avatar">${post.author.name.charAt(0)}</div>
+                  <span>${post.author.name}</span>
+                </div>
+                <a href="blog-details.html?id=${post.id}" class="btn btn-outline btn-sm" style="padding:0.4rem 0.8rem; font-size:0.75rem;">Read More</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+
+    function renderTrendingPosts() {
+      const container = document.getElementById("trending-container");
+      // Choose 3 specific posts to trend
+      const trending = BLOG_DATA.slice(2, 5);
+      container.innerHTML = trending.map(post => `
+        <div class="trending-item" onclick="window.location.href='blog-details.html?id=${post.id}'">
+          <div class="trending-img-wrap">
+            <img src="${post.image}" alt="${post.title}" class="trending-img" />
+          </div>
+          <div class="trending-body">
+            <h5 class="trending-title">${post.title}</h5>
+            <div class="trending-meta">${post.category} • ${post.readTime}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+
+</html>
