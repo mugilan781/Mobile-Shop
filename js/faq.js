@@ -44,13 +44,7 @@ function initFAQ() {
     }, { passive: true });
   });
 
-  // Open first item by default
-  const firstItem = faqItems[0];
-  if (firstItem) {
-    const firstAnswer = firstItem.querySelector('.faq-answer');
-    firstItem.classList.add('open');
-    if (firstAnswer) firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
-  }
+
 }
 
 document.addEventListener('DOMContentLoaded', initFAQ);

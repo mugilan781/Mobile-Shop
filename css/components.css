@@ -1235,3 +1235,49 @@
   color: var(--clr-red-light); margin-bottom: var(--sp-4);
 }
 
+/* ── HERO FLOATING FEATURE CARDS ──────────────────────────────── */
+.hero-visual-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.hero-floating-card {
+  position: absolute;
+  background: rgba(16, 16, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--clr-border-glow);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-md);
+  animation: floatY 4s ease-in-out infinite;
+  z-index: 10;
+  white-space: nowrap;
+}
+.hero-floating-card-1 { top: 12%; left: -5%; animation-delay: -1s; }
+.hero-floating-card-2 { bottom: 12%; right: -5%; animation-delay: -2s; }
+
+.hero-floating-card svg {
+  width: 14px; height: 14px;
+  stroke: var(--clr-red-light);
+  stroke-width: 2px;
+  fill: none;
+  flex-shrink: 0;
+}
+.hero-floating-card span {
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: var(--clr-silver-light);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+
