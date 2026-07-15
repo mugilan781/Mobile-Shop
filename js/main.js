@@ -311,6 +311,206 @@ function initPricingTabs() {
   });
 }
 
+/* ── Checkout / Quick Buy Modal ───────────────────────────────── */
+function initCheckoutModal() {
+  // Create overlay markup
+  const overlay = document.createElement('div');
+  overlay.className = 'checkout-modal-overlay';
+  overlay.id = 'checkoutModal';
+  overlay.innerHTML = `
+    <div class="checkout-modal-card">
+      <button class="checkout-modal-close" id="closeCheckout" aria-label="Close modal">&times;</button>
+      <div style="margin-bottom:1rem;">
+        <span class="badge badge-red" style="margin-bottom:0.5rem;">Quick Checkout</span>
+        <h3 class="checkout-product-title" id="checkoutProdName">Product Name</h3>
+        <p class="checkout-product-price" id="checkoutProdPrice">₹0.00</p>
+      </div>
+      <form id="checkoutForm" novalidate style="display:flex; flex-direction:column; gap:1rem;">
+        <div class="form-group">
+          <label class="form-label" for="checkoutName">Your Name *</label>
+          <input type="text" id="checkoutName" class="form-input" placeholder="Enter your full name" required />
+          <span class="form-error" id="checkoutNameError" style="display:none; color:var(--clr-error); font-size:0.75rem;"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="checkoutPhone">Phone Number *</label>
+          <input type="tel" id="checkoutPhone" class="form-input" placeholder="+91 XXXXX XXXXX" required />
+          <span class="form-error" id="checkoutPhoneError" style="display:none; color:var(--clr-error); font-size:0.75rem;"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="checkoutAddress">Delivery Address *</label>
+          <input type="text" id="checkoutAddress" class="form-input" placeholder="Flat, Street, Area" required />
+          <span class="form-error" id="checkoutAddressError" style="display:none; color:var(--clr-error); font-size:0.75rem;"></span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="checkoutQty">Quantity</label>
+            <select id="checkoutQty" class="form-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="checkoutPayment">Payment Method</label>
+            <select id="checkoutPayment" class="form-select">
+              <option value="cod">Cash on Delivery</option>
+              <option value="upi">UPI / QR Code</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="checkoutSubmit" style="margin-top:0.5rem; width:100%;">
+          Confirm Order
+        </button>
+      </form>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const closeBtn = document.getElementById('closeCheckout');
+  const form = document.getElementById('checkoutForm');
+
+  function openModal(name, price) {
+    document.getElementById('checkoutProdName').textContent = name;
+    document.getElementById('checkoutProdPrice').textContent = price;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    form.reset();
+    // Hide errors
+    form.querySelectorAll('.form-error').forEach(e => e.style.display = 'none');
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  // Listen globally for Buy clicks
+  document.body.addEventListener('click', (e) => {
+    // Match buy buttons: either href matches gallery.html but text is "Buy"/"Order", or class is .buy-btn
+    const link = e.target.closest('a') || e.target.closest('button');
+    if (!link) return;
+
+    const isBuyLink = link.classList.contains('buy-btn') || 
+                      link.getAttribute('href') === 'gallery.html' ||
+                      link.textContent.trim().toLowerCase() === 'buy' ||
+                      link.textContent.trim().toLowerCase() === 'order now' ||
+                      link.textContent.trim().toLowerCase() === 'shop now';
+
+    // If it's a gallery filter btn, ignore
+    if (link.classList.contains('filter-btn')) return;
+    // If it's header nav active, ignore
+    if (link.classList.contains('nav-link')) return;
+
+    if (isBuyLink) {
+      e.preventDefault();
+      // Look for product details
+      const card = link.closest('.product-card') || link.closest('.featured-item-content') || link.closest('article') || document.body;
+      const name = card.querySelector('.product-name')?.textContent || card.querySelector('h3')?.textContent || 'Premium Tech Accessory';
+      const price = card.querySelector('.product-price')?.textContent || card.querySelector('.price-amount')?.textContent || '₹999';
+
+      openModal(name, price.split(' ')[0]); // Get price without old price
+    }
+  });
+
+  // Form submission
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let hasErr = false;
+
+    const name = document.getElementById('checkoutName');
+    const phone = document.getElementById('checkoutPhone');
+    const addr = document.getElementById('checkoutAddress');
+
+    if (!name.value.trim()) {
+      document.getElementById('checkoutNameError').textContent = 'Name is required';
+      document.getElementById('checkoutNameError').style.display = 'block';
+      hasErr = true;
+    } else {
+      document.getElementById('checkoutNameError').style.display = 'none';
+    }
+
+    if (!phone.value.trim() || !/^\+?[0-9\s-]{10,14}$/.test(phone.value.trim())) {
+      document.getElementById('checkoutPhoneError').textContent = 'Enter a valid phone number';
+      document.getElementById('checkoutPhoneError').style.display = 'block';
+      hasErr = true;
+    } else {
+      document.getElementById('checkoutPhoneError').style.display = 'none';
+    }
+
+    if (!addr.value.trim()) {
+      document.getElementById('checkoutAddressError').textContent = 'Address is required';
+      document.getElementById('checkoutAddressError').style.display = 'block';
+      hasErr = true;
+    } else {
+      document.getElementById('checkoutAddressError').style.display = 'none';
+    }
+
+    if (hasErr) return;
+
+    // Loading transition
+    const submitBtn = document.getElementById('checkoutSubmit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing...';
+
+    setTimeout(() => {
+      const orderId = 'MR' + Math.floor(1000 + Math.random() * 9000);
+      closeModal();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Confirm Order';
+      
+      showToast(`🎉 Order placed! ID: #${orderId}. Executive will call you in 15 mins.`, 'success');
+    }, 1200);
+  });
+}
+
+/* ── Service Tab Autofill ──────────────────────────────────────── */
+function initServicePreselector() {
+  // If we click "Book Service" cards
+  document.body.addEventListener('click', (e) => {
+    const link = e.target.closest('.service-book-btn');
+    if (!link) return;
+
+    const serviceName = link.dataset.service;
+    if (!serviceName) return;
+
+    // Set select service if present on page
+    const select = document.getElementById('repairService') || document.getElementById('enquiryType');
+    if (select) {
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.toLowerCase().includes(serviceName.toLowerCase()) ||
+            select.options[i].text.toLowerCase().includes(serviceName.toLowerCase())) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  });
+
+  // Check URL hash on page load
+  const hash = window.location.hash;
+  if (hash.startsWith('#book-')) {
+    const sName = hash.replace('#book-', '');
+    setTimeout(() => {
+      const select = document.getElementById('repairService') || document.getElementById('enquiryType');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase().includes(sName) ||
+              select.options[i].text.toLowerCase().includes(sName)) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }, 100);
+  }
+}
+
 /* ── Init All ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
@@ -326,8 +526,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursorGlow();
   initTypingAnimation();
   initPricingTabs();
+  initCheckoutModal();
+  initServicePreselector();
 });
 
 // Expose toast globally
 window.showToast = showToast;
+
 
