@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your MR Mobile Hub account — Track repairs, manage orders, and get exclusive member offers." />
+  <title>Sign Up — MR Mobile Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .auth-bg-particles {
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    }
+    .auth-bg-particles::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 70%);
+      top: -250px; right: -150px;
+      animation: floatY 7s ease-in-out infinite;
+    }
+    .auth-bg-particles::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+      bottom: -150px; left: -100px;
+      animation: floatY 9s ease-in-out infinite reverse;
+    }
+    .input-icon-wrap { position: relative; }
+    .input-icon-wrap .form-input { padding-left: 2.75rem; }
+    .input-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--clr-silver-dim); font-size: 1rem; pointer-events: none; display: flex; }
+    .input-icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2px; }
+    .pw-toggle { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--clr-silver-dim); cursor: pointer; font-size: 0.85rem; background: none; border: none; transition: color 0.2s; }
+    .pw-toggle:hover { color: var(--clr-white); }
+
+    .pw-strength {
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+    .pw-strength-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s, background 0.3s;
+      width: 0%;
+    }
+    .pw-strength-label {
+      font-size: 0.72rem;
+      margin-top: 0.25rem;
+    }
+
+    .perks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: rgba(37,99,235,0.04);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: var(--r-md);
+    }
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--clr-silver);
+    }
+    .perk svg { width: 14px; height: 14px; fill: none; stroke: var(--clr-cyan); stroke-width: 2.5px; flex-shrink: 0; }
+
+    .signup-card-wide {
+      max-width: 500px !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="auth-bg-particles" aria-hidden="true"></div>
+<div style="position:fixed;inset:0;background-image:linear-gradient(rgba(37,99,235,0.02) 1px, transparent 1px),linear-gradient(90deg, rgba(37,99,235,0.02) 1px, transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;" aria-hidden="true"></div>
+
+<main class="auth-page" role="main">
+  <div class="auth-card signup-card-wide">
+
+    <!-- Logo -->
+    <div class="auth-logo" style="text-align:center;">
+      <div class="logo-icon" style="margin:0 auto 1rem;width:48px;height:48px;font-size:1.25rem;">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      </div>
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Join 4,900+ members of MR Mobile Hub</p>
+    </div>
+
+    <!-- Perks -->
+    <div class="perks-list">
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Track your repairs in real-time
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Exclusive member discounts
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Early access to new tech arrivals
+      </div>
+    </div>
+
+    <!-- Signup Form -->
+    <form class="auth-form" data-validate-form id="signupForm" novalidate style="margin-top:1.5rem;">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="signupFirstName">First Name *</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+            <input type="text" id="signupFirstName" class="form-input" placeholder="Arjun" data-validate="required" autocomplete="given-name" />
+          </div>
+          <span class="form-error" style="display:none;"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="signupLastName">Last Name *</label>
+          <div class="input-icon-wrap">
+            <span class="input-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+            <input type="text" id="signupLastName" class="form-input" placeholder="Sharma" data-validate="required" autocomplete="family-name" />
+          </div>
+          <span class="form-error" style="display:none;"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="signupEmail">Email Address *</label>
+        <div class="input-icon-wrap">
+          <span class="input-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </span>
+          <input type="email" id="signupEmail" class="form-input" placeholder="your@email.com" data-validate="required|email" autocomplete="email" />
+        </div>
+        <span class="form-error" style="display:none;"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="signupPhone">Phone Number *</label>
+        <div class="input-icon-wrap">
+          <span class="input-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <input type="tel" id="signupPhone" class="form-input" placeholder="+91 99400 12345" data-validate="required|phone" autocomplete="tel" />
+        </div>
+        <span class="form-error" style="display:none;"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="signupPassword">Password *</label>
+        <div class="input-icon-wrap" style="position:relative;">
+          <span class="input-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </span>
+          <input type="password" id="signupPassword" class="form-input" placeholder="Minimum 8 characters" data-validate="required|minlen:8" autocomplete="new-password" />
+          <button type="button" class="pw-toggle" id="signupPwToggle">Show</button>
+        </div>
+        <div class="pw-strength"><div class="pw-strength-fill" id="pwStrengthFill"></div></div>
+        <span class="pw-strength-label" id="pwStrengthLabel" style="color:var(--clr-silver-dim);">Password strength</span>
+        <span class="form-error" style="display:none;"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="signupConfirmPassword">Confirm Password *</label>
+        <div class="input-icon-wrap" style="position:relative;">
+          <span class="input-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </span>
+          <input type="password" id="signupConfirmPassword" class="form-input" placeholder="Re-enter your password" data-validate="required|match:signupPassword" autocomplete="new-password" />
+          <button type="button" class="pw-toggle" id="confirmPwToggle">Show</button>
+        </div>
+        <span class="form-error" style="display:none;"></span>
+      </div>
+
+      <div class="form-checkbox" style="margin-top:0.5rem;">
+        <input type="checkbox" id="signupTerms" required />
+        <label class="form-checkbox-label" for="signupTerms">
+          I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit" id="signupSubmit" style="margin-top:0.5rem;">Create Account</button>
+    </form>
+
+    <div class="auth-redirect">
+      Already have an account? <a href="login.html">Sign in</a>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+<script>
+  // Password toggle - signup
+  document.getElementById('signupPwToggle')?.addEventListener('click', () => {
+    const pw = document.getElementById('signupPassword');
+    const btn = document.getElementById('signupPwToggle');
+    pw.type = pw.type === 'password' ? 'text' : 'password';
+    btn.textContent = pw.type === 'password' ? 'Show' : 'Hide';
+  });
+
+  // Password toggle - confirm
+  document.getElementById('confirmPwToggle')?.addEventListener('click', () => {
+    const pw = document.getElementById('signupConfirmPassword');
+    const btn = document.getElementById('confirmPwToggle');
+    pw.type = pw.type === 'password' ? 'text' : 'password';
+    btn.textContent = pw.type === 'password' ? 'Show' : 'Hide';
+  });
+
+  // Password strength meter
+  document.getElementById('signupPassword')?.addEventListener('input', (e) => {
+    const val = e.target.value;
+    const fill = document.getElementById('pwStrengthFill');
+    const label = document.getElementById('pwStrengthLabel');
+
+    let strength = 0;
+    if (val.length >= 8) strength++;
+    if (/[A-Z]/.test(val)) strength++;
+    if (/[0-9]/.test(val)) strength++;
+    if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+    const levels = [
+      { w: '0%',    c: 'transparent', t: 'Password strength' },
+      { w: '25%',   c: '#ef4444',     t: 'Weak' },
+      { w: '50%',   c: '#f59e0b',     t: 'Fair' },
+      { w: '75%',   c: '#22d3ee',     t: 'Good' },
+      { w: '100%',  c: '#10b981',     t: 'Strong' },
+    ];
+
+    const lvl = levels[strength];
+    fill.style.width = val ? lvl.w : '0%';
+    fill.style.background = lvl.c;
+    label.textContent = val ? lvl.t : 'Password strength';
+    label.style.color = lvl.c;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact MR Mobile Hub — Visit our store, call us, or fill the form. Expert repair enquiries, product questions, and walk-in appointments." />
+  <title>Contact Us — MR Mobile Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .contact-info-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--grad-blue);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .contact-info-card:hover::before { transform: scaleX(1); }
+    .contact-info-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--clr-border-glow);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table tr { border-bottom: 1px solid var(--clr-border); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td { padding: 0.875rem 0; font-size: 0.875rem; }
+    .hours-table td:first-child { color: var(--clr-white); font-weight: 500; }
+    .hours-table td:last-child { color: var(--clr-silver); text-align: right; }
+    .hours-open { color: #10b981 !important; font-weight: 600 !important; }
+    .hours-closed { color: #ef4444 !important; font-weight: 600 !important; }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .social-link:hover {
+      transform: translateX(6px);
+      border-color: var(--clr-border-glow);
+      background: rgba(37,99,235,0.05);
+    }
+    .social-link svg { width: 22px; height: 22px; fill: none; stroke: var(--clr-cyan); stroke-width: 2px; }
+    .social-link-name { font-weight: 700; color: var(--clr-white); font-size: 0.9rem; }
+    .social-link-handle { font-size: 0.78rem; color: var(--clr-silver); }
+
+    @media (max-width: 767px) {
+      .contact-layout { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <div class="logo-text">MR <span>Mobile Hub</span></div>
+      </a>
+      <ul class="navbar-nav" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="home2.html"    class="nav-link">Explore</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link">Gallery</a></li>
+        <li><a href="contact.html"  class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="login.html"  class="btn btn-outline btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"    class="nav-link">Home</a>
+    <a href="home2.html"    class="nav-link">Explore</a>
+    <a href="about.html"    class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html"  class="nav-link">Gallery</a>
+    <a href="contact.html"  class="nav-link active">Contact</a>
+    <div style="display:flex;gap:0.75rem;padding:1rem 0.5rem 0;">
+      <a href="login.html"  class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center;">Sign Up</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ SECTION 1 — HERO ══ -->
+<section class="page-hero bg-grid" aria-label="Contact hero">
+  <div class="page-hero-bg"></div>
+  <div class="glow-cyan" style="top:0;right:10%;" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> / <span>Contact</span>
+      </nav>
+      <div class="section-tag reveal" style="margin:0 auto 1.5rem;">Get in Touch</div>
+      <h1 class="reveal delay-1" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;margin-bottom:1.5rem;">
+        We're Here to <span class="grad-text">Help</span>
+      </h1>
+      <p class="reveal delay-2" style="color:var(--clr-silver);font-size:1.05rem;line-height:1.7;max-width:540px;margin:0 auto 2.5rem;">
+        Walk in, call us, or drop us a message. Our team responds within 30 minutes during business hours.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2 — CONTACT INFO CARDS ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Contact information">
+  <div class="container">
+    <div class="grid-4">
+      <div class="contact-info-card reveal delay-1">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);">Visit Our Store</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">123, Tech Street, Anna Nagar, Chennai - 600040, Tamil Nadu</p>
+        <a href="#map" class="btn btn-outline btn-sm" style="width:fit-content; margin-top: auto;">Get Directions →</a>
+      </div>
+
+      <div class="contact-info-card reveal delay-2">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);">Call Us</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">+91 99400 12345<br />Mon–Sat: 10:00 AM – 8:00 PM</p>
+        <a href="tel:+919940012345" class="btn btn-outline btn-sm" style="width:fit-content; margin-top: auto;">Call Now →</a>
+      </div>
+
+      <div class="contact-info-card reveal delay-3">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);">Email Us</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">hello@mrmobilehub.in<br />Response within 2 hours</p>
+        <a href="mailto:hello@mrmobilehub.in" class="btn btn-outline btn-sm" style="width:fit-content; margin-top: auto;">Email Now →</a>
+      </div>
+
+      <div class="contact-info-card reveal delay-4">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);">WhatsApp</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">+91 99400 12345<br />Instant replies during store hours</p>
+        <a href="https://wa.me/919940012345" class="btn btn-outline btn-sm" style="width:fit-content; margin-top: auto;" target="_blank" rel="noopener noreferrer">Chat Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3 — CONTACT FORM ══ -->
+<section class="section bg-grid" id="contact-form" aria-label="Contact form">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;" class="contact-layout">
+      <!-- Left Info -->
+      <div class="reveal-left">
+        <div class="section-tag" style="margin-bottom:1.5rem;">Send a Message</div>
+        <h2 class="section-title" style="text-align:left;">Let's Start a<br /><span class="grad-text">Conversation</span></h2>
+        <p style="color:var(--clr-silver);margin:1.5rem 0 2.5rem;line-height:1.7;">
+          Have a question about a product, need a repair quote, or want to partner with us? We'd love to hear from you.
+        </p>
+
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div style="padding:1.5rem;background:var(--clr-bg-card);border:1px solid var(--clr-border);border-radius:1rem;">
+            <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.5rem;font-size:0.9rem;">Response Times</div>
+            <div style="font-size:0.82rem;color:var(--clr-silver);line-height:1.6;">
+              Calls: Immediate during store hours<br />
+              WhatsApp: Within 15 minutes<br />
+              Email: Within 2 hours<br />
+              Form: Within 30 minutes
+            </div>
+          </div>
+
+          <div style="padding:1.5rem;background:rgba(37,99,235,0.04);border:1px solid rgba(37,99,235,0.15);border-radius:1rem;">
+            <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.5rem;font-size:0.9rem;">Free Diagnostic</div>
+            <div style="font-size:0.82rem;color:var(--clr-silver);line-height:1.6;">Walk in anytime for a free 15-minute device diagnostic — no appointment needed.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Form -->
+      <div class="glass-card" style="padding:2.5rem;" class="reveal-right">
+        <form data-validate-form id="contactForm" novalidate>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Full Name *</label>
+                <input type="text" id="contactName" class="form-input" placeholder="Your full name" data-validate="required" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Phone *</label>
+                <input type="tel" id="contactPhone" class="form-input" placeholder="+91 99400 12345" data-validate="required|phone" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="your@email.com" data-validate="required|email" />
+              <span class="form-error" style="display:none;"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject *</label>
+              <select id="contactSubject" class="form-select" data-validate="required">
+                <option value="">Select subject...</option>
+                <option>Repair Enquiry</option>
+                <option>Product Question</option>
+                <option>Warranty Claim</option>
+                <option>Feedback</option>
+                <option>Business / Partnership</option>
+                <option>Other</option>
+              </select>
+              <span class="form-error" style="display:none;"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Your Message *</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Tell us how we can help you..." data-validate="required|minlen:20"></textarea>
+              <span class="form-error" style="display:none;"></span>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="contactConsent" />
+              <label class="form-checkbox-label" for="contactConsent">I agree to the Privacy Policy and consent to being contacted regarding my enquiry.</label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="contactSubmit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4 — MAP ══ -->
+<section class="section-sm" style="background:var(--clr-bg-2);" id="map" aria-label="Location map">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:2rem;">
+      <div class="section-tag reveal">Find Us</div>
+      <h2 class="section-title reveal delay-1">Visit Our <span class="grad-text">Store</span></h2>
+    </div>
+
+    <div class="map-wrap reveal-scale">
+      <!-- OpenStreetMap embed (Anna Nagar, Chennai) -->
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=80.2%2C13.07%2C80.22%2C13.09&layer=mapnik"
+        title="MR Mobile Hub Location — Anna Nagar, Chennai"
+        loading="lazy"
+        aria-label="Map showing our store location">
+      </iframe>
+    </div>
+
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://maps.google.com/?q=Anna+Nagar,+Chennai" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        Open in Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5 — FAQ PREVIEW ══ -->
+<section class="section bg-grid" aria-label="FAQ preview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Quick Help</div>
+      <h2 class="section-title reveal delay-1">Common <span class="grad-text">Questions</span></h2>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto 2.5rem;">
+      <div class="faq-item reveal delay-1">
+        <button class="faq-question">How do I book a repair appointment? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Fill the walk-in enquiry form, WhatsApp us, or call directly. We confirm your slot within 30 minutes.</div></div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <button class="faq-question">Do I need to bring any documents? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Just bring your device and, if you have it, the original purchase receipt. No other documents required.</div></div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <button class="faq-question">Where are you located exactly? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We're at 123 Tech Street, Anna Nagar, Chennai 600040. Near Anna Nagar West Metro Station. Look for our blue MR Mobile Hub sign.</div></div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="services.html#faq" class="btn btn-outline">View All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6 — SOCIAL MEDIA ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Social media links">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Stay Connected</div>
+      <h2 class="section-title reveal delay-1">Follow Us on <span class="grad-text">Social</span></h2>
+      <p class="section-subtitle reveal delay-2">Stay updated with new arrivals, tips, offers, and behind-the-scenes content.</p>
+    </div>
+
+    <div class="grid-4">
+      <a href="#" class="social-link reveal delay-1" aria-label="Follow us on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        <div>
+          <div class="social-link-name">Facebook</div>
+          <div class="social-link-handle">@MRMobileHub</div>
+        </div>
+      </a>
+      <a href="#" class="social-link reveal delay-2" aria-label="Follow us on Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <div>
+          <div class="social-link-name">Instagram</div>
+          <div class="social-link-handle">@mrmobilehub</div>
+        </div>
+      </a>
+      <a href="#" class="social-link reveal delay-3" aria-label="Follow us on YouTube">
+        <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+        <div>
+          <div class="social-link-name">YouTube</div>
+          <div class="social-link-handle">MR Mobile Hub</div>
+        </div>
+      </a>
+      <a href="#" class="social-link reveal delay-4" aria-label="Follow us on Twitter/X">
+        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+        <div>
+          <div class="social-link-name">Twitter / X</div>
+          <div class="social-link-handle">@MRMobileHub</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7 — WALK-IN DROP-OFF FORM ══ -->
+<section class="section bg-grid" id="walkin" aria-label="Walk-in drop-off form">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="section-header">
+        <div class="section-tag reveal">Quick Drop-off</div>
+        <h2 class="section-title reveal delay-1">Walk-in <span class="grad-text">Enquiry</span></h2>
+        <p class="section-subtitle reveal delay-2">Quick form — tell us your device and issue, we'll call back in 30 mins.</p>
+      </div>
+
+      <div class="glass-card" style="padding:2.5rem;" class="reveal-scale">
+        <form data-validate-form id="walkinForm" novalidate>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="walkinName">Your Name *</label>
+                <input type="text" id="walkinName" class="form-input" placeholder="Full name" data-validate="required" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="walkinPhone">Phone *</label>
+                <input type="tel" id="walkinPhone" class="form-input" placeholder="+91 XXXXX XXXXX" data-validate="required|phone" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="walkinDevice">Device *</label>
+                <input type="text" id="walkinDevice" class="form-input" placeholder="e.g. iPhone 15 Pro" data-validate="required" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="walkinIssue">Issue Type *</label>
+                <select id="walkinIssue" class="form-select" data-validate="required">
+                  <option value="">Select...</option>
+                  <option>Screen Damage</option>
+                  <option>Battery Issue</option>
+                  <option>Water Damage</option>
+                  <option>Camera Problem</option>
+                  <option>Charging Issue</option>
+                  <option>Software Problem</option>
+                  <option>Other</option>
+                </select>
+                <span class="form-error" style="display:none;"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Drop-off Enquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8 — BUSINESS HOURS ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Business hours">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <!-- Hours table -->
+      <div class="reveal-left">
+        <div class="section-tag" style="margin-bottom:1.5rem;">⏰ When to Find Us</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:2rem;">Business <span class="grad-text">Hours</span></h2>
+
+        <div class="glass-card" style="padding:2rem;">
+          <table class="hours-table" aria-label="Business hours schedule">
+            <tbody>
+              <tr><td>Monday</td>     <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Tuesday</td>    <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Wednesday</td>  <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Thursday</td>   <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Friday</td>     <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Saturday</td>   <td class="hours-open">10:00 AM – 8:00 PM</td></tr>
+              <tr><td>Sunday</td>     <td class="hours-open">11:00 AM – 5:00 PM</td></tr>
+              <tr><td>Public Holidays</td><td class="hours-closed">Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:1.5rem;padding:1.25rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:1rem;display:flex;gap:1rem;align-items:center;">
+          <span style="color:#10b981;font-size:1.25rem;">●</span>
+          <div>
+            <div style="font-weight:600;color:var(--clr-white);font-size:0.875rem;">Currently Open</div>
+            <div style="font-size:0.78rem;color:var(--clr-silver);">Closes at 8:00 PM today</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency info -->
+      <div class="reveal-right">
+        <div class="section-tag" style="margin-bottom:1.5rem;">Urgent Repair?</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:2rem;">Need Help <span class="grad-text">Now?</span></h2>
+
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div style="padding:2rem;background:var(--clr-bg-card);border:1px solid var(--clr-border);border-radius:var(--r-lg);">
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);margin-bottom:0.75rem;">Same-Day Emergency Repair</h3>
+            <p style="font-size:0.85rem;color:var(--clr-silver);line-height:1.7;margin-bottom:1rem;">Call us before 5 PM on weekdays and we guarantee same-day completion for screen & battery repairs.</p>
+            <a href="tel:+919940012345" class="btn btn-primary btn-sm">Call Now: +91 99400 12345</a>
+          </div>
+
+          <div style="padding:2rem;background:var(--clr-bg-card);border:1px solid var(--clr-border);border-radius:var(--r-lg);">
+            <h3 style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--clr-white);margin-bottom:0.75rem;">Home Pickup Service</h3>
+            <p style="font-size:0.85rem;color:var(--clr-silver);line-height:1.7;margin-bottom:1rem;">Can't visit the store? We offer doorstep pickup and delivery within Chennai (additional charges apply).</p>
+            <a href="https://wa.me/919940012345" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <span>MR <span>Mobile Hub</span></span>
+        </div>
+        <p class="footer-desc">Your premium destination for mobile accessories and expert repair services.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">Home</a></li>
+          <li><a href="about.html"    class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link">Products</a></li>
+          <li><a href="contact.html"  class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Screen Repair</a></li>
+          <li><a href="services.html" class="footer-link">Battery Service</a></li>
+          <li><a href="services.html" class="footer-link">Water Damage</a></li>
+          <li><a href="services.html" class="footer-link">Camera Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <div class="footer-contact-item">📍 123, Tech Street, Anna Nagar, Chennai</div>
+        <div class="footer-contact-item">📞 +91 99400 12345</div>
+        <div class="footer-contact-item">✉️ hello@mrmobilehub.in</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 MR Mobile Hub. All rights reserved.</p>
+      <div class="footer-policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/faq.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

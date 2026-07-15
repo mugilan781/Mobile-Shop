@@ -1,0 +1,118 @@
+/* ================================================================
+   MR MOBILE HUB — responsive.css v4.0
+   Mobile-first breakpoints for industrial minimalist theme
+   ================================================================ */
+
+/* ── TABLET — max-width: 1024px ───────────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --navbar-h: 60px; }
+
+  .grid-4  { grid-template-columns: repeat(2, 1fr); }
+  .grid-3  { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  .testimonial-slide { min-width: calc(80% - 1rem); }
+
+  .section-title { font-size: var(--fs-3xl); }
+  h1 { font-size: var(--fs-4xl); }
+}
+
+/* ── MOBILE — max-width: 768px ────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --navbar-h: 56px;
+    --section-py: clamp(3rem, 6vw, 4.25rem);
+  }
+
+  /* Navbar */
+  .navbar-nav    { display: none; }
+  .navbar-actions { display: none; }
+  .menu-toggle   { display: flex; }
+
+  /* Typography */
+  h1 { font-size: var(--fs-3xl); }
+  h2 { font-size: var(--fs-2xl); }
+  h3 { font-size: var(--fs-xl); }
+
+  .section-title    { font-size: var(--fs-2xl); }
+  .section-subtitle { font-size: var(--fs-sm); }
+
+  /* Grids */
+  .grid-2  { grid-template-columns: 1fr; }
+  .grid-3  { grid-template-columns: 1fr; }
+  .grid-4  { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; }
+
+  /* Form */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Hero Slider */
+  .slide-title { font-size: var(--fs-4xl); }
+  .slide-desc  { font-size: var(--fs-base); }
+  .slide-content { padding: 0 var(--sp-4); }
+  .slider-arrow { display: none; }
+  .scroll-indicator { display: none; }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2); }
+  .gallery-filter-bar { gap: 0.25rem; }
+  .filter-btn { padding: 0.25rem 0.75rem; font-size: var(--fs-xs); }
+
+  /* Newsletter */
+  .newsletter-section { padding: var(--sp-6) var(--sp-3); }
+  .newsletter-form { flex-direction: column; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Pricing tabs */
+  .pricing-tabs { flex-wrap: wrap; justify-content: center; }
+
+  /* Timeline */
+  .timeline { padding-left: var(--sp-4); }
+
+  /* Auth */
+  .auth-card { padding: var(--sp-5); }
+
+  /* Map */
+  .map-wrap { height: 240px; }
+
+  /* Container padding */
+  .container { padding: 0 var(--sp-4); }
+
+  /* Buttons */
+  .btn-lg { padding: 0.75rem 1.6rem; font-size: var(--fs-sm); }
+
+  /* Back to top */
+  .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 36px; height: 36px; }
+
+  /* Two-column layouts to single column override */
+  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  [style*="grid-template-columns: 1fr 1.2fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  [style*="grid-template-columns: 1.5fr 1fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+}
+
+/* ── SMALL MOBILE — max-width: 480px ─────────────────────────── */
+@media (max-width: 480px) {
+  :root { --section-py: clamp(2.5rem, 5vw, 3.5rem); }
+
+  .slide-title { font-size: var(--fs-3xl); }
+  .section-title { font-size: var(--fs-xl); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-2); }
+  .stat-number { font-size: var(--fs-2xl); }
+  .stat-card { padding: var(--sp-3) var(--sp-1); }
+
+  .gallery-grid { grid-template-columns: 1fr; }
+
+  .auth-card { padding: var(--sp-4); }
+
+  .countdown { gap: var(--sp-2); }
+  .countdown-num { font-size: var(--fs-xl); }
+
+  .container { padding: 0 var(--sp-3); }
+}

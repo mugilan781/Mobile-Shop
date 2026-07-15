@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MR Mobile Hub Services — Screen repair, battery replacement, water damage recovery, camera repair, software & more. Transparent pricing, 6-month warranty." />
+  <title>Services — MR Mobile Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .pricing-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--clr-blue-light);
+      background: linear-gradient(145deg, rgba(37,99,235,0.06), var(--clr-bg-card));
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--clr-border-glow);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--grad-blue);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .pricing-price {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--clr-white);
+      margin: 1rem 0;
+    }
+    .pricing-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .pricing-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--clr-silver);
+    }
+    .pricing-feature::before { content: '✓'; color: var(--clr-cyan); font-weight: 700; flex-shrink: 0; }
+
+    .warranty-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      transition: all 0.3s ease;
+    }
+    .warranty-card:hover { transform: translateY(-4px); border-color: var(--clr-border-glow); }
+    .warranty-card svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2px; }
+
+    @media (max-width: 767px) {
+      .services-layout { grid-template-columns: 1fr !important; gap: 2rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <div class="logo-text">MR <span>Mobile Hub</span></div>
+      </a>
+      <ul class="navbar-nav" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="home2.html"    class="nav-link">Explore</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link">Gallery</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="login.html"  class="btn btn-outline btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"    class="nav-link">Home</a>
+    <a href="home2.html"    class="nav-link">Explore</a>
+    <a href="about.html"    class="nav-link">About</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="gallery.html"  class="nav-link">Gallery</a>
+    <a href="contact.html"  class="nav-link">Contact</a>
+    <div style="display:flex;gap:0.75rem;padding:1rem 0.5rem 0;">
+      <a href="login.html"  class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center;">Sign Up</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ SECTION 1 — HERO ══ -->
+<section class="page-hero bg-grid" aria-label="Services hero">
+  <div class="page-hero-bg"></div>
+  <div class="glow-blue" style="top:-200px;right:5%;" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> / <span>Services</span>
+      </nav>
+      <div class="section-tag reveal" style="margin:0 auto 1.5rem;">Expert Repair Services</div>
+      <h1 class="reveal delay-1" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;margin-bottom:1.5rem;">
+        We Fix It <span class="grad-text">Right</span><br />Every Time
+      </h1>
+      <p class="reveal delay-2" style="color:var(--clr-silver);font-size:1.05rem;line-height:1.7;max-width:560px;margin:0 auto 2.5rem;">
+        Certified technicians, genuine parts, 6-month warranty. From cracked screens to full motherboard repairs — we handle it all.
+      </p>
+      <div class="reveal delay-3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="#book-repair" class="btn btn-primary btn-lg">Book a Repair</a>
+        <a href="#pricing"     class="btn btn-outline btn-lg">View Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2 — REPAIR SERVICES ══ -->
+<section class="section bg-grid" id="repair-services" aria-label="Repair services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">What We Do</div>
+      <h2 class="section-title reveal delay-1">Repair <span class="grad-text">Services</span></h2>
+      <p class="section-subtitle reveal delay-2">Every service performed by certified technicians using only genuine parts.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="service-card reveal delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <h3 class="service-name">Screen Replacement</h3>
+        <p class="service-desc">OLED & LCD replacement for iPhone, Samsung Galaxy, OnePlus, Pixel and more. 90-minute service.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹1,499</span></div>
+      </article>
+
+      <article class="service-card reveal delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="11" x2="23" y2="13"></line></svg>
+        </div>
+        <h3 class="service-name">Battery Replacement</h3>
+        <p class="service-desc">Original capacity cells for all major brands. Restore your phone to 100% battery health. 30-minute service.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹799</span></div>
+      </article>
+
+      <article class="service-card reveal delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 5-12.2V6a5 5 0 0 0-10 0v3.8A7 7 0 0 0 12 22z"></path></svg>
+        </div>
+        <h3 class="service-name">Water Damage Recovery</h3>
+        <p class="service-desc">Ultrasonic PCB cleaning, component-level diagnosis, corrosion removal. 90% recovery rate.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹999</span></div>
+      </article>
+
+      <article class="service-card reveal delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        </div>
+        <h3 class="service-name">Camera Module Repair</h3>
+        <p class="service-desc">Front & rear camera lens, module, and autofocus repair. Calibrated to factory specifications.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹1,199</span></div>
+      </article>
+
+      <article class="service-card reveal delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </div>
+        <h3 class="service-name">Speaker & Mic Repair</h3>
+        <p class="service-desc">Call speaker, loudspeaker, and microphone replacement. Crystal-clear audio restored.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹599</span></div>
+      </article>
+
+      <article class="service-card reveal delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="2" x2="22" y2="6"></line><line x1="22" y1="2" x2="18" y2="6"></line><rect x="2" y="9" width="20" height="8" rx="2" ry="2"></rect></svg>
+        </div>
+        <h3 class="service-name">Charging Port Repair</h3>
+        <p class="service-desc">USB-C or Lightning port replacement or cleaning. Soldering-level repair by trained engineers.</p>
+        <div class="service-price"><span class="price-from">From</span><span class="price-amount">₹699</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3 — ACCESSORIES SERVICES ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Accessories services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Accessories</div>
+      <h2 class="section-title reveal delay-1">We Also <span class="grad-text">Sell & Install</span></h2>
+      <p class="section-subtitle reveal delay-2">Premium accessories with professional installation. Guaranteed to fit perfectly.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="feature-card reveal delay-1">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <div class="feature-body">
+          <h3 class="feature-title">Cases & Covers</h3>
+          <p class="feature-desc">Hundreds of case options. We help you find the perfect fit for your device and lifestyle.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div class="feature-body">
+          <h3 class="feature-title">Screen Protectors</h3>
+          <p class="feature-desc">Professional dust-free installation. Bubble-free guaranteed or we redo it free.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal delay-3">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        </div>
+        <div class="feature-body">
+          <h3 class="feature-title">Chargers & Cables</h3>
+          <p class="feature-desc">GaN chargers, MagSafe, USB-C, Lightning cables. Genuine brands only.</p>
+        </div>
+      </div>
+      <div class="feature-card reveal delay-4">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+        </div>
+        <div class="feature-body">
+          <h3 class="feature-title">Earbuds & Audio</h3>
+          <p class="feature-desc">TWS earbuds, wired headphones, Bluetooth speakers from top brands.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4 — HOW IT WORKS ══ -->
+<section class="section bg-grid" aria-label="How it works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Simple Process</div>
+      <h2 class="section-title reveal delay-1">How It <span class="grad-text">Works</span></h2>
+      <p class="section-subtitle reveal delay-2">Getting your device repaired is simple, fast, and stress-free.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card reveal delay-1">
+        <div class="step-number">1</div>
+        <div class="step-title">Diagnose</div>
+        <p class="step-desc">Walk in or book online. We run a free diagnostic within 15 minutes.</p>
+      </div>
+      <div class="step-card reveal delay-2">
+        <div class="step-number">2</div>
+        <div class="step-title">Get a Quote</div>
+        <p class="step-desc">Transparent pricing — no hidden fees. You approve before we touch anything.</p>
+      </div>
+      <div class="step-card reveal delay-3">
+        <div class="step-number">3</div>
+        <div class="step-title">We Fix It</div>
+        <p class="step-desc">Our certified technicians repair your device using genuine parts.</p>
+      </div>
+      <div class="step-card reveal delay-4">
+        <div class="step-number">4</div>
+        <div class="step-title">Pick Up</div>
+        <p class="step-desc">Device fully tested and quality-checked. Walk out with your warranty card.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5 — PRICING TABLE ══ -->
+<section class="section" style="background:var(--clr-bg-2);" id="pricing" aria-label="Pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Transparent Pricing</div>
+      <h2 class="section-title reveal delay-1">Simple <span class="grad-text">Pricing</span></h2>
+      <p class="section-subtitle reveal delay-2">No surprises. All prices are fixed and include parts, labor & warranty.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="pricing-tabs reveal">
+      <button class="pricing-tab" data-tab="iphone">iPhone</button>
+      <button class="pricing-tab" data-tab="samsung">Samsung</button>
+      <button class="pricing-tab" data-tab="oneplus">OnePlus</button>
+      <button class="pricing-tab" data-tab="others">Others</button>
+    </div>
+
+    <!-- iPhone panel -->
+    <div class="pricing-panel" data-panel="iphone">
+      <div class="grid-3">
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">iPhone 11 / 12</h3>
+          <div class="pricing-price">₹1,499</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">OLED Display</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">iPhone 13 / 14</h3>
+          <div class="pricing-price">₹2,299</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">Super Retina XDR</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">iPhone 15 Pro</h3>
+          <div class="pricing-price">₹3,499</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">ProMotion OLED</div>
+            <div class="pricing-feature">120-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Samsung panel -->
+    <div class="pricing-panel" data-panel="samsung" style="display:none;">
+      <div class="grid-3">
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">Galaxy A Series</h3>
+          <div class="pricing-price">₹1,199</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">AMOLED Display</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">Galaxy S23 / S24</h3>
+          <div class="pricing-price">₹2,499</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">Dynamic AMOLED</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">Galaxy S24 Ultra</h3>
+          <div class="pricing-price">₹3,999</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">QHD+ AMOLED</div>
+            <div class="pricing-feature">120-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+            <div class="pricing-feature">Free diagnostic</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OnePlus panel -->
+    <div class="pricing-panel" data-panel="oneplus" style="display:none;">
+      <div class="grid-3">
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">OnePlus Nord</h3>
+          <div class="pricing-price">₹999</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">AMOLED Display</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">OnePlus 12</h3>
+          <div class="pricing-price">₹2,199</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">LTPO AMOLED</div>
+            <div class="pricing-feature">90-min service</div>
+            <div class="pricing-feature">6-month warranty</div>
+          </div>
+          <a href="#book-repair" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+        <div class="pricing-card">
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">OnePlus Open</h3>
+          <div class="pricing-price">₹4,499</div>
+          <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Foldable Repair</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">Foldable OLED</div>
+            <div class="pricing-feature">2–4 hour service</div>
+            <div class="pricing-feature">6-month warranty</div>
+          </div>
+          <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Others panel -->
+    <div class="pricing-panel" data-panel="others" style="display:none;">
+      <div style="text-align:center;padding:4rem 2rem;">
+        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" style="margin-bottom: 1.5rem; color: var(--clr-cyan);"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <h3 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;margin-bottom:1rem;">Don't see your device?</h3>
+        <p style="color:var(--clr-silver);max-width:400px;margin:0 auto 2rem;line-height:1.7;">We repair Xiaomi, Realme, Vivo, Oppo, Google Pixel, Nothing Phone and more. Contact us for a custom quote.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Get a Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6 — WARRANTY ══ -->
+<section class="section bg-grid" aria-label="Warranty information">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Peace of Mind</div>
+      <h2 class="section-title reveal delay-1">Our <span class="grad-text">Warranty</span> Promise</h2>
+      <p class="section-subtitle reveal delay-2">Every repair is backed by our comprehensive 6-month warranty.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="warranty-card reveal delay-1">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">What's Covered</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">Parts failure, workmanship defects, and re-occurrence of the same issue. We fix it again — free.</p>
+      </div>
+      <div class="warranty-card reveal delay-2">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">What's Not Covered</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">Physical damage after repair, water damage (unless original repair was water damage), and user-caused damage.</p>
+      </div>
+      <div class="warranty-card reveal delay-3">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">How to Claim</h3>
+        <p style="font-size:0.875rem;color:var(--clr-silver);line-height:1.6;">Simply walk in with your warranty card (or receipt). No questions asked — we diagnose and repair immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7 — FAQ ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Service FAQ">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">FAQs</div>
+      <h2 class="section-title reveal delay-1">Common <span class="grad-text">Questions</span></h2>
+    </div>
+
+    <div style="max-width:800px;margin:0 auto;">
+      <div class="faq-item reveal delay-1">
+        <button class="faq-question">Do I need to back up my data before repair? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, we strongly recommend backing up your data before any repair. While we take all precautions, some repairs (like motherboard work) may require a factory reset in rare cases.</div></div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <button class="faq-question">Is my device safe with you? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. Your device is tagged, secured, and stored safely. We use CCTV-monitored repair stations. Your privacy is our priority — we never access personal data.</div></div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <button class="faq-question">Do you repair phones not on your device list? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes! If parts are available, we can repair almost any smartphone. Contact us with your device model and we'll confirm availability and pricing within 2 hours.</div></div>
+      </div>
+      <div class="faq-item reveal delay-4">
+        <button class="faq-question">Can I get a repair quote without bringing my phone? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes! Fill our enquiry form or WhatsApp us with your device model and issue. We'll provide an estimated quote within 30 minutes.</div></div>
+      </div>
+      <div class="faq-item reveal delay-5">
+        <button class="faq-question">How do I pay? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We accept cash, UPI (GPay, PhonePe, Paytm), debit/credit cards. Payment is collected after repair completion, not before.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8 — BOOK REPAIR FORM ══ -->
+<section class="section bg-grid" id="book-repair" aria-label="Book a repair">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Book Now</div>
+      <h2 class="section-title reveal delay-1">Schedule Your <span class="grad-text">Repair</span></h2>
+      <p class="section-subtitle reveal delay-2">Fill the form and we'll confirm your slot within 30 minutes.</p>
+    </div>
+
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="glass-card" style="padding:3rem;" class="reveal-scale">
+        <form data-validate-form id="bookRepairForm" novalidate>
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="repairName">Full Name *</label>
+                <input type="text" id="repairName" class="form-input" placeholder="Your name" data-validate="required" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="repairPhone">Phone *</label>
+                <input type="tel" id="repairPhone" class="form-input" placeholder="+91 99400 12345" data-validate="required|phone" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="repairEmail">Email</label>
+                <input type="email" id="repairEmail" class="form-input" placeholder="your@email.com" data-validate="email" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="repairDevice">Device Model *</label>
+                <input type="text" id="repairDevice" class="form-input" placeholder="e.g. iPhone 15 Pro" data-validate="required" />
+                <span class="form-error" style="display:none;"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="repairService">Service Type *</label>
+                <select id="repairService" class="form-select" data-validate="required">
+                  <option value="">Select service...</option>
+                  <option>Screen Replacement</option>
+                  <option>Battery Replacement</option>
+                  <option>Water Damage Recovery</option>
+                  <option>Camera Repair</option>
+                  <option>Speaker / Mic Repair</option>
+                  <option>Charging Port Repair</option>
+                  <option>Software / Unlocking</option>
+                  <option>Other</option>
+                </select>
+                <span class="form-error" style="display:none;"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="repairDate">Preferred Date</label>
+                <input type="date" id="repairDate" class="form-input" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="repairNotes">Describe the Issue</label>
+              <textarea id="repairNotes" class="form-textarea" placeholder="Please describe the problem in detail..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Book Repair Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <span>MR <span>Mobile Hub</span></span>
+        </div>
+        <p class="footer-desc">Expert repairs and premium accessories. Trusted by 4,900+ customers.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">Home</a></li>
+          <li><a href="about.html"    class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link">Products</a></li>
+          <li><a href="contact.html"  class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="#repair-services" class="footer-link">Screen Repair</a></li>
+          <li><a href="#repair-services" class="footer-link">Battery Service</a></li>
+          <li><a href="#repair-services" class="footer-link">Water Damage</a></li>
+          <li><a href="#repair-services" class="footer-link">Camera Repair</a></li>
+          <li><a href="#book-repair"     class="footer-link">Book a Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <div class="footer-contact-item">📍 123, Tech Street, Anna Nagar, Chennai</div>
+        <div class="footer-contact-item">📞 +91 99400 12345</div>
+        <div class="footer-contact-item">✉️ hello@mrmobilehub.in</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 MR Mobile Hub. All rights reserved.</p>
+      <div class="footer-policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Warranty</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/faq.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

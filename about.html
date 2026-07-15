@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About MR Mobile Hub — Our story, team, values, achievements, and why 4,900+ customers trust us for mobile accessories and repairs." />
+  <title>About Us — MR Mobile Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .value-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      transition: all 0.3s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--clr-border-glow);
+      box-shadow: var(--shadow-md);
+    }
+    .value-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: inline-flex;
+      color: var(--clr-cyan);
+    }
+    .value-icon svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2px; }
+    .value-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--clr-white); margin-bottom: 0.5rem; }
+    .value-desc { font-size: 0.82rem; color: var(--clr-silver); line-height: 1.7; }
+
+    .achievement-card {
+      background: var(--clr-bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-md);
+      padding: 2rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .achievement-card:hover {
+      transform: translateX(6px);
+      border-color: var(--clr-border-glow);
+    }
+
+    .achievement-card svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2.5px; }
+
+    @media (max-width: 767px) {
+      .about-story-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <div class="logo-text">MR <span>Mobile Hub</span></div>
+      </a>
+      <ul class="navbar-nav" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="home2.html"    class="nav-link">Explore</a></li>
+        <li><a href="about.html"    class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html"  class="nav-link">Gallery</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="login.html"  class="btn btn-outline btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html"    class="nav-link">Home</a>
+    <a href="home2.html"    class="nav-link">Explore</a>
+    <a href="about.html"    class="nav-link active">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html"  class="nav-link">Gallery</a>
+    <a href="contact.html"  class="nav-link">Contact</a>
+    <div style="display:flex;gap:0.75rem;padding:1rem 0.5rem 0;">
+      <a href="login.html"  class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center;">Sign Up</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ SECTION 1 — ABOUT HERO ══ -->
+<section class="page-hero bg-grid" aria-label="About us hero">
+  <div class="page-hero-bg"></div>
+  <div class="glow-blue" style="top:-100px;left:-100px;" aria-hidden="true"></div>
+  <div class="glow-cyan" style="bottom:-100px;right:10%;" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> / <span>About Us</span>
+      </nav>
+      <div class="section-tag reveal" style="margin:0 auto 1.5rem;">Our Story</div>
+      <h1 class="reveal delay-1" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;margin-bottom:1.5rem;">
+        More Than a <span class="grad-text">Mobile Shop</span>
+      </h1>
+      <p class="reveal delay-2" style="color:var(--clr-silver);font-size:1.05rem;line-height:1.7;max-width:580px;margin:0 auto 2.5rem;">
+        Since 2019, we've been the trusted tech companions for thousands of customers — combining genuine products with expert craftsmanship.
+      </p>
+      <div class="reveal delay-3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="#our-story" class="btn btn-primary btn-lg">Our Journey</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 2 — OUR STORY ══ -->
+<section class="section" id="our-story" style="background:var(--clr-bg-2);" aria-label="Our story">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="about-story-grid">
+      <!-- Left -->
+      <div class="reveal-left">
+        <div class="section-tag" style="margin-bottom:1.5rem;">Founded 2019</div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:1.5rem;">
+          From a Small Kiosk<br /><span class="grad-text">to a Flagship Store</span>
+        </h2>
+        <p style="color:var(--clr-silver);line-height:1.75;margin-bottom:1.5rem;">
+          MR Mobile Hub started in 2019 as a one-person repair kiosk in Anna Nagar's tech market. Our founder had a vision: to bring honest, quality mobile services to customers who were tired of shady repair shops and overpriced accessories.
+        </p>
+        <p style="color:var(--clr-silver);line-height:1.75;margin-bottom:2rem;">
+          Today, we operate a premium flagship store, serve 4,900+ customers, and stock hundreds of authentic products from top global brands. Every accessory we sell, every repair we do — carries the same promise: quality you can trust.
+        </p>
+        <div style="margin-bottom:2rem;">
+          <img src="images/about-story.png" alt="MR Mobile Hub Store Showroom" style="width: 100%; border: 1px solid var(--clr-border-glow); box-shadow: var(--shadow-lg);" />
+        </div>
+        <a href="contact.html" class="btn btn-primary">Visit Our Store</a>
+      </div>
+
+      <!-- Right: Timeline -->
+      <div class="reveal-right">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-title">The Beginning</div>
+            <div class="timeline-desc">Started as a small repair kiosk with 1 technician, offering screen and battery replacements.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-title">Expanded Services</div>
+            <div class="timeline-desc">Added water damage recovery, software services, and began stocking premium accessories.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <div class="timeline-title">Brand Partnerships</div>
+            <div class="timeline-desc">Became authorized dealer for Anker, Belkin, and Spigen. Hired 3 certified technicians.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Flagship Store Opens</div>
+            <div class="timeline-desc">Moved to our premium showroom on Tech Street. Launched online order & home delivery.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">4,900+ Customers</div>
+            <div class="timeline-desc">Serving customers across Chennai with 98% satisfaction rate and 6-month repair warranty.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3 — MISSION & VISION ══ -->
+<section class="section bg-grid" aria-label="Mission and vision">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Purpose</div>
+      <h2 class="section-title reveal delay-1">Our <span class="grad-text">Mission & Vision</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+      <div style="background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(37,99,235,0.02));border:1px solid rgba(37,99,235,0.25);border-radius:var(--r-lg);padding:3rem;" class="reveal-left">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 22 12 17 22 22 12 2"></polygon></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1.75rem;font-weight:800;color:var(--clr-white);margin-bottom:1rem;">Our Mission</h3>
+        <p style="color:var(--clr-silver);line-height:1.7;font-size:0.95rem;">
+          To deliver honest, high-quality mobile repair services and genuine accessories that empower our customers to stay connected. We believe everyone deserves reliable tech support without compromise.
+        </p>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(6,182,212,0.06),rgba(6,182,212,0.02));border:1px solid rgba(6,182,212,0.2);border-radius:var(--r-lg);padding:3rem;" class="reveal-right">
+        <div class="value-icon" style="color: var(--clr-cyan);">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+        </div>
+        <h3 style="font-family:var(--font-head);font-size:1.75rem;font-weight:800;color:var(--clr-white);margin-bottom:1rem;">Our Vision</h3>
+        <p style="color:var(--clr-silver);line-height:1.7;font-size:0.95rem;">
+          To become Tamil Nadu's most trusted mobile service ecosystem — where customers find everything they need for their devices, from premium accessories to expert repairs, under one roof.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4 — MEET THE TEAM ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Meet the team">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">People</div>
+      <h2 class="section-title reveal delay-1">Meet the <span class="grad-text">Experts</span></h2>
+      <p class="section-subtitle reveal delay-2">Certified technicians and passionate professionals dedicated to your device's well-being.</p>
+    </div>
+
+    <div class="grid-4">
+      <article class="team-card reveal delay-1">
+        <div class="team-avatar">👨‍💼</div>
+        <div class="team-name">Mugilan Raja</div>
+        <div class="team-role">Founder & CEO</div>
+        <p class="team-bio">7+ years in mobile technology. Certified Apple & Samsung repair specialist. Passionate about customer experience.</p>
+      </article>
+
+      <article class="team-card reveal delay-2">
+        <div class="team-avatar">👩‍🔧</div>
+        <div class="team-name">Priya Devi</div>
+        <div class="team-role">Lead Technician</div>
+        <p class="team-bio">5 years of repair expertise. Specialized in water damage recovery and component-level board repairs.</p>
+      </article>
+
+      <article class="team-card reveal delay-3">
+        <div class="team-avatar">👨‍💻</div>
+        <div class="team-name">Karthik S</div>
+        <div class="team-role">Software Specialist</div>
+        <p class="team-bio">Expert in iOS & Android software recovery, data migration, and custom ROM flashing.</p>
+      </article>
+
+      <article class="team-card reveal delay-4">
+        <div class="team-avatar">👩‍💼</div>
+        <div class="team-name">Deepa R</div>
+        <div class="team-role">Store Manager</div>
+        <p class="team-bio">Manages inventory, customer relations, and quality control. The backbone of our daily operations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 5 — CORE VALUES ══ -->
+<section class="section bg-grid" aria-label="Core values">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">What We Stand For</div>
+      <h2 class="section-title reveal delay-1">Our Core <span class="grad-text">Values</span></h2>
+    </div>
+
+    <div class="grid-4">
+      <!-- 1 -->
+      <div class="value-card reveal delay-1">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </span>
+        <div class="value-title">Trust & Honesty</div>
+        <p class="value-desc">Transparent pricing, honest diagnostics. We never recommend unnecessary repairs.</p>
+      </div>
+      <!-- 2 -->
+      <div class="value-card reveal delay-2">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </span>
+        <div class="value-title">Quality First</div>
+        <p class="value-desc">OEM-certified parts only. We refuse to compromise on the quality of our work.</p>
+      </div>
+      <!-- 3 -->
+      <div class="value-card reveal delay-3">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </span>
+        <div class="value-title">Speed & Efficiency</div>
+        <p class="value-desc">Most repairs done in 1–2 hours. Your time is valuable and we respect it.</p>
+      </div>
+      <!-- 4 -->
+      <div class="value-card reveal delay-4">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </span>
+        <div class="value-title">Customer Care</div>
+        <p class="value-desc">4,900+ satisfied customers. We go above and beyond for every single one.</p>
+      </div>
+      <!-- 5 -->
+      <div class="value-card reveal delay-1">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg>
+        </span>
+        <div class="value-title">Precision Work</div>
+        <p class="value-desc">Micro-level component repair with professional tools and magnification systems.</p>
+      </div>
+      <!-- 6 -->
+      <div class="value-card reveal delay-2">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+        </span>
+        <div class="value-title">Sustainability</div>
+        <p class="value-desc">We responsibly dispose of electronic waste and repair rather than replace.</p>
+      </div>
+      <!-- 7 -->
+      <div class="value-card reveal delay-3">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </span>
+        <div class="value-title">Continuous Training</div>
+        <p class="value-desc">Our team trains on every new device model. We stay ahead of technology.</p>
+      </div>
+      <!-- 8 -->
+      <div class="value-card reveal delay-4">
+        <span class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </span>
+        <div class="value-title">Warranty Backed</div>
+        <p class="value-desc">6-month warranty on all repairs. We stand behind every job we do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6 — ACHIEVEMENTS ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Our achievements">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Milestones</div>
+      <h2 class="section-title reveal delay-1">Our <span class="grad-text">Achievements</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div class="achievement-card reveal delay-1">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26 6.91 1.01-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Best Mobile Shop 2024</div>
+          <div style="font-size:0.82rem;color:var(--clr-silver);">Chennai Tech Awards — Voted by customers</div>
+        </div>
+      </div>
+      <div class="achievement-card reveal delay-2">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">4.9/5 Google Rating</div>
+          <div style="font-size:0.82rem;color:var(--clr-silver);">Based on 1,200+ verified reviews</div>
+        </div>
+      </div>
+      <div class="achievement-card reveal delay-3">
+        <div class="icon-box icon-box-red icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">12,000+ Devices Repaired</div>
+          <div style="font-size:0.82rem;color:var(--clr-silver);">With 98% success rate since 2019</div>
+        </div>
+      </div>
+      <div class="achievement-card reveal delay-4">
+        <div class="icon-box icon-box-zinc icon-box-lg">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm14 14v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Authorized Anker Partner</div>
+          <div style="font-size:0.82rem;color:var(--clr-silver);">Official reseller since 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 7 — CERTIFICATIONS & PARTNERS ══ -->
+<section class="section bg-grid" aria-label="Certifications and partners">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag reveal">Certified & Trusted</div>
+      <h2 class="section-title reveal delay-1">Certifications &<br /><span class="grad-text">Partners</span></h2>
+      <p class="section-subtitle reveal delay-2">Authorized by the best in the industry. Our certifications prove our commitment.</p>
+    </div>
+
+    <div class="cert-grid reveal-scale">
+      <div class="cert-item">Apple Authorized</div>
+      <div class="cert-item">Samsung Certified</div>
+      <div class="cert-item">Anker Official</div>
+      <div class="cert-item">Belkin Partner</div>
+      <div class="cert-item">Spigen Dealer</div>
+      <div class="cert-item">JBL Authorized</div>
+      <div class="cert-item">ISO 9001</div>
+      <div class="cert-item">E-Waste Certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 8 — CTA ══ -->
+<section class="section" style="background:var(--clr-bg-2);" aria-label="Call to action">
+  <div class="container">
+    <div class="newsletter-section reveal-scale">
+      <h2 class="section-title">Ready to <span class="grad-text">Work With Us?</span></h2>
+      <p style="color:var(--clr-silver);margin:1rem auto;max-width:520px;line-height:1.7;">
+        Visit our store, book a repair slot online, or explore our collection. We're here to help you.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+        <a href="services.html" class="btn btn-primary btn-lg">Book a Repair</a>
+        <a href="contact.html"  class="btn btn-outline btn-lg">Contact Us</a>
+        <a href="gallery.html"  class="btn btn-ghost btn-lg">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+          <span>MR <span>Mobile Hub</span></span>
+        </div>
+        <p class="footer-desc">Your premium destination for mobile accessories and expert repair services.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">Home</a></li>
+          <li><a href="about.html"    class="footer-link">About Us</a></li>
+          <li><a href="services.html" class="footer-link">Services</a></li>
+          <li><a href="gallery.html"  class="footer-link">Products</a></li>
+          <li><a href="contact.html"  class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link">Screen Repair</a></li>
+          <li><a href="services.html" class="footer-link">Battery Service</a></li>
+          <li><a href="services.html" class="footer-link">Water Damage</a></li>
+          <li><a href="services.html" class="footer-link">Camera Repair</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <div class="footer-contact-item">📍 123, Tech Street, Anna Nagar, Chennai</div>
+        <div class="footer-contact-item">📞 +91 99400 12345</div>
+        <div class="footer-contact-item">✉️ hello@mrmobilehub.in</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 MR Mobile Hub. All rights reserved.</p>
+      <div class="footer-policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
