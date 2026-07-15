@@ -155,12 +155,11 @@
   --clr-void:        #f8f8fa;
   --clr-bg:          #ffffff;
   --clr-bg-2:        #f4f4f6;
-  --clr-bg-card:     #ffffff;
+  --clr-bg-card:     #fafafa;
   --clr-bg-glass:    rgba(255, 255, 255, 0.88);
   --clr-bg-elevated: #f0f0f2;
 
   /* ── Crimson Tech Palette ──────────────────────────── */
-  /* Red accent preserved exactly */
   --clr-red:         #ef4444;
   --clr-red-light:   #ff5a5a;
   --clr-red-pale:    #fecaca;
@@ -186,13 +185,12 @@
   --clr-border-glow:   rgba(239, 68, 68, 0.3);
   --clr-border-silver: rgba(0, 0, 0, 0.08);
 
-  /* ── Functional (unchanged) ──────────────────────── */
+  /* ── Functional ──────────────────────────────────── */
   --clr-success: #10b981;
   --clr-error:   #ef4444;
   --clr-warn:    #f59e0b;
 
-  /* ── Gradients ────────────────────────────────────── */
-  --grad-red:        linear-gradient(135deg, #ef4444 0%, #ff5a5a 50%, #b91c1c 100%);
+  /* ── Light-mode gradients ──────────────────────────── */
   --grad-tech:       linear-gradient(135deg, #f0f0f2 0%, #f4f4f6 100%);
   --grad-hero:       linear-gradient(135deg, #f8f8fa 0%, #ffffff 50%, #f4f4f6 100%);
   --grad-card:       linear-gradient(145deg, #ffffff, #f8f8fa);
@@ -214,87 +212,87 @@
   --shadow-red-glow: 0 0 60px rgba(239,68,68,0.06), 0 0 120px rgba(255,90,90,0.03);
   --shadow-inner-red: inset 0 1px 0 rgba(255,90,90,0.12);
 
-  /* ── Navbar ───────────────────────────────────────── */
+  /* ── Navbar (scrolled) — white glass ─────────────── */
   --clr-navbar-bg:       rgba(255, 255, 255, 0.94);
   --clr-navbar-border:   rgba(0, 0, 0, 0.06);
 
-  /* ── Mobile Menu ──────────────────────────────────── */
+  /* ── Mobile Menu — light ──────────────────────────── */
   --clr-mobile-nav-bg:   rgba(255, 255, 255, 0.98);
 
-  /* ── Profile Dropdown ─────────────────────────────── */
+  /* ── Profile Dropdown — light ────────────────────── */
   --clr-dropdown-bg:     rgba(255, 255, 255, 0.96);
   --clr-dropdown-border: rgba(0, 0, 0, 0.06);
 
-  /* ── Hero Slider ──────────────────────────────────── */
-  --clr-slide-overlay:   linear-gradient(110deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.65) 60%, rgba(255,255,255,0.2) 100%);
+  /* ── Hero Slider — premium dark overlay (lighter than dark mode) ── */
+  --clr-slide-overlay:   linear-gradient(110deg, rgba(8,8,10,0.88) 0%, rgba(8,8,10,0.55) 55%, rgba(8,8,10,0.12) 100%);
   --clr-hero-visual-bg:  var(--clr-bg-2);
 
-  /* ── Hero Floating Cards ──────────────────────────── */
-  --clr-hero-floating:       rgba(255, 255, 255, 0.85);
-  --clr-hero-floating-hover: rgba(240, 240, 242, 0.6);
+  /* ── Hero Floating Cards — dark glass (same as dark mode) ── */
+  --clr-hero-floating:       rgba(16, 16, 20, 0.85);
+  --clr-hero-floating-hover: rgba(20, 20, 26, 0.6);
 
   /* ── Product / Card visuals ───────────────────────── */
   --clr-product-img-bg:   linear-gradient(135deg, #f0f0f2, #f8f8fa);
-  --clr-product-action:   rgba(255, 255, 255, 0.85);
+  --clr-product-action:   rgba(250, 250, 250, 0.85);
 
-  /* ── Large Product Card (home2) ───────────────────── */
-  --clr-large-card:       rgba(255, 255, 255, 0.85);
-  --clr-large-card-hover: rgba(255, 255, 255, 0.95);
+  /* ── Large Product Card (home2) — light glass ────── */
+  --clr-large-card:       rgba(255, 255, 255, 0.8);
+  --clr-large-card-hover: rgba(255, 255, 255, 0.92);
   --clr-large-visual-bg:  rgba(240, 240, 242, 0.85);
 
-  /* ── Review Cards ─────────────────────────────────── */
-  --clr-review-card:       rgba(255, 255, 255, 0.85);
-  --clr-review-card-hover: rgba(255, 255, 255, 0.95);
+  /* ── Review Cards — light glass ───────────────────── */
+  --clr-review-card:       rgba(255, 255, 255, 0.8);
+  --clr-review-card-hover: rgba(255, 255, 255, 0.92);
 
-  /* ── Auth Cards ───────────────────────────────────── */
+  /* ── Auth Cards — white glass ─────────────────────── */
   --clr-auth-card:        rgba(255, 255, 255, 0.94);
   --clr-auth-card-border: rgba(0, 0, 0, 0.08);
 
-  /* ── Lightbox ─────────────────────────────────────── */
+  /* ── Lightbox — light overlay ─────────────────────── */
   --clr-lightbox-bg: rgba(255, 255, 255, 0.96);
 
-  /* ── Checkout Modal ───────────────────────────────── */
+  /* ── Checkout Modal — light overlay ──────────────── */
   --clr-checkout-overlay: rgba(255, 255, 255, 0.95);
 
-  /* ── Video Placeholder ────────────────────────────── */
-  --clr-video-bg: linear-gradient(135deg, #f0f0f2, #f8f8fa);
+  /* ── Video Placeholder — stays dark in light theme ── */
+  --clr-video-bg: linear-gradient(135deg, #101015, #08080a);
 
-  /* ── Stats Hero (home2) ───────────────────────────── */
-  --clr-stats-card:       rgba(255, 255, 255, 0.75);
-  --clr-stats-card-hover: rgba(255, 255, 255, 0.9);
+  /* ── Stats Hero (home2) — default light glass, hover dark accent ── */
+  --clr-stats-card:       rgba(255, 255, 255, 0.85);
+  --clr-stats-card-hover: rgba(16, 16, 20, 0.55);
 
-  /* ── Contact Social Cards ─────────────────────────── */
-  --clr-social-card:       rgba(255, 255, 255, 0.85);
-  --clr-social-card-hover: rgba(255, 255, 255, 0.95);
+  /* ── Contact Social Cards — light glass ────────────── */
+  --clr-social-card:       rgba(255, 255, 255, 0.8);
+  --clr-social-card-hover: rgba(255, 255, 255, 0.92);
 
-  /* ── Achievement Card ─────────────────────────────── */
-  --clr-achievement-card: rgba(255, 255, 255, 0.85);
+  /* ── Achievement Card — light glass ───────────────── */
+  --clr-achievement-card: rgba(255, 255, 255, 0.8);
 
-  /* ── Pricing Card ─────────────────────────────────── */
+  /* ── Pricing featured card ────────────────────────── */
   --clr-pricing-featured: linear-gradient(145deg, rgba(239,68,68,0.04), #ffffff);
 
-  /* ── Carousel / Slider controls ───────────────────── */
-  --clr-carousel-arrow:   rgba(255, 255, 255, 0.6);
-  --clr-carousel-dot:     rgba(0, 0, 0, 0.12);
-  --clr-carousel-dot-hover: rgba(0, 0, 0, 0.25);
+  /* ── Carousel / Slider controls (on light surfaces) ── */
+  --clr-carousel-arrow:   rgba(0, 0, 0, 0.12);
+  --clr-carousel-dot:     rgba(0, 0, 0, 0.15);
+  --clr-carousel-dot-hover: rgba(0, 0, 0, 0.3);
 
   /* ── Background Decorations ───────────────────────── */
   --clr-grid-line: rgba(0,0,0,0.03);
   --clr-dot-color: rgba(0,0,0,0.03);
 
-  /* ── Home2 specific ───────────────────────────────── */
-  --clr-home2-overlay: linear-gradient(to right, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.2) 100%);
-  --clr-home2-overlay-mobile: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-  --clr-phone-card:   linear-gradient(145deg, #f0f0f2, #f8f8fa);
+  /* ── Home2 specific — hero overlays stay dark (lighter than dark mode) ── */
+  --clr-home2-overlay: linear-gradient(to right, rgba(8,8,10,0.82) 0%, rgba(8,8,10,0.52) 50%, rgba(8,8,10,0.12) 100%);
+  --clr-home2-overlay-mobile: linear-gradient(to bottom, rgba(8,8,10,0.88) 0%, rgba(8,8,10,0.55) 100%);
+  --clr-phone-card:   linear-gradient(145deg, #162032, #0A0F1D);
   --clr-grid-lines: rgba(239,68,68,0.03);
 
-  /* ── Newsletter Section ───────────────────────────── */
+  /* ── Newsletter Section (subtle differentiation) ── */
   --clr-newsletter-bg: linear-gradient(135deg, rgba(239,68,68,0.03) 0%, rgba(0,0,0,0.01) 100%);
 
-  /* ── Grey Section backgrounds ─────────────────────── */
+  /* ── Section alt background ───────────────────────── */
   --clr-section-alt: #f4f4f6;
 
-  /* ── Map filter (light mode) ──────────────────────── */
+  /* ── Map filter ───────────────────────────────────── */
   --clr-map-filter: grayscale(0.3) invert(0) contrast(1.05);
 }
 
@@ -311,6 +309,244 @@
     fill 0.25s ease,
     stroke 0.25s ease;
 }
+
+/* ════════════════════════════════════════════════════════════════
+   DARK COMPONENTS IN LIGHT THEME — keep dark-bg elements dark,
+   override hardcoded rgba() values from components.css/style.css
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── HOME HERO — dark bg prevents white flash ─────────────────── */
+[data-theme="light"] .hero-slider { background: #08080a; }
+
+/* ── HOME HERO TEXT — force light text over dark overlay ──────── */
+[data-theme="light"] .slide-title { color: #fafafa; }
+[data-theme="light"] .slide-desc { color: #a1a1aa; }
+[data-theme="light"] .slide-tag { color: var(--clr-red-light); }
+[data-theme="light"] .slide-actions .btn-outline { color: #e4e4e7; border-color: rgba(255,255,255,0.14); }
+[data-theme="light"] .slide-actions .btn-outline:hover { color: #fafafa; border-color: var(--clr-red-light); }
+
+/* ── HERO SCROLL INDICATOR ─────────────────────────────────────── */
+[data-theme="light"] .scroll-indicator span { color: #a1a1aa; }
+
+/* ── HERO FLOATING CARDS — dark glass in both themes ──────────── */
+[data-theme="light"] .hero-floating-card { background: rgba(16, 16, 20, 0.85); border-color: rgba(239,68,68,0.3); }
+[data-theme="light"] .hero-floating-card span { color: #e4e4e7; }
+[data-theme="light"] .hero-floating-card svg { stroke: var(--clr-red-light); }
+
+/* ── GLOBAL BUTTONS — visible borders in light mode ───────────── */
+[data-theme="light"] .btn-outline { color: #5c5c66; border-color: rgba(0,0,0,0.18); }
+[data-theme="light"] .btn-outline:hover { border-color: var(--clr-red-light); }
+[data-theme="light"] .btn-ghost { background: rgba(0,0,0,0.03); color: #5c5c66; }
+[data-theme="light"] .btn-ghost:hover { background: rgba(0,0,0,0.06); color: #0d0d11; border-color: rgba(0,0,0,0.12); }
+
+/* ── HOME 2 HERO — dark bg prevents white bleed-through ──────── */
+[data-theme="light"] .video-hero { background: #08080a; }
+
+/* ── HOME 2 HERO TEXT — forced light over dark overlay ────────── */
+[data-theme="light"] .video-hero h1 { color: #fafafa !important; }
+[data-theme="light"] .video-hero p { color: #d4d4d8 !important; }
+[data-theme="light"] .video-hero .section-tag { color: var(--clr-red-light); }
+[data-theme="light"] .video-hero .btn-outline { color: #e4e4e7; border-color: rgba(255,255,255,0.18); }
+[data-theme="light"] .video-hero .btn-outline:hover { color: #fafafa; border-color: var(--clr-red-light); }
+[data-theme="light"] .video-hero [data-count] { color: #fafafa !important; }
+[data-theme="light"] .video-hero [data-count] + * { color: #d4d4d8 !important; }
+
+/* ── PAGE HEROES (internal) — stay dark, force text light ─────── */
+[data-theme="light"] .page-hero { background: #08080a; }
+[data-theme="light"] .page-hero .section-tag { color: var(--clr-red-light); }
+[data-theme="light"] .page-hero .section-title,
+[data-theme="light"] .page-hero h1,
+[data-theme="light"] .page-hero h2 { color: #fafafa; }
+[data-theme="light"] .page-hero .section-subtitle,
+[data-theme="light"] .page-hero p { color: #a1a1aa; }
+[data-theme="light"] .page-hero .breadcrumb,
+[data-theme="light"] .page-hero .breadcrumb a { color: #a1a1aa; }
+[data-theme="light"] .page-hero .breadcrumb span { color: var(--clr-red-light); }
+[data-theme="light"] .page-hero .breadcrumb a:hover { color: var(--clr-red-light); }
+[data-theme="light"] .page-hero .btn-outline { color: #e4e4e7; border-color: rgba(255,255,255,0.14); }
+[data-theme="light"] .page-hero .btn-outline:hover { color: #fafafa; border-color: var(--clr-red-light); }
+
+/* ── BLOG HERO — stays dark ───────────────────────────────────── */
+[data-theme="light"] .blog-hero { background: #08080a; }
+[data-theme="light"] .blog-hero h1 { color: #fafafa; }
+[data-theme="light"] .blog-hero p { color: #a1a1aa; }
+[data-theme="light"] .blog-hero .breadcrumb,
+[data-theme="light"] .blog-hero .breadcrumb a { color: #a1a1aa; }
+[data-theme="light"] .blog-hero .breadcrumb span { color: var(--clr-red-light); }
+[data-theme="light"] .blog-hero .breadcrumb a:hover { color: var(--clr-red-light); }
+
+/* ── LEGAL HERO (Privacy, Terms) — stays dark ─────────────────── */
+[data-theme="light"] .legal-hero { background: #08080a; }
+[data-theme="light"] .legal-hero h1 { color: #fafafa; }
+[data-theme="light"] .legal-hero p { color: #a1a1aa; }
+[data-theme="light"] .legal-hero .breadcrumb,
+[data-theme="light"] .legal-hero .breadcrumb a { color: #a1a1aa; }
+[data-theme="light"] .legal-hero .breadcrumb span { color: var(--clr-red-light); }
+[data-theme="light"] .legal-hero .breadcrumb a:hover { color: var(--clr-red-light); }
+
+/* ── MAINTENANCE PAGE — stays dark ────────────────────────────── */
+[data-theme="light"] .special-page { background: #08080a; }
+[data-theme="light"] .special-page h1 { color: #fafafa; }
+[data-theme="light"] .special-page p { color: #a1a1aa; }
+
+/* ── GALLERY ITEM OVERLAY — lighter gradient for light mode ───── */
+[data-theme="light"] .gallery-item-overlay { background: linear-gradient(to top, rgba(8,8,10,0.85) 0%, transparent 60%); }
+[data-theme="light"] .gallery-item-overlay .gallery-item-name { color: #fafafa; }
+[data-theme="light"] .gallery-item-overlay .gallery-item-cat { color: var(--clr-red-light); }
+
+/* ── GALLERY VIDEO PLACEHOLDER — dark bg in both themes ───────── */
+[data-theme="light"] .video-placeholder { background: linear-gradient(135deg, #101015, #08080a); }
+
+/* ── FORM INPUTS — light bg in light mode ─────────────────────── */
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-textarea,
+[data-theme="light"] .form-select {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+  color: #0d0d11;
+}
+[data-theme="light"] .form-input::placeholder,
+[data-theme="light"] .form-textarea::placeholder { color: #9e9ea6; }
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-textarea:focus,
+[data-theme="light"] .form-select:focus {
+  background: #ffffff;
+  border-color: var(--clr-red-light);
+}
+[data-theme="light"] .newsletter-input {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+  color: #0d0d11;
+}
+[data-theme="light"] .newsletter-input::placeholder { color: #9e9ea6; }
+[data-theme="light"] .newsletter-input:focus {
+  background: #ffffff;
+  border-color: var(--clr-red-light);
+}
+
+/* ── NAVBAR PROFILE BUTTON — visible on light bg ──────────────── */
+[data-theme="light"] .navbar-profile-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #0d0d11;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+[data-theme="light"] .navbar-profile-btn svg { stroke: #0d0d11; }
+[data-theme="light"] .navbar-profile-btn:hover,
+[data-theme="light"] .navbar-profile-btn[aria-expanded="true"] {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: var(--clr-red-light);
+  color: var(--clr-red-light);
+}
+
+/* ── SLIDER CONTROLS — visible on light bg ────────────────────── */
+[data-theme="light"] .slider-dot { background: rgba(0,0,0,0.2); }
+[data-theme="light"] .slider-dot.active { background: var(--clr-red-light); }
+[data-theme="light"] .slider-arrow { background: rgba(0,0,0,0.04); color: #0d0d11; border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .slider-arrow:hover { background: var(--clr-red); color: #ffffff; border-color: var(--clr-red); }
+
+/* ── CAROUSEL ARROWS — visible on light bg ────────────────────── */
+[data-theme="light"] .carousel-arrow { background: rgba(255,255,255,0.9); color: #0d0d11; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+[data-theme="light"] .carousel-arrow:hover { background: #ffffff; color: var(--clr-red-light); }
+
+/* ── STAT GLASS CARDS — light bg in light mode ────────────────── */
+[data-theme="light"] .stat-glass-card { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.06); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+[data-theme="light"] .stat-glass-card:hover { background: rgba(240,240,242,0.9); border-color: var(--clr-border-glow); }
+
+/* ── SERVICE ICONS — keep visible on light bg ─────────────────── */
+[data-theme="light"] .service-icon { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+
+/* ── FAQ ICON — visible on light bg ────────────────────────────── */
+[data-theme="light"] .faq-icon { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+
+/* ── BRAND ITEM HOVER — visible on light bg ────────────────────── */
+[data-theme="light"] .brand-item:hover { background: rgba(0,0,0,0.02); }
+
+/* ── BADGE ZINC — visible bg on light surfaces ──────────────────── */
+[data-theme="light"] .badge-zinc { background: rgba(0,0,0,0.04); }
+
+/* ── ICON BOX ZINC — visible bg on light surfaces ───────────────── */
+[data-theme="light"] .icon-box-zinc { background: rgba(0,0,0,0.03); }
+
+/* ── BACK TO TOP — dark on light bg ────────────────────────────── */
+[data-theme="light"] .back-to-top { border-color: rgba(0,0,0,0.08); }
+
+/* ── LIGHTBOX CLOSE — dark on light bg ─────────────────────────── */
+[data-theme="light"] .lightbox-close { background: rgba(0,0,0,0.04); color: #0d0d11; }
+[data-theme="light"] .lightbox-close:hover { background: var(--clr-red); color: #ffffff; }
+
+/* ── CHECKOUT MODAL CLOSE — dark on light bg ───────────────────── */
+[data-theme="light"] .checkout-modal-close { background: rgba(0,0,0,0.03); color: #0d0d11; }
+[data-theme="light"] .checkout-modal-close:hover { background: var(--clr-red); color: #ffffff; }
+
+/* ── BLOG CARD IMAGE WRAP — light bg in light mode ─────────────── */
+[data-theme="light"] .blog-card-img-wrap { background: #f0f0f2; }
+
+/* ── RELATED CARD IMAGE WRAP — light bg in light mode ──────────── */
+[data-theme="light"] .related-card-img-wrap { background: #f0f0f2; }
+
+/* ── GALLERY FEATURED PRODUCT VISUAL — light gradient in light mode ── */
+[data-theme="light"] .featured-product-visual { background: linear-gradient(135deg, #f4f4f6, #f0f0f2); }
+
+/* ── SOCIAL LOGIN BUTTONS (auth pages) — dark on light bg ─────── */
+[data-theme="light"] .social-login-btn {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.08);
+  color: #0d0d11;
+}
+[data-theme="light"] .social-login-btn:hover {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.12);
+}
+
+/* ── AUTH FORM INPUTS — white bg, dark text ────────────────────── */
+[data-theme="light"] .input-icon-wrap .form-input {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+  color: #0d0d11;
+}
+[data-theme="light"] .input-icon-wrap .form-input:focus {
+  background: #ffffff !important;
+  border-color: var(--clr-red-light) !important;
+}
+
+/* ── AUTH DIVIDER — visible line ───────────────────────────────── */
+[data-theme="light"] .auth-divider span { color: #9e9ea6; }
+
+/* ── FILLED RED BACKGROUNDS — icons/text must always be WHITE ─── */
+[data-theme="light"] .btn-primary,
+[data-theme="light"] .filter-btn.active,
+[data-theme="light"] .pricing-tab.active,
+[data-theme="light"] .back-to-top,
+[data-theme="light"] .btn-submit,
+[data-theme="light"] .play-btn,
+[data-theme="light"] .logo-icon,
+[data-theme="light"] .slider-arrow:hover,
+[data-theme="light"] .product-action-btn:hover,
+[data-theme="light"] .service-card:hover .service-icon,
+[data-theme="light"] .faq-item.open .faq-icon,
+[data-theme="light"] .step-card:hover .step-number,
+[data-theme="light"] .checkout-modal-close:hover,
+[data-theme="light"] .lightbox-close:hover {
+  color: #fafafa !important;
+}
+
+/* ── HOME 2 STATS — hover overrides (default card is white via variables) ── */
+[data-theme="light"] .stats-hero .stat-card:hover .stat-number { color: #fafafa !important; }
+[data-theme="light"] .stats-hero .stat-card:hover .stat-label { color: #e4e4e7 !important; }
+[data-theme="light"] .stats-hero .stat-card:hover .stat-icon-wrap svg { stroke: var(--clr-red-light) !important; }
+
+/* ── SERVICES — How It Works hover overrides ── */
+[data-theme="light"] .step-card:hover { background: rgba(16, 16, 20, 0.88) !important; }
+[data-theme="light"] .step-card:hover .step-title { color: #fafafa !important; }
+[data-theme="light"] .step-card:hover .step-desc { color: #d4d4d8 !important; }
+[data-theme="light"] .step-card:hover .step-number-badge { color: #fafafa !important; }
+[data-theme="light"] .step-card:hover .step-icon-wrap { color: var(--clr-red-light) !important; }
+[data-theme="light"] .step-card:hover .step-icon-wrap svg { stroke: var(--clr-red-light) !important; }
+
+/* ── FOOTER LOGO — visible text on light footer bg ──────────────── */
+[data-theme="light"] .footer .logo-text { color: #0d0d11 !important; }
+[data-theme="light"] .footer .logo-text span { color: var(--clr-red-light) !important; }
 
 /* ── SCROLLBAR (Light theme) ──────────────────────────────────── */
 [data-theme="light"] ::-webkit-scrollbar-track {
