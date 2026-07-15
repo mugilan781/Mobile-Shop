@@ -21,8 +21,8 @@
       position: relative;
     }
     .pricing-card.featured {
-      border-color: var(--clr-blue-light);
-      background: linear-gradient(145deg, rgba(37,99,235,0.06), var(--clr-bg-card));
+      border-color: var(--clr-red-light);
+      background: linear-gradient(145deg, rgba(239, 68, 68, 0.04), var(--clr-bg-card));
     }
     .pricing-card:hover {
       transform: translateY(-6px);
@@ -31,18 +31,24 @@
     }
     .pricing-badge {
       position: absolute;
-      top: -12px;
+      top: -14px;
       left: 50%;
       transform: translateX(-50%);
-      background: var(--grad-blue);
-      color: white;
-      font-size: 0.7rem;
+      background: linear-gradient(90deg, var(--clr-red) 0%, var(--clr-red-light) 100%);
+      color: var(--clr-white);
+      font-size: 0.68rem;
       font-weight: 700;
-      padding: 0.3rem 1rem;
+      padding: 0.35rem 1.15rem;
       border-radius: 999px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.25), 0 4px 10px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      z-index: 10;
     }
     .pricing-price {
       font-family: var(--font-head);
@@ -64,7 +70,7 @@
       font-size: 0.875rem;
       color: var(--clr-silver);
     }
-    .pricing-feature::before { content: '✓'; color: var(--clr-cyan); font-weight: 700; flex-shrink: 0; }
+    .pricing-feature::before { content: '✓'; color: var(--clr-red-light); font-weight: 700; flex-shrink: 0; }
 
     .warranty-card {
       display: flex;
@@ -79,6 +85,133 @@
     }
     .warranty-card:hover { transform: translateY(-4px); border-color: var(--clr-border-glow); }
     .warranty-card svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 2px; }
+
+    /* ── PROCESS STEPS REDESIGN OVERRIDES ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+      margin-top: 3.5rem;
+    }
+    .steps-grid::before {
+      content: "";
+      position: absolute;
+      top: 38%;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, 
+        rgba(239, 68, 68, 0.03) 0%, 
+        rgba(239, 68, 68, 0.4) 50%, 
+        rgba(239, 68, 68, 0.03) 100%
+      );
+      z-index: 1;
+    }
+    .step-card {
+      background: rgba(16, 16, 20, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: var(--r-lg);
+      padding: 2.5rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+      position: relative;
+      z-index: 2;
+      transition: all var(--tr-base);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+    .step-card:hover {
+      transform: translateY(-8px);
+      background: rgba(20, 20, 26, 0.6);
+      border-color: rgba(239, 68, 68, 0.25);
+      box-shadow: 0 15px 35px rgba(239, 68, 68, 0.06), 0 0 1px rgba(239, 68, 68, 0.2) inset;
+    }
+    .step-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-red-light);
+      margin-bottom: 0.25rem;
+      transition: all var(--tr-base);
+      position: relative;
+    }
+    .step-card:hover .step-icon-wrap {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: var(--clr-red-light);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+    }
+    .step-icon-wrap svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .step-number-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: rgba(16, 16, 20, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--clr-silver-light);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--tr-base);
+      z-index: 5;
+    }
+    .step-card:hover .step-number-badge {
+      background: var(--clr-red);
+      color: var(--clr-white);
+      border-color: var(--clr-red);
+      box-shadow: var(--shadow-red);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 1024px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .steps-grid::before {
+        display: none;
+      }
+      .step-card {
+        padding: 2.25rem 1.5rem 1.75rem;
+      }
+      .step-number-badge {
+        right: 15px;
+      }
+    }
+    @media (max-width: 600px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .step-number-badge {
+        right: 50%;
+        transform: translateX(50%);
+      }
+    }
 
     @media (max-width: 767px) {
       .services-layout { grid-template-columns: 1fr !important; gap: 2rem !important; }
@@ -319,24 +452,43 @@
     </div>
 
     <div class="steps-grid">
+      <!-- Step 1: Diagnose -->
       <div class="step-card reveal delay-1">
-        <div class="step-number">1</div>
-        <div class="step-title">Diagnose</div>
+        <div class="step-number-badge">1</div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </div>
+        <h3 class="step-title">Diagnose</h3>
         <p class="step-desc">Walk in or book online. We run a free diagnostic within 15 minutes.</p>
       </div>
+
+      <!-- Step 2: Get a Quote -->
       <div class="step-card reveal delay-2">
-        <div class="step-number">2</div>
-        <div class="step-title">Get a Quote</div>
+        <div class="step-number-badge">2</div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <h3 class="step-title">Get a Quote</h3>
         <p class="step-desc">Transparent pricing — no hidden fees. You approve before we touch anything.</p>
       </div>
+
+      <!-- Step 3: We Fix It -->
       <div class="step-card reveal delay-3">
-        <div class="step-number">3</div>
-        <div class="step-title">We Fix It</div>
+        <div class="step-number-badge">3</div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <h3 class="step-title">We Fix It</h3>
         <p class="step-desc">Our certified technicians repair your device using genuine parts.</p>
       </div>
+
+      <!-- Step 4: Pick Up -->
       <div class="step-card reveal delay-4">
-        <div class="step-number">4</div>
-        <div class="step-title">Pick Up</div>
+        <div class="step-number-badge">4</div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
+        <h3 class="step-title">Pick Up</h3>
         <p class="step-desc">Device fully tested and quality-checked. Walk out with your warranty card.</p>
       </div>
     </div>
@@ -377,7 +529,7 @@
         </div>
 
         <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-badge">🔥 Most Popular</div>
           <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">iPhone 13 / 14</h3>
           <div class="pricing-price">₹2,299</div>
           <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
@@ -421,7 +573,7 @@
           <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
         </div>
         <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-badge">🔥 Most Popular</div>
           <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">Galaxy S23 / S24</h3>
           <div class="pricing-price">₹2,499</div>
           <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
@@ -463,7 +615,7 @@
           <a href="#book-repair" class="btn btn-outline" style="width:100%;justify-content:center;">Book Now</a>
         </div>
         <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-badge">🔥 Most Popular</div>
           <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--clr-white);">OnePlus 12</h3>
           <div class="pricing-price">₹2,199</div>
           <div style="font-size:0.8rem;color:var(--clr-silver);margin-bottom:1rem;">Screen Replacement</div>
