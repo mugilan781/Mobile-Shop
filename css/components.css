@@ -17,7 +17,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(8, 8, 10, 0.94);
+  background: var(--clr-navbar-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
@@ -135,7 +135,7 @@
   position: fixed;
   top: var(--navbar-h);
   left: 0; right: 0;
-  background: rgba(8, 8, 10, 0.98);
+  background: var(--clr-mobile-nav-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--clr-border);
   padding: var(--sp-6);
@@ -208,10 +208,10 @@
   top: 100%;
   right: 0;
   margin-top: 0.75rem;
-  background: rgba(16, 16, 20, 0.96);
+  background: var(--clr-dropdown-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--clr-dropdown-border);
   border-radius: var(--r-md);
   width: 180px;
   padding: 0.5rem;
@@ -276,10 +276,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   width: 180px;
-  background: rgba(16, 16, 20, 0.96);
+  background: var(--clr-dropdown-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--clr-dropdown-border);
   border-radius: var(--r-md);
   padding: 0.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -375,7 +375,7 @@
 
 .slide-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(110deg, rgba(8,8,10,0.94) 0%, rgba(8,8,10,0.65) 60%, rgba(8,8,10,0.2) 100%);
+  background: var(--clr-slide-overlay);
 }
 
 .slide-content {
@@ -495,7 +495,7 @@
 
 .product-img-wrap {
   position: relative; aspect-ratio: 1.15;
-  background: linear-gradient(135deg, #111116, #08080a);
+  background: var(--clr-product-img-bg);
   overflow: hidden;
   display: flex; align-items: center; justify-content: center;
 }
@@ -524,7 +524,7 @@
 
 .product-action-btn {
   width: 30px; height: 30px; border-radius: var(--r-xs);
-  background: rgba(8, 8, 10, 0.85);
+  background: var(--clr-product-action);
   border: 1px solid var(--clr-border-md);
   display: flex; align-items: center; justify-content: center;
   color: var(--clr-white); font-size: 0.75rem;
@@ -1010,10 +1010,10 @@
 
 /* Glassmorphism card */
 .review-card {
-  background: rgba(16, 16, 20, 0.45);
+  background: var(--clr-review-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--clr-border);
   border-radius: var(--r-md);
   padding: 2.25rem 2rem;
   height: 100%;
@@ -1027,7 +1027,7 @@
 }
 .review-card:hover {
   transform: translateY(-4px);
-  background: rgba(20, 20, 26, 0.6);
+  background: var(--clr-review-card-hover);
   border-color: rgba(239, 68, 68, 0.2);
   box-shadow: 0 12px 30px rgba(239, 68, 68, 0.05), 0 0 1px rgba(239, 68, 68, 0.25) inset;
 }
@@ -1109,7 +1109,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(16, 16, 20, 0.6);
+  background: var(--clr-carousel-arrow);
   border: 1px solid var(--clr-border);
   color: var(--clr-silver-light);
   display: flex;
@@ -1151,12 +1151,12 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--clr-carousel-dot);
   cursor: pointer;
   transition: all var(--tr-base);
 }
 .carousel-dot:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--clr-carousel-dot-hover);
 }
 .carousel-dot.active {
   width: 24px;
@@ -1221,7 +1221,7 @@
 /* ── LIGHTBOX ─────────────────────────────────────────────────── */
 .lightbox {
   position: fixed; inset: 0; z-index: 9000;
-  background: rgba(8,8,10,0.96);
+  background: var(--clr-lightbox-bg);
   display: flex; align-items: center; justify-content: center;
   padding: var(--sp-6);
   opacity: 0; pointer-events: none;
@@ -1251,7 +1251,7 @@
 
 /* ── NEWSLETTER SECTION ───────────────────────────────────────── */
 .newsletter-section {
-  background: linear-gradient(135deg, rgba(239,68,68,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  background: var(--clr-newsletter-bg);
   border: 1px solid var(--clr-border-md);
   border-radius: var(--r-md); padding: var(--sp-10) var(--sp-6);
   text-align: center; position: relative; overflow: hidden;
@@ -1439,10 +1439,10 @@
 
 .auth-card {
   width: 100%; max-width: 400px;
-  background: rgba(8, 8, 10, 0.94);
+  background: var(--clr-auth-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--clr-border-md);
+  border: 1px solid var(--clr-auth-card-border);
   border-radius: var(--r-md); padding: var(--sp-6);
   position: relative; z-index: 2;
   box-shadow: var(--shadow-xl);
@@ -1547,7 +1547,7 @@
 .video-placeholder {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--sp-2);
-  background: linear-gradient(135deg, #101015, #08080a);
+  background: var(--clr-video-bg);
 }
 
 .play-btn {
@@ -1583,7 +1583,7 @@
 /* ── CHECKOUT / QUICK ORDER MODAL ─────────────────────────────── */
 .checkout-modal-overlay {
   position: fixed; inset: 0; z-index: 9500;
-  background: rgba(8, 8, 10, 0.95);
+  background: var(--clr-checkout-overlay);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex; align-items: center; justify-content: center;
@@ -1639,7 +1639,7 @@
 }
 .hero-floating-card {
   position: absolute;
-  background: rgba(16, 16, 20, 0.85);
+  background: var(--clr-hero-floating);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--clr-border-glow);

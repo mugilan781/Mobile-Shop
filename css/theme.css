@@ -1,0 +1,335 @@
+/* ================================================================
+   NEXCELL — Theme Switching System
+   theme.css — Dark (default) & Light theme variables
+   Architecture: :root = dark, [data-theme="light"] = light overrides
+   ================================================================ */
+
+/* ── DARK THEME (default) ─────────────────────────────────────── */
+:root {
+  /* ── Core Surface Colors ──────────────────────────── */
+  --clr-void:        #08080a;
+  --clr-bg:          #0d0d11;
+  --clr-bg-2:        #121217;
+  --clr-bg-card:     #171720;
+  --clr-bg-glass:    rgba(13, 13, 17, 0.88);
+  --clr-bg-elevated: #20202b;
+
+  /* ── Crimson Tech Palette ──────────────────────────── */
+  --clr-red:         #ef4444;
+  --clr-red-light:   #ff5a5a;
+  --clr-red-pale:    #fecaca;
+  --clr-red-dark:    #b91c1c;
+  --clr-red-muted:   #991b1b;
+
+  /* ── Steel / Zinc Grays ───────────────────────────── */
+  --clr-silver:      #a1a1aa;
+  --clr-silver-light:#e4e4e7;
+  --clr-silver-dim:  #52525b;
+  --clr-platinum:    #f4f4f5;
+
+  /* ── Text / White ─────────────────────────────────── */
+  --clr-white:       #fafafa;
+  --clr-white-90:    rgba(250, 250, 250, 0.9);
+  --clr-white-70:    rgba(250, 250, 250, 0.7);
+  --clr-white-40:    rgba(250, 250, 250, 0.4);
+  --clr-white-15:    rgba(250, 250, 250, 0.05);
+
+  /* ── Borders ──────────────────────────────────────── */
+  --clr-border:        rgba(255, 255, 255, 0.07);
+  --clr-border-md:     rgba(255, 255, 255, 0.14);
+  --clr-border-glow:   rgba(239, 68, 68, 0.4);
+  --clr-border-silver: rgba(161, 161, 170, 0.15);
+
+  /* ── Functional ───────────────────────────────────── */
+  --clr-success: #10b981;
+  --clr-error:   #ef4444;
+  --clr-warn:    #f59e0b;
+
+  /* ── Gradients ────────────────────────────────────── */
+  --grad-red:        linear-gradient(135deg, #ef4444 0%, #ff5a5a 50%, #b91c1c 100%);
+  --grad-tech:       linear-gradient(135deg, #18181f 0%, #121217 100%);
+  --grad-hero:       linear-gradient(135deg, #08080a 0%, #0d0d11 50%, #121217 100%);
+  --grad-card:       linear-gradient(145deg, #171720, #121217);
+  --grad-text:       linear-gradient(90deg, #fafafa 0%, #ef4444 50%, #fafafa 100%);
+  --grad-text-wide:  linear-gradient(90deg, #71717a, #fafafa, #ef4444, #fafafa, #71717a);
+  --grad-overlay:    linear-gradient(to bottom, transparent 0%, rgba(13,13,17,0.98) 100%);
+  --grad-radial-red:  radial-gradient(circle at center, rgba(239,68,68,0.12) 0%, transparent 65%);
+  --grad-radial-zinc: radial-gradient(circle at center, rgba(161,161,170,0.06) 0%, transparent 60%);
+  --grad-shimmer:    linear-gradient(90deg, transparent 0%, rgba(239,68,68,0.15) 50%, transparent 100%);
+
+  /* ── Shadows ──────────────────────────────────────── */
+  --shadow-xs:   0 1px 4px rgba(0,0,0,0.5);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.6);
+  --shadow-md:   0 6px 24px rgba(0,0,0,0.7);
+  --shadow-lg:   0 12px 48px rgba(0,0,0,0.75);
+  --shadow-xl:   0 24px 80px rgba(0,0,0,0.8);
+  --shadow-red:  0 4px 20px rgba(239,68,68,0.2);
+  --shadow-red-lg: 0 8px 40px rgba(239,68,68,0.28);
+  --shadow-red-glow: 0 0 60px rgba(239,68,68,0.1), 0 0 120px rgba(255,90,90,0.05);
+  --shadow-inner-red: inset 0 1px 0 rgba(255,90,90,0.15);
+
+  /* ── Navbar ───────────────────────────────────────── */
+  --clr-navbar-bg:       rgba(8, 8, 10, 0.94);
+  --clr-navbar-border:   var(--clr-border);
+
+  /* ── Mobile Menu ──────────────────────────────────── */
+  --clr-mobile-nav-bg:   rgba(8, 8, 10, 0.98);
+
+  /* ── Profile Dropdown ─────────────────────────────── */
+  --clr-dropdown-bg:     rgba(16, 16, 20, 0.96);
+  --clr-dropdown-border: rgba(255, 255, 255, 0.06);
+
+  /* ── Hero Slider ──────────────────────────────────── */
+  --clr-slide-overlay:   linear-gradient(110deg, rgba(8,8,10,0.94) 0%, rgba(8,8,10,0.65) 60%, rgba(8,8,10,0.2) 100%);
+  --clr-hero-visual-bg:  var(--clr-bg-2);
+
+  /* ── Hero Floating Cards ──────────────────────────── */
+  --clr-hero-floating:       rgba(16, 16, 20, 0.85);
+  --clr-hero-floating-hover: rgba(20, 20, 26, 0.6);
+
+  /* ── Product / Card visuals ───────────────────────── */
+  --clr-product-img-bg:   linear-gradient(135deg, #111116, #08080a);
+  --clr-product-action:   rgba(8, 8, 10, 0.85);
+
+  /* ── Large Product Card (home2) ───────────────────── */
+  --clr-large-card:       rgba(16, 16, 20, 0.45);
+  --clr-large-card-hover: rgba(20, 20, 26, 0.6);
+  --clr-large-visual-bg:  rgba(8, 8, 10, 0.45);
+
+  /* ── Review Cards ─────────────────────────────────── */
+  --clr-review-card:       rgba(16, 16, 20, 0.45);
+  --clr-review-card-hover: rgba(20, 20, 26, 0.6);
+
+  /* ── Auth Cards ───────────────────────────────────── */
+  --clr-auth-card:        rgba(8, 8, 10, 0.94);
+  --clr-auth-card-border: rgba(255, 255, 255, 0.08);
+
+  /* ── Lightbox ─────────────────────────────────────── */
+  --clr-lightbox-bg: rgba(8, 8, 10, 0.96);
+
+  /* ── Checkout Modal ───────────────────────────────── */
+  --clr-checkout-overlay: rgba(8, 8, 10, 0.95);
+
+  /* ── Video Placeholder ────────────────────────────── */
+  --clr-video-bg: linear-gradient(135deg, #101015, #08080a);
+
+  /* ── Stats Hero (home2) ───────────────────────────── */
+  --clr-stats-card:       rgba(16, 16, 20, 0.4);
+  --clr-stats-card-hover: rgba(20, 20, 26, 0.6);
+
+  /* ── Contact Social Cards ─────────────────────────── */
+  --clr-social-card:       rgba(16, 16, 20, 0.45);
+  --clr-social-card-hover: rgba(20, 20, 26, 0.6);
+
+  /* ── Achievement Card ─────────────────────────────── */
+  --clr-achievement-card: rgba(16, 16, 20, 0.45);
+
+  /* ── Pricing Card ─────────────────────────────────── */
+  --clr-pricing-featured: linear-gradient(145deg, rgba(239,68,68,0.04), var(--clr-bg-card));
+
+  /* ── Carousel / Slider controls ───────────────────── */
+  --clr-carousel-arrow:   rgba(16, 16, 20, 0.6);
+  --clr-carousel-dot:     rgba(255, 255, 255, 0.15);
+  --clr-carousel-dot-hover: rgba(255, 255, 255, 0.35);
+
+  /* ── Background Decorations ───────────────────────── */
+  --clr-grid-line: rgba(255,255,255,0.015);
+  --clr-dot-color: rgba(255,255,255,0.04);
+
+  /* ── Home2 specific ───────────────────────────────── */
+  --clr-home2-overlay: linear-gradient(to right, rgba(8,8,10,0.85) 0%, rgba(8,8,10,0.6) 50%, rgba(8,8,10,0.2) 100%);
+  --clr-home2-overlay-mobile: linear-gradient(to bottom, rgba(8,8,10,0.9) 0%, rgba(8,8,10,0.7) 100%);
+  --clr-phone-card:   linear-gradient(145deg, #162032, #0A0F1D);
+  --clr-grid-lines: rgba(239,68,68,0.02);
+
+  /* ── Newsletter Section ───────────────────────────── */
+  --clr-newsletter-bg: linear-gradient(135deg, rgba(239,68,68,0.04) 0%, rgba(255,255,255,0.01) 100%);
+
+  /* ── Grey Section backgrounds ─────────────────────── */
+  --clr-section-alt: var(--clr-bg-2);
+}
+
+/* ── LIGHT THEME ──────────────────────────────────────────────── */
+[data-theme="light"] {
+  /* ── Core Surface Colors ──────────────────────────── */
+  --clr-void:        #f8f8fa;
+  --clr-bg:          #ffffff;
+  --clr-bg-2:        #f4f4f6;
+  --clr-bg-card:     #ffffff;
+  --clr-bg-glass:    rgba(255, 255, 255, 0.88);
+  --clr-bg-elevated: #f0f0f2;
+
+  /* ── Crimson Tech Palette ──────────────────────────── */
+  /* Red accent preserved exactly */
+  --clr-red:         #ef4444;
+  --clr-red-light:   #ff5a5a;
+  --clr-red-pale:    #fecaca;
+  --clr-red-dark:    #b91c1c;
+  --clr-red-muted:   #dc2626;
+
+  /* ── Steel / Zinc Grays (darker for light bg) ────── */
+  --clr-silver:      #5c5c66;
+  --clr-silver-light:#2e2e36;
+  --clr-silver-dim:  #9e9ea6;
+  --clr-platinum:    #111115;
+
+  /* ── Text / Black (dark for light bg) ────────────── */
+  --clr-white:       #0d0d11;
+  --clr-white-90:    rgba(13, 13, 17, 0.9);
+  --clr-white-70:    rgba(13, 13, 17, 0.7);
+  --clr-white-40:    rgba(13, 13, 17, 0.4);
+  --clr-white-15:    rgba(13, 13, 17, 0.05);
+
+  /* ── Borders (dark on light bg) ──────────────────── */
+  --clr-border:        rgba(0, 0, 0, 0.06);
+  --clr-border-md:     rgba(0, 0, 0, 0.12);
+  --clr-border-glow:   rgba(239, 68, 68, 0.3);
+  --clr-border-silver: rgba(0, 0, 0, 0.08);
+
+  /* ── Functional (unchanged) ──────────────────────── */
+  --clr-success: #10b981;
+  --clr-error:   #ef4444;
+  --clr-warn:    #f59e0b;
+
+  /* ── Gradients ────────────────────────────────────── */
+  --grad-red:        linear-gradient(135deg, #ef4444 0%, #ff5a5a 50%, #b91c1c 100%);
+  --grad-tech:       linear-gradient(135deg, #f0f0f2 0%, #f4f4f6 100%);
+  --grad-hero:       linear-gradient(135deg, #f8f8fa 0%, #ffffff 50%, #f4f4f6 100%);
+  --grad-card:       linear-gradient(145deg, #ffffff, #f8f8fa);
+  --grad-text:       linear-gradient(90deg, #0d0d11 0%, #ef4444 50%, #0d0d11 100%);
+  --grad-text-wide:  linear-gradient(90deg, #5c5c66, #0d0d11, #ef4444, #0d0d11, #5c5c66);
+  --grad-overlay:    linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.98) 100%);
+  --grad-radial-red:  radial-gradient(circle at center, rgba(239,68,68,0.08) 0%, transparent 65%);
+  --grad-radial-zinc: radial-gradient(circle at center, rgba(0,0,0,0.04) 0%, transparent 60%);
+  --grad-shimmer:    linear-gradient(90deg, transparent 0%, rgba(239,68,68,0.08) 50%, transparent 100%);
+
+  /* ── Shadows (lighter for light mode) ────────────── */
+  --shadow-xs:   0 1px 3px rgba(0,0,0,0.06);
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:   0 6px 20px rgba(0,0,0,0.1);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,0.1);
+  --shadow-xl:   0 24px 60px rgba(0,0,0,0.12);
+  --shadow-red:  0 4px 20px rgba(239,68,68,0.15);
+  --shadow-red-lg: 0 8px 40px rgba(239,68,68,0.2);
+  --shadow-red-glow: 0 0 60px rgba(239,68,68,0.06), 0 0 120px rgba(255,90,90,0.03);
+  --shadow-inner-red: inset 0 1px 0 rgba(255,90,90,0.12);
+
+  /* ── Navbar ───────────────────────────────────────── */
+  --clr-navbar-bg:       rgba(255, 255, 255, 0.94);
+  --clr-navbar-border:   rgba(0, 0, 0, 0.06);
+
+  /* ── Mobile Menu ──────────────────────────────────── */
+  --clr-mobile-nav-bg:   rgba(255, 255, 255, 0.98);
+
+  /* ── Profile Dropdown ─────────────────────────────── */
+  --clr-dropdown-bg:     rgba(255, 255, 255, 0.96);
+  --clr-dropdown-border: rgba(0, 0, 0, 0.06);
+
+  /* ── Hero Slider ──────────────────────────────────── */
+  --clr-slide-overlay:   linear-gradient(110deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.65) 60%, rgba(255,255,255,0.2) 100%);
+  --clr-hero-visual-bg:  var(--clr-bg-2);
+
+  /* ── Hero Floating Cards ──────────────────────────── */
+  --clr-hero-floating:       rgba(255, 255, 255, 0.85);
+  --clr-hero-floating-hover: rgba(240, 240, 242, 0.6);
+
+  /* ── Product / Card visuals ───────────────────────── */
+  --clr-product-img-bg:   linear-gradient(135deg, #f0f0f2, #f8f8fa);
+  --clr-product-action:   rgba(255, 255, 255, 0.85);
+
+  /* ── Large Product Card (home2) ───────────────────── */
+  --clr-large-card:       rgba(255, 255, 255, 0.85);
+  --clr-large-card-hover: rgba(255, 255, 255, 0.95);
+  --clr-large-visual-bg:  rgba(240, 240, 242, 0.85);
+
+  /* ── Review Cards ─────────────────────────────────── */
+  --clr-review-card:       rgba(255, 255, 255, 0.85);
+  --clr-review-card-hover: rgba(255, 255, 255, 0.95);
+
+  /* ── Auth Cards ───────────────────────────────────── */
+  --clr-auth-card:        rgba(255, 255, 255, 0.94);
+  --clr-auth-card-border: rgba(0, 0, 0, 0.08);
+
+  /* ── Lightbox ─────────────────────────────────────── */
+  --clr-lightbox-bg: rgba(255, 255, 255, 0.96);
+
+  /* ── Checkout Modal ───────────────────────────────── */
+  --clr-checkout-overlay: rgba(255, 255, 255, 0.95);
+
+  /* ── Video Placeholder ────────────────────────────── */
+  --clr-video-bg: linear-gradient(135deg, #f0f0f2, #f8f8fa);
+
+  /* ── Stats Hero (home2) ───────────────────────────── */
+  --clr-stats-card:       rgba(255, 255, 255, 0.75);
+  --clr-stats-card-hover: rgba(255, 255, 255, 0.9);
+
+  /* ── Contact Social Cards ─────────────────────────── */
+  --clr-social-card:       rgba(255, 255, 255, 0.85);
+  --clr-social-card-hover: rgba(255, 255, 255, 0.95);
+
+  /* ── Achievement Card ─────────────────────────────── */
+  --clr-achievement-card: rgba(255, 255, 255, 0.85);
+
+  /* ── Pricing Card ─────────────────────────────────── */
+  --clr-pricing-featured: linear-gradient(145deg, rgba(239,68,68,0.04), #ffffff);
+
+  /* ── Carousel / Slider controls ───────────────────── */
+  --clr-carousel-arrow:   rgba(255, 255, 255, 0.6);
+  --clr-carousel-dot:     rgba(0, 0, 0, 0.12);
+  --clr-carousel-dot-hover: rgba(0, 0, 0, 0.25);
+
+  /* ── Background Decorations ───────────────────────── */
+  --clr-grid-line: rgba(0,0,0,0.03);
+  --clr-dot-color: rgba(0,0,0,0.03);
+
+  /* ── Home2 specific ───────────────────────────────── */
+  --clr-home2-overlay: linear-gradient(to right, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.2) 100%);
+  --clr-home2-overlay-mobile: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+  --clr-phone-card:   linear-gradient(145deg, #f0f0f2, #f8f8fa);
+  --clr-grid-lines: rgba(239,68,68,0.03);
+
+  /* ── Newsletter Section ───────────────────────────── */
+  --clr-newsletter-bg: linear-gradient(135deg, rgba(239,68,68,0.03) 0%, rgba(0,0,0,0.01) 100%);
+
+  /* ── Grey Section backgrounds ─────────────────────── */
+  --clr-section-alt: #f4f4f6;
+
+  /* ── Map filter (light mode) ──────────────────────── */
+  --clr-map-filter: grayscale(0.3) invert(0) contrast(1.05);
+}
+
+/* ── THEME TRANSITION ─────────────────────────────────────────── */
+[data-theme],
+[data-theme] *,
+[data-theme] *::before,
+[data-theme] *::after {
+  transition:
+    background-color 0.3s ease,
+    color 0.25s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    fill 0.25s ease,
+    stroke 0.25s ease;
+}
+
+/* ── SCROLLBAR (Light theme) ──────────────────────────────────── */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f0f0f2;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-red);
+}
+
+/* ── SELECTION (Light theme) ──────────────────────────────────── */
+[data-theme="light"] ::selection {
+  background: rgba(239, 68, 68, 0.2);
+  color: #0d0d11;
+}
+
+/* ── MAP FILTER (Light theme) ──────────────────────────────────── */
+[data-theme="light"] .map-wrap iframe {
+  filter: var(--clr-map-filter);
+}

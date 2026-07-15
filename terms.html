@@ -6,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="NexCell Terms and Conditions — Read the terms governing use of our website, repair services, product purchases, and warranty policies." />
   <title>Terms &amp; Conditions — NexCell</title>
+  <!-- Theme: FOUC prevention (immediate before paint) -->
+  <script>
+    (function(){var t='dark';try{var s=localStorage.getItem('nexcell-theme');if(s==='light'||s==='dark')t=s;}catch(e){}if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <style>
@@ -248,8 +254,17 @@
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
-        <!-- Profile Menu -->
-        <div class="navbar-profile-wrapper desktop-profile">
+        <!-- Navbar Right Actions -->
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <!-- Theme Toggle -->
+          <button class="navbar-profile-btn" id="themeToggle" aria-label="Switch to light mode" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Profile Menu -->
+          <div class="navbar-profile-wrapper desktop-profile">
           <button class="navbar-profile-btn" id="profileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
             <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -276,6 +291,9 @@
             </a>
           </div>
         </div>
+        </div>
+
+        <!-- Mobile Toggle -->
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -680,6 +698,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+<script src="js/theme.js"></script>
 </body>
 
 </html>

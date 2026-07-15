@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="NexCell — Explore our full range of premium phone cases, chargers, earbuds, screen protectors and more. Cinematic showcase." />
   <title>Explore — NexCell</title>
+  <!-- Theme: FOUC prevention (immediate before paint) -->
+  <script>
+    (function(){var t='dark';try{var s=localStorage.getItem('nexcell-theme');if(s==='light'||s==='dark')t=s;}catch(e){}if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <style>
@@ -35,13 +41,13 @@
     .video-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(8,8,10,0.85) 0%, rgba(8,8,10,0.6) 50%, rgba(8,8,10,0.2) 100%);
+      background: var(--clr-home2-overlay);
       z-index: 2;
     }
 
     @media (max-width: 768px) {
       .video-hero-overlay {
-        background: linear-gradient(to bottom, rgba(8,8,10,0.9) 0%, rgba(8,8,10,0.7) 100%) !important;
+        background: var(--clr-home2-overlay-mobile) !important;
         z-index: 2;
       }
     }
@@ -50,8 +56,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(239,68,68,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(239,68,68,0.02) 1px, transparent 1px);
+        linear-gradient(var(--clr-grid-lines) 1px, transparent 1px),
+        linear-gradient(90deg, var(--clr-grid-lines) 1px, transparent 1px);
       background-size: 80px 80px;
       z-index: 2;
     }
@@ -66,7 +72,7 @@
     .phone-card-big {
       width: 180px;
       aspect-ratio: 9/19;
-      background: linear-gradient(145deg, #162032, #0A0F1D);
+      background: var(--clr-phone-card);
       border-radius: 2.25rem;
       border: 1px solid var(--clr-border-md);
       display: flex;
@@ -103,7 +109,7 @@
     }
 
     .large-product-card {
-      background: rgba(16, 16, 20, 0.45);
+      background: var(--clr-large-card);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.04);
@@ -118,7 +124,7 @@
 
     .large-product-card:hover {
       transform: translateY(-5px);
-      background: rgba(20, 20, 26, 0.6);
+      background: var(--clr-large-card-hover);
       border-color: rgba(239, 68, 68, 0.2);
       box-shadow: 0 12px 30px rgba(239, 68, 68, 0.05), 0 0 1px rgba(239, 68, 68, 0.25) inset;
     }
@@ -127,7 +133,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(8, 8, 10, 0.45);
+      background: var(--clr-large-visual-bg);
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       overflow: hidden;
       height: 220px;
@@ -223,7 +229,7 @@
       margin: 0 auto;
     }
     .stats-hero .stat-card {
-      background: rgba(16, 16, 20, 0.4);
+      background: var(--clr-stats-card);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.04);
@@ -240,7 +246,7 @@
     }
     .stats-hero .stat-card:hover {
       transform: translateY(-5px);
-      background: rgba(20, 20, 26, 0.6);
+      background: var(--clr-stats-card-hover);
       border-color: rgba(239, 68, 68, 0.2);
       box-shadow: 0 10px 30px rgba(239, 68, 68, 0.06), 0 0 1px rgba(239, 68, 68, 0.2) inset;
     }
@@ -349,8 +355,17 @@
         <li><a href="contact.html"  class="nav-link">Contact</a></li>
       </ul>
 
-      <!-- Profile Menu -->
-      <div class="navbar-profile-wrapper desktop-profile">
+      <!-- Navbar Right Actions -->
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <!-- Theme Toggle -->
+        <button class="navbar-profile-btn" id="themeToggle" aria-label="Switch to light mode" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Profile Menu -->
+        <div class="navbar-profile-wrapper desktop-profile">
         <button class="navbar-profile-btn" id="profileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
           <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -376,6 +391,7 @@
             <span>Sign Up</span>
           </a>
         </div>
+      </div>
       </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -915,5 +931,6 @@
 
 <script src="js/main.js"></script>
 <script src="js/form.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>
