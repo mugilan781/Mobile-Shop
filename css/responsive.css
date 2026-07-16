@@ -133,6 +133,10 @@ iframe {
     align-items: center !important;
     flex-wrap: nowrap !important;
     gap: 10px !important;
+    margin-left: auto !important;
+  }
+  .navbar-inner {
+    gap: 0.75rem !important;
   }
   #themeToggle,
   #rtlToggle,
@@ -153,6 +157,10 @@ iframe {
   }
   #rtlToggle .rtl-toggle-text {
     font-size: 0.7rem !important;
+    line-height: 1 !important;
+  }
+  .navbar.scrolled {
+    height: var(--navbar-h) !important;
   }
 
   /* ---- HERO (index.html) — match Home2 Hero architecture ---- */
@@ -536,6 +544,10 @@ iframe {
     align-items: center !important;
     flex-wrap: nowrap !important;
     gap: 8px !important;
+    margin-left: auto !important;
+  }
+  .navbar-inner {
+    gap: 0.5rem !important;
   }
   #themeToggle,
   #rtlToggle,
@@ -556,6 +568,10 @@ iframe {
   }
   #rtlToggle .rtl-toggle-text {
     font-size: 0.68rem !important;
+    line-height: 1 !important;
+  }
+  .navbar.scrolled {
+    height: var(--navbar-h) !important;
   }
 
   /* ---- MOBILE NAV DRAWER ---- */
@@ -1154,6 +1170,16 @@ iframe {
   }
   .navbar-inner > div[style*="display:flex"] {
     gap: 6px !important;
+    margin-left: auto !important;
+  }
+  .navbar-inner {
+    gap: 0.4rem !important;
+  }
+  .rtl-toggle-text {
+    line-height: 1 !important;
+  }
+  .navbar.scrolled {
+    height: var(--navbar-h) !important;
   }
 
   /* ---- HERO (index.html) ---- */
