@@ -41,27 +41,11 @@ function toggleDir() {
   setDir(next);
 }
 
-/* ── LTR Icon: "Type/Align-Left" style SVG ────────────────────── */
-const LTR_ICON_SVG = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-       fill="none" stroke="currentColor" stroke-width="2"
-       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M17 10H3"/>
-    <path d="M21 6H3"/>
-    <path d="M21 14H3"/>
-    <path d="M17 18H3"/>
-  </svg>`;
+/* ── LTR Text ────────────────────────────────────────────────── */
+const LTR_TEXT = `<span class="rtl-toggle-text">LTR</span>`;
 
-/* ── RTL Icon: "Align-Right" style SVG ───────────────────────── */
-const RTL_ICON_SVG = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-       fill="none" stroke="currentColor" stroke-width="2"
-       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M21 10H7"/>
-    <path d="M21 6H3"/>
-    <path d="M21 14H3"/>
-    <path d="M21 18H7"/>
-  </svg>`;
+/* ── RTL Text ────────────────────────────────────────────────── */
+const RTL_TEXT = `<span class="rtl-toggle-text">RTL</span>`;
 
 /* ── Update toggle button icon ────────────────────────────────── */
 function updateRTLToggleIcon(dir, toggleId = 'rtlToggle') {
@@ -69,11 +53,11 @@ function updateRTLToggleIcon(dir, toggleId = 'rtlToggle') {
   if (!toggle) return;
 
   if (dir === DIR_RTL) {
-    toggle.innerHTML = RTL_ICON_SVG;
+    toggle.innerHTML = LTR_TEXT;
     toggle.setAttribute('aria-label', 'Switch to Left-to-Right layout');
     toggle.setAttribute('title', 'Switch to LTR');
   } else {
-    toggle.innerHTML = LTR_ICON_SVG;
+    toggle.innerHTML = RTL_TEXT;
     toggle.setAttribute('aria-label', 'Switch to Right-to-Left layout');
     toggle.setAttribute('title', 'Switch to RTL');
   }
