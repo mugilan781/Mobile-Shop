@@ -2595,6 +2595,31 @@ iframe {
     box-sizing: border-box !important;
   }
 
+  /* ---- Contact Form Fields (Tablet) ---- */
+  #contactForm .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  #contactForm .form-input,
+  #contactForm .form-select,
+  #contactForm .form-textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #contactForm .form-input,
+  #contactForm .form-select {
+    height: 48px !important;
+  }
+  #contactForm .form-textarea {
+    min-height: 120px !important;
+  }
+  #contactForm .btn-submit {
+    margin-inline: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
   /* ---- Contact Info Cards (Tablet) ---- */
   .grid-4 {
     gap: 1.5rem !important;
@@ -2628,6 +2653,42 @@ iframe {
   .contact-layout .glass-card {
     max-width: 100% !important;
     padding: 1.5rem !important;
+  }
+
+  /* ---- Contact Form Fields (Mobile) ---- */
+  #contactForm .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  #contactForm .form-input,
+  #contactForm .form-select,
+  #contactForm .form-textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #contactForm .form-input,
+  #contactForm .form-select {
+    height: 46px !important;
+  }
+  #contactForm .form-label {
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 0.35rem !important;
+  }
+  #contactForm .form-checkbox {
+    display: flex !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 0.75rem !important;
+  }
+  #contactForm .form-checkbox input[type="checkbox"] {
+    margin-top: 4px !important;
+    flex-shrink: 0 !important;
+  }
+  #contactForm .btn-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
   }
 
   /* ---- Contact Info Cards (Mobile) ---- */
