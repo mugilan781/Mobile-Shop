@@ -1,0 +1,810 @@
+/* ================================================================
+   NEXCELL — RTL/LTR Override System
+   rtl.css — Directional overrides scoped under [dir="rtl"]
+   Architecture: Only override properties that depend on direction.
+   Never duplicate base styles from style.css or components.css.
+   ================================================================ */
+
+/* ================================================================
+   SECTION 1 — GLOBAL TEXT DIRECTION
+   ================================================================ */
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] label,
+[dir="rtl"] span:not(.grad-text):not(.logo-text span):not(.stars),
+[dir="rtl"] blockquote {
+  text-align: right;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 2 — NAVBAR
+   ================================================================ */
+
+[dir="rtl"] .navbar-inner {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-nav {
+  flex-direction: row-reverse;
+}
+
+/* Profile dropdown opens to the left in RTL */
+[dir="rtl"] .profile-dropdown {
+  right: auto;
+  left: 0;
+}
+
+/* Mobile profile dropdown stays centered — no change needed */
+
+/* Scroll progress bar fills from right to left */
+[dir="rtl"] .scroll-progress {
+  left: auto;
+  right: 0;
+}
+
+/* ================================================================
+   SECTION 3 — MOBILE NAV DRAWER
+   ================================================================ */
+
+[dir="rtl"] .mobile-nav .nav-link {
+  text-align: right;
+}
+
+[dir="rtl"] .mobile-nav {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 4 — HERO SLIDER
+   ================================================================ */
+
+[dir="rtl"] .slide-content {
+  text-align: right;
+}
+
+[dir="rtl"] .slide-tag {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .slide-actions {
+  flex-direction: row-reverse;
+}
+
+/* Slider arrows swap sides */
+[dir="rtl"] .slider-arrow.prev {
+  left: auto;
+  right: 2rem;
+}
+
+[dir="rtl"] .slider-arrow.next {
+  right: auto;
+  left: 2rem;
+}
+
+/* Scroll indicator moves to the left */
+[dir="rtl"] .scroll-indicator {
+  right: auto;
+  left: 3rem;
+}
+
+/* Mirror the arrow SVGs inside slider buttons */
+[dir="rtl"] .slider-arrow svg {
+  transform: scaleX(-1);
+}
+
+/* Hero floating cards — flip horizontal positions */
+[dir="rtl"] .hero-floating-card-1 {
+  left: auto;
+  right: -5%;
+}
+
+[dir="rtl"] .hero-floating-card-2 {
+  right: auto;
+  left: -5%;
+}
+
+/* ================================================================
+   SECTION 5 — SECTION HEADERS & TAGS
+   ================================================================ */
+
+[dir="rtl"] .section-header {
+  text-align: right;
+}
+
+[dir="rtl"] .section-header .section-subtitle {
+  margin: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .section-tag {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-tag::before {
+  /* dot stays — no change needed since we reversed the flex direction */
+}
+
+/* ================================================================
+   SECTION 6 — SCROLL REVEAL ANIMATIONS
+   ================================================================ */
+
+/* Swap reveal-left and reveal-right directions in RTL */
+[dir="rtl"] .reveal-left {
+  transform: translateX(20px);
+}
+
+[dir="rtl"] .reveal-left.revealed {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .reveal-right {
+  transform: translateX(-20px);
+}
+
+[dir="rtl"] .reveal-right.revealed {
+  transform: translateX(0);
+}
+
+/* ================================================================
+   SECTION 7 — BREADCRUMB
+   ================================================================ */
+
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+/* Mirror the breadcrumb separator (/) */
+[dir="rtl"] .breadcrumb a::after,
+[dir="rtl"] .breadcrumb span::before {
+  content: '/';
+  direction: ltr;
+}
+
+/* ================================================================
+   SECTION 8 — BUTTONS
+   ================================================================ */
+
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 9 — BACK TO TOP
+   ================================================================ */
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 2rem;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .back-to-top {
+    right: auto;
+    left: 1.25rem;
+  }
+}
+
+/* ================================================================
+   SECTION 10 — TOAST NOTIFICATION
+   ================================================================ */
+
+[dir="rtl"] .toast {
+  right: auto;
+  left: 2rem;
+}
+
+[dir="rtl"] .toast {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 11 — PRODUCT CARDS
+   ================================================================ */
+
+/* Badge flips from top-left to top-right */
+[dir="rtl"] .product-badge {
+  left: auto;
+  right: var(--sp-3);
+}
+
+/* Action buttons flip from top-right to top-left */
+[dir="rtl"] .product-actions {
+  right: auto;
+  left: var(--sp-3);
+  transform: translateX(-6px);
+}
+
+[dir="rtl"] .product-card:hover .product-actions {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .product-body {
+  text-align: right;
+}
+
+[dir="rtl"] .product-footer {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-price .old-price {
+  margin-left: 0;
+  margin-right: var(--sp-1);
+}
+
+/* ================================================================
+   SECTION 12 — SERVICE CARDS
+   ================================================================ */
+
+[dir="rtl"] .service-card {
+  text-align: right;
+}
+
+[dir="rtl"] .service-price {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 13 — FEATURE CARDS
+   ================================================================ */
+
+[dir="rtl"] .feature-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* Flip the hover translateX direction */
+[dir="rtl"] .feature-card:hover {
+  transform: translateX(-3px);
+}
+
+/* ================================================================
+   SECTION 14 — REVIEW / TESTIMONIAL CARDS
+   ================================================================ */
+
+[dir="rtl"] .review-card {
+  text-align: right;
+}
+
+[dir="rtl"] .review-card-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .reviewer {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .reviewer-meta {
+  text-align: right;
+}
+
+[dir="rtl"] .review-quote-icon {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ================================================================
+   SECTION 15 — CAROUSEL (Testimonials)
+   ================================================================ */
+
+/* Carousel arrows swap sides */
+[dir="rtl"] .carousel-arrow.prev {
+  left: auto;
+  right: 0.5rem;
+}
+
+[dir="rtl"] .carousel-arrow.next {
+  right: auto;
+  left: 0.5rem;
+}
+
+/* Mirror arrow icons inside carousel */
+[dir="rtl"] .carousel-arrow svg {
+  transform: scaleX(-1);
+}
+
+/* RTL carousel should slide in reverse direction — handled by JS via data-dir */
+[dir="rtl"] .testimonials-track {
+  direction: rtl;
+}
+
+/* ================================================================
+   SECTION 16 — FAQ ACCORDION
+   ================================================================ */
+
+[dir="rtl"] .faq-question {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .faq-answer-inner {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 17 — FORMS
+   ================================================================ */
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .form-label {
+  text-align: right;
+}
+
+[dir="rtl"] .form-input,
+[dir="rtl"] .form-textarea {
+  text-align: right;
+}
+
+/* Select dropdown arrow flips to the left */
+[dir="rtl"] .form-select {
+  background-position: left 1rem center;
+  padding-right: var(--sp-4);
+  padding-left: 2.5rem;
+}
+
+[dir="rtl"] .form-checkbox {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .form-checkbox-label {
+  text-align: right;
+}
+
+[dir="rtl"] .form-row {
+  direction: rtl;
+}
+
+[dir="rtl"] .form-error {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 18 — FOOTER NEWSLETTER FORM
+   ================================================================ */
+
+[dir="rtl"] .footer-newsletter-form {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-newsletter-form input {
+  text-align: right;
+}
+
+[dir="rtl"] .newsletter-form {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .newsletter-input {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 19 — FOOTER
+   ================================================================ */
+
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-desc {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-social {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-links {
+  align-items: flex-end;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-link {
+  flex-direction: row-reverse;
+}
+
+/* Flip the hover translateX on footer links */
+[dir="rtl"] .footer-link:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .footer-contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-policies {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .footer {
+    text-align: right;
+  }
+
+  [dir="rtl"] .footer-social {
+    justify-content: flex-end;
+  }
+
+  [dir="rtl"] .footer-contact-item {
+    justify-content: flex-end;
+  }
+
+  [dir="rtl"] .footer-logo {
+    justify-content: flex-end;
+  }
+
+  [dir="rtl"] .footer-links {
+    align-items: flex-end;
+  }
+}
+
+/* ================================================================
+   SECTION 20 — STAT CARDS
+   ================================================================ */
+
+/* Stats are center-aligned — no directional change needed */
+
+/* ================================================================
+   SECTION 21 — GALLERY
+   ================================================================ */
+
+[dir="rtl"] .gallery-item-overlay {
+  text-align: right;
+}
+
+[dir="rtl"] .gallery-item-info {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 22 — PROCESS STEPS
+   ================================================================ */
+
+[dir="rtl"] .step-card {
+  text-align: center;  /* steps are centered — preserve center */
+}
+
+/* ================================================================
+   SECTION 23 — TIMELINE
+   ================================================================ */
+
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: var(--sp-6);
+}
+
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .timeline-item::before {
+  left: auto;
+  right: calc(-1.5rem - 4.5px);
+}
+
+[dir="rtl"] .timeline-year,
+[dir="rtl"] .timeline-title,
+[dir="rtl"] .timeline-desc {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .timeline {
+    padding-left: 0;
+    padding-right: var(--sp-4);
+  }
+}
+
+/* ================================================================
+   SECTION 24 — LIGHTBOX
+   ================================================================ */
+
+/* Lightbox close button flips to the left */
+[dir="rtl"] .lightbox-close {
+  right: auto;
+  left: var(--sp-6);
+}
+
+/* ================================================================
+   SECTION 25 — AUTH PAGES (Login / Signup)
+   ================================================================ */
+
+[dir="rtl"] .auth-card {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .auth-form {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-form .form-input,
+[dir="rtl"] .auth-form .form-textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Password field wrapper — eye icon moves to the other side */
+[dir="rtl"] .pw-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .auth-redirect {
+  text-align: center; /* keep centered */
+}
+
+[dir="rtl"] .auth-divider {
+  direction: ltr; /* keep divider symmetric */
+}
+
+/* ================================================================
+   SECTION 26 — BLOG CARDS
+   ================================================================ */
+
+[dir="rtl"] .blog-card,
+[dir="rtl"] .blog-card-body {
+  text-align: right;
+}
+
+[dir="rtl"] .blog-meta {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .blog-author {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-tags {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 27 — BLOG DETAILS
+   ================================================================ */
+
+[dir="rtl"] .blog-content {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .blog-share-bar {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-author-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .related-articles-grid .blog-card {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 28 — TEAM CARDS
+   ================================================================ */
+
+/* Team cards are center-aligned — no directional override needed */
+
+/* ================================================================
+   SECTION 29 — CONTACT PAGE
+   ================================================================ */
+
+[dir="rtl"] .contact-info-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .contact-form {
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 30 — PRICING BADGES (Services Page)
+   ================================================================ */
+
+[dir="rtl"] .pricing-badge {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 31 — PRICING TABS
+   ================================================================ */
+
+[dir="rtl"] .pricing-tabs {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 32 — CHECKOUT MODAL
+   ================================================================ */
+
+[dir="rtl"] .checkout-modal-card {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Modal close button flips to the left */
+[dir="rtl"] .checkout-modal-close {
+  right: auto;
+  left: var(--sp-4);
+}
+
+[dir="rtl"] .checkout-modal-overlay .form-checkbox {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 33 — ICON MIRRORING
+   Mirrors only directional arrow/chevron icons.
+   Does NOT mirror: logos, brands, social icons, payments.
+   ================================================================ */
+
+/* Breadcrumb separators — handled by flex-direction reversal */
+
+/* Back arrow icons (used in "Read More", "Return" buttons) */
+[dir="rtl"] .btn svg[data-arrow],
+[dir="rtl"] a.btn svg {
+  transform: scaleX(-1);
+}
+
+/* Profile dropdown arrow icons */
+[dir="rtl"] .profile-dropdown-item svg {
+  transform: scaleX(-1);
+}
+
+/* Footer link arrow icons */
+[dir="rtl"] .footer-link svg {
+  transform: scaleX(-1);
+}
+
+/* ================================================================
+   SECTION 34 — EYEBROW LABELS
+   ================================================================ */
+
+[dir="rtl"] .eyebrow {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .eyebrow::after {
+  display: none;
+}
+
+[dir="rtl"] .eyebrow::before {
+  content: '';
+  height: 1px;
+  width: 32px;
+  background: var(--clr-red);
+}
+
+/* ================================================================
+   SECTION 35 — SPECIAL PAGES (404, Maintenance)
+   ================================================================ */
+
+[dir="rtl"] .special-content {
+  text-align: center; /* keep centered on 404 */
+}
+
+[dir="rtl"] .nav-404-links {
+  direction: rtl;
+}
+
+/* ================================================================
+   SECTION 36 — BRAND MARQUEE
+   ================================================================ */
+
+/* Reverse marquee direction in RTL */
+[dir="rtl"] .brands-track {
+  animation-direction: reverse;
+}
+
+/* ================================================================
+   SECTION 37 — HERO FLOATING CARDS TEXT
+   ================================================================ */
+
+[dir="rtl"] .hero-floating-card {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 38 — NEWSLETTER SECTION (inline)
+   ================================================================ */
+
+[dir="rtl"] .newsletter-section {
+  direction: rtl;
+}
+
+[dir="rtl"] .newsletter-section .section-tag {
+  flex-direction: row-reverse;
+}
+
+/* ================================================================
+   SECTION 39 — STATS HERO SECTION
+   ================================================================ */
+
+[dir="rtl"] .stat-glass-card {
+  text-align: center; /* stats stay centered */
+}
+
+/* ================================================================
+   SECTION 40 — ACHIEVEMENT CARDS
+   ================================================================ */
+
+[dir="rtl"] .achievement-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* ================================================================
+   SECTION 41 — SCROLL INDICATOR
+   ================================================================ */
+
+[dir="rtl"] .scroll-indicator span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* ================================================================
+   SECTION 42 — RTL TOGGLE BUTTON — Style Overrides
+   The toggle itself uses the same .navbar-profile-btn style.
+   No additional overrides needed — inherits from components.css.
+   ================================================================ */
+
+/* In RTL mode, when viewing RTL, the icon should visually
+   indicate "currently RTL" — handled in JS via updateRTLToggleIcon. */
+
+/* ================================================================
+   SECTION 43 — RESPONSIVE RTL OVERRIDES
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .footer-grid {
+    direction: rtl;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile nav toggle buttons row */
+  [dir="rtl"] .mobile-profile-section {
+    direction: rtl;
+  }
+
+  /* Mobile form adjustments */
+  [dir="rtl"] .form-row {
+    direction: rtl;
+  }
+
+  /* Toast in mobile */
+  [dir="rtl"] .toast {
+    right: auto;
+    left: 1rem;
+  }
+}
