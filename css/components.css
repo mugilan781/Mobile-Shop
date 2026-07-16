@@ -310,13 +310,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .footer { text-align: center; }
-  .footer-logo { justify-content: center; }
-  .footer-social { justify-content: center; }
-  .footer-contact-item { justify-content: center; text-align: center; }
-}
-
 /* ── SCROLL PROGRESS ──────────────────────────────────────────── */
 .scroll-progress {
   position: fixed; top: 0; left: 0;

@@ -293,6 +293,12 @@ iframe {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+  .footer {
+    text-align: center;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
   .footer-brand {
     text-align: center;
   }
@@ -301,12 +307,28 @@ iframe {
   }
   .footer-links {
     text-align: center;
+    align-items: center;
+  }
+  .footer-social {
+    justify-content: center;
   }
   .footer-contact-item {
     justify-content: center;
+    text-align: center;
   }
   .footer-desc {
     text-align: center;
+    margin-inline: auto;
+  }
+  .footer-newsletter-form {
+    align-items: center;
+  }
+  .footer-newsletter-form input {
+    text-align: center;
+  }
+  .footer-newsletter-form .btn {
+    max-width: 280px;
+    width: 100%;
   }
 
   /* ---- CONTACT PAGE ---- */
@@ -834,6 +856,45 @@ iframe {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
+  .footer {
+    text-align: center;
+    padding-bottom: 3.5rem;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-brand {
+    text-align: center;
+  }
+  .footer-col-title {
+    text-align: center;
+  }
+  .footer-links {
+    text-align: center;
+    align-items: center;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+  .footer-desc {
+    max-width: 100%;
+    text-align: center;
+    margin-inline: auto;
+  }
+  .footer-contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-newsletter-form {
+    align-items: center;
+  }
+  .footer-newsletter-form input {
+    text-align: center;
+  }
+  .footer-newsletter-form .btn {
+    max-width: 280px;
+    width: 100%;
+  }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
@@ -846,25 +907,6 @@ iframe {
   .footer-policies {
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .footer-logo {
-    justify-content: center;
-  }
-  .footer-social {
-    justify-content: center;
-  }
-  .footer-desc {
-    max-width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-contact-item {
-    justify-content: center;
-    text-align: center;
-  }
-  .footer-newsletter-form input {
-    text-align: center;
   }
 
   /* ---- ENQUIRY / CONTACT FORMS ---- */
@@ -1308,9 +1350,36 @@ iframe {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
+  .footer {
+    text-align: center;
+    padding-bottom: 3rem;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+  .footer-newsletter-form {
+    align-items: center;
+  }
+  .footer-newsletter-form .btn {
+    max-width: 280px;
+    width: 100%;
+  }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .footer-policies {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 
   /* ---- CONTACT ---- */
