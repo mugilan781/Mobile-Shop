@@ -268,10 +268,47 @@ iframe {
     grid-template-columns: repeat(2, 1fr);
   }
   .featured-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .featured-content {
-    padding: 2rem;
+    padding: 2.5rem !important;
+  }
+  .blog-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .blog-card-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* ---- NEWSLETTER (Stay Informed - Tablet) ---- */
+  section[aria-label="Newsletter subscription"] .newsletter-section {
+    padding: 3rem 2rem !important;
+  }
+  section[aria-label="Newsletter subscription"] .footer-newsletter-form {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    margin-inline: auto !important;
+  }
+  section[aria-label="Newsletter subscription"] .footer-newsletter-form input {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 280px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  section[aria-label="Newsletter subscription"] .footer-newsletter-form .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
   }
 
   /* ---- GALLERY ---- */
@@ -325,6 +362,8 @@ iframe {
   }
   .footer-newsletter-form input {
     text-align: center;
+    max-width: 280px;
+    width: 100%;
   }
   .footer-newsletter-form .btn {
     max-width: 280px;
@@ -363,9 +402,50 @@ iframe {
   }
 
   /* ---- NEWSLETTER ---- */
+  .newsletter-section {
+    padding: 3rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .newsletter-section p {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+  .newsletter-section .section-tag {
+    margin-inline: auto !important;
+    display: table !important;
+  }
   .newsletter-form {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    margin-inline: auto !important;
+  }
+  .newsletter-form .newsletter-input,
+  .newsletter-form .btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ---- STATS ---- */
+  .video-hero div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    max-width: 500px !important;
+    margin-inline: auto !important;
+    margin-top: 2rem !important;
+  }
+  .video-hero div[style*="grid-template-columns:repeat(3,1fr)"] > div {
+    text-align: center !important;
+  }
+  .video-hero div[style*="grid-template-columns:repeat(3,1fr)"] > div:nth-child(3) {
+    grid-column: span 2 / span 2 !important;
   }
 
   /* ---- MAP ---- */
@@ -404,13 +484,40 @@ iframe {
     margin-top: 2rem !important;
   }
 
-  /* ---- GALLERY PAGE: FEATURED PRODUCT ---- */
+  /* ---- GALLERY PAGE: FEATURED PRODUCT (Tablet) ---- */
   .featured-product {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .featured-product-visual {
+    aspect-ratio: auto !important;
+    height: 320px !important;
+    width: 100% !important;
+  }
+  .featured-product-visual img {
+    max-height: 85% !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
   .featured-product-info {
-    padding: 2rem;
+    padding: 2.5rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .featured-product-info h3,
+  .featured-product-info p {
+    text-align: center !important;
+  }
+  .featured-product-info div[style*="display:flex"][style*="flex-direction:column"] {
+    align-items: flex-start !important;
+    max-width: 330px !important;
+    margin-inline: auto !important;
+  }
+  .featured-product-info div[style*="margin-top:2rem"] {
+    justify-content: center !important;
+    gap: 1.5rem !important;
   }
 
   /* ---- MAINTENANCE PAGE ---- */
@@ -486,6 +593,35 @@ iframe {
   [style*="gap: 5rem"],
   [style*="gap:5rem"] {
     gap: 2.5rem !important;
+  }
+
+  /* ---- HOME PAGE: Instant Quote & Drop-off Slot (Tablet) ---- */
+  #enquiry .container > div[style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  #enquiry .section-title {
+    text-align: center !important;
+  }
+  #enquiry .section-tag {
+    margin-inline: auto !important;
+    display: table !important;
+  }
+  #enquiry p {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 600px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  #enquiry .reveal-left > div[style*="display:flex"] {
+    align-items: center !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+  }
+  #enquiry .glass-card {
+    max-width: 580px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
   }
 
 } /* end 1023px */
@@ -778,8 +914,24 @@ iframe {
 
   /* ---- BLOG ---- */
   .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
+  }
+  .blog-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .blog-card-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
   }
   .blog-card-content {
     padding: 1.25rem;
@@ -788,13 +940,43 @@ iframe {
     font-size: 1.1rem;
   }
   .featured-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .featured-content {
-    padding: 1.5rem;
+    padding: 1.75rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .featured-content h3,
+  .featured-content p {
+    text-align: center !important;
+  }
+  .featured-content .blog-meta {
+    justify-content: center !important;
+  }
+  .featured-content .blog-author {
+    justify-content: center !important;
+  }
+  .featured-content div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+  }
+  .featured-content .btn {
+    width: 100% !important;
+    max-width: 200px !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
   }
   .featured-img-wrap {
-    min-height: 220px;
+    min-height: 240px !important;
+  }
+
+  /* ---- NEWSLETTER (Stay Informed - Mobile) ---- */
+  section[aria-label="Newsletter subscription"] .newsletter-section {
+    padding: 2.5rem 1.5rem !important;
   }
   .cat-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -829,11 +1011,12 @@ iframe {
     grid-template-columns: 1fr;
   }
   .newsletter-form {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
   }
   .newsletter-input {
-    width: 100%;
+    width: 100% !important;
   }
 
   /* ---- BUTTONS ---- */
@@ -898,6 +1081,8 @@ iframe {
   }
   .footer-newsletter-form input {
     text-align: center;
+    max-width: 280px;
+    width: 100%;
   }
   .footer-newsletter-form .btn {
     max-width: 280px;
@@ -945,9 +1130,11 @@ iframe {
     padding: 2rem 1.5rem;
   }
   .auth-page {
-    padding: 1.5rem;
-    align-items: flex-start;
-    padding-top: calc(var(--navbar-h) + 1.5rem);
+    padding: 2rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
   }
   .auth-form {
     width: 100%;
@@ -1029,7 +1216,25 @@ iframe {
 
   /* ---- NEWSLETTER ---- */
   .newsletter-section {
-    padding: var(--sp-8) var(--sp-4);
+    padding: 2.5rem 1.5rem !important;
+  }
+  .newsletter-form {
+    max-width: 280px !important;
+    gap: 0.75rem !important;
+  }
+  .newsletter-form .newsletter-input,
+  .newsletter-form .btn {
+    max-width: 280px !important;
+  }
+
+  /* ---- STATS (Mobile) ---- */
+  .video-hero div[style*="grid-template-columns:repeat(3,1fr)"] {
+    gap: 1.25rem !important;
+    max-width: 320px !important;
+    margin-top: 1.5rem !important;
+  }
+  .video-hero div[style*="grid-template-columns:repeat(3,1fr)"] div[style*="font-size:1.75rem"] {
+    font-size: 1.4rem !important;
   }
 
   /* ---- FAQ ---- */
@@ -1051,13 +1256,41 @@ iframe {
     padding: var(--sp-4);
   }
 
-  /* ---- GALLERY PAGE: FEATURED PRODUCT ---- */
+  /* ---- GALLERY PAGE: FEATURED PRODUCT (Mobile) ---- */
   .featured-product {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .featured-product-visual {
+    aspect-ratio: auto !important;
+    height: 240px !important;
+    width: 100% !important;
+  }
+  .featured-product-visual img {
+    max-height: 85% !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
   .featured-product-info {
-    padding: 1.5rem;
+    padding: 1.75rem !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .featured-product-info h3,
+  .featured-product-info p {
+    text-align: center !important;
+  }
+  .featured-product-info div[style*="display:flex"][style*="flex-direction:column"] {
+    align-items: flex-start !important;
+    max-width: 330px !important;
+    margin-inline: auto !important;
+  }
+  .featured-product-info div[style*="margin-top:2rem"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
   }
   .brand-filtered-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1108,7 +1341,7 @@ iframe {
     padding: 1.5rem !important;
   }
   .featured-content {
-    padding: 2rem !important;
+    padding: 1.75rem !important;
   }
   .stats-hero {
     padding: 2.5rem 0 !important;
@@ -1176,6 +1409,23 @@ iframe {
   }
   .footer-newsletter-form input[style*="min-width"] {
     min-width: 0 !important;
+  }
+
+  /* ---- HOME PAGE: Instant Quote & Drop-off Slot (Mobile) ---- */
+  #enquiry .container > div[style*="display:grid"] {
+    gap: 2rem !important;
+  }
+  #enquiry .glass-card {
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #enquiry .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  #enquiry form > div[style*="display:flex"] {
+    gap: 1rem !important;
   }
 
 } /* end 767px */
@@ -1402,6 +1652,10 @@ iframe {
   .footer-newsletter-form {
     align-items: center;
   }
+  .footer-newsletter-form input {
+    max-width: 280px;
+    width: 100%;
+  }
   .footer-newsletter-form .btn {
     max-width: 280px;
     width: 100%;
@@ -1480,7 +1734,7 @@ iframe {
 
   /* ---- NEWSLETTER ---- */
   .newsletter-section {
-    padding: var(--sp-6) var(--sp-3);
+    padding: 2rem 1rem !important;
   }
 
   /* ---- FAQ ---- */
@@ -1558,7 +1812,12 @@ iframe {
     padding: 1.25rem !important;
   }
   .featured-content {
-    padding: 1.5rem !important;
+    padding: 1.25rem !important;
+  }
+
+  /* ---- NEWSLETTER (Stay Informed - Small Mobile) ---- */
+  section[aria-label="Newsletter subscription"] .newsletter-section {
+    padding: 2rem 1rem !important;
   }
   .contact-info-card {
     padding: 1.25rem !important;
@@ -1631,6 +1890,11 @@ iframe {
     min-width: 0 !important;
   }
 
+  /* ---- HOME PAGE: Instant Quote & Drop-off Slot (Small Mobile) ---- */
+  #enquiry .glass-card {
+    padding: 1.25rem !important;
+  }
+
 } /* end 479px */
 
 
@@ -1661,18 +1925,150 @@ iframe {
 
 /* ---- HOME2: Product & Brand Grids ---- */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .large-product-grid { grid-template-columns: 1fr 1fr; }
+  .large-product-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .large-product-card {
+    height: 100% !important;
+  }
+  .large-product-card .visual {
+    height: 200px !important;
+    padding: 1.25rem !important;
+  }
+  .large-product-card .card-body-p {
+    padding: 1.25rem !important;
+  }
   .earbuds-grid { grid-template-columns: 1fr 1fr; }
-  .brand-grid-alt { grid-template-columns: repeat(3, 1fr); }
+  .brand-grid-alt { grid-template-columns: repeat(3, 1fr) !important; }
   .card-body-p { padding: 1.25rem; }
+
+  /* ---- HOME2: Chargers & Cables Section (Tablet) ---- */
+  section[aria-label="Chargers and cables"] .container > div[style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  section[aria-label="Chargers and cables"] .section-title {
+    text-align: center !important;
+  }
+  section[aria-label="Chargers and cables"] .section-tag {
+    margin-inline: auto !important;
+    display: table !important;
+  }
+  section[aria-label="Chargers and cables"] p {
+    text-align: center !important;
+    margin-inline: auto !important;
+    max-width: 600px !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left > div[style*="display:flex"] {
+    align-items: stretch !important;
+    max-width: 480px !important;
+    margin-inline: auto !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left > div[style*="display:flex"] > div {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    min-height: 72px !important;
+    box-sizing: border-box !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left > div[style*="display:flex"] > div > div:not(.icon-box) {
+    flex: 1 !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left .btn {
+    margin-inline: auto !important;
+    display: flex !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-right img {
+    max-width: 480px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    display: block !important;
+  }
 }
 @media (max-width: 767px) {
-  .large-product-grid { grid-template-columns: 1fr; }
+  .large-product-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+  }
+  .large-product-card {
+    max-width: 350px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+  .large-product-card .visual {
+    height: 180px !important;
+    padding: 1.25rem !important;
+  }
+  .large-product-card .card-body-p {
+    padding: 1.25rem !important;
+  }
+  .large-product-card .card-body-p > div:first-of-type {
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+  .large-product-card h3 {
+    text-align: center !important;
+  }
+  .large-product-card p {
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+  }
+  .large-product-card .card-body-p > div:last-of-type {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+  .large-product-card .card-body-p .btn {
+    width: 100% !important;
+    max-width: 200px !important;
+    justify-content: center !important;
+  }
   .earbuds-grid { grid-template-columns: 1fr; }
-  .brand-grid-alt { grid-template-columns: repeat(2, 1fr); }
+  .brand-grid-alt {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
+  }
+  .brand-card-alt {
+    padding: 1rem 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 54px !important;
+    box-sizing: border-box !important;
+  }
+  .brand-card-alt .b-name {
+    font-size: 0.8rem !important;
+    word-break: break-word !important;
+  }
   .card-body-p { padding: 1rem; }
   .phone-showcase { gap: 1rem; }
   .phone-card-big { width: 110px; }
+
+  /* ---- HOME2: Chargers & Cables Section (Mobile) ---- */
+  section[aria-label="Chargers and cables"] .container > div[style*="display:grid"] {
+    gap: 2rem !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left > div[style*="display:flex"] {
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin-inline: auto !important;
+    gap: 0.75rem !important;
+  }
+  section[aria-label="Chargers and cables"] .reveal-left > div[style*="display:flex"] > div {
+    min-height: 72px !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+  }
 }
 
 /* ---- BLOG DETAILS: Article Layout & Related ---- */
@@ -2061,3 +2457,296 @@ iframe {
   }
 }
 
+/* =============================================================
+   6. ABOUT PAGE RESPONSIVE OVERRIDES
+   ============================================================= */
+
+/* ---- Achievements Section ---- */
+@media (max-width: 1023px) {
+  section[aria-label="Our achievements"] .container > div[style*="display:grid"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+  }
+  section[aria-label="Our achievements"] .achievement-card {
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 767px) {
+  section[aria-label="Our achievements"] .container > div[style*="display:grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    max-width: 480px !important;
+    margin-inline: auto !important;
+  }
+  section[aria-label="Our achievements"] .achievement-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    padding: 1.5rem !important;
+    height: 100% !important;
+  }
+  section[aria-label="Our achievements"] .achievement-card .icon-box {
+    margin-inline: auto !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* =============================================================
+   7. SERVICES PAGE RESPONSIVE OVERRIDES
+   ============================================================= */
+
+/* ---- How It Works Section ---- */
+@media (max-width: 1023px) {
+  section[aria-label="How it works"] .steps-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+  }
+  section[aria-label="How it works"] .step-card {
+    height: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 767px) {
+  section[aria-label="How it works"] .steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    max-width: 340px !important;
+    margin-inline: auto !important;
+  }
+  section[aria-label="How it works"] .step-card {
+    width: 100% !important;
+    height: auto !important;
+    padding: 2.25rem 1.5rem !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  section[aria-label="How it works"] .step-icon-wrap {
+    margin-inline: auto !important;
+  }
+  section[aria-label="How it works"] .step-title,
+  section[aria-label="How it works"] .step-desc {
+    text-align: center !important;
+  }
+  section[aria-label="How it works"] .step-number-badge {
+    right: 20px !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  section[aria-label="How it works"] .step-number-badge {
+    right: 20px !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
+
+/* =============================================================
+   8. CONTACT PAGE RESPONSIVE OVERRIDES
+   ============================================================= */
+
+/* ---- Let's Start a Conversation Section ---- */
+@media (max-width: 1023px) {
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .contact-layout .reveal-left {
+    text-align: center !important;
+    max-width: 580px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .contact-layout .reveal-left h2 {
+    text-align: center !important;
+  }
+  .contact-layout .reveal-left p {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+  .contact-layout .reveal-left .section-tag {
+    margin-inline: auto !important;
+    display: table !important;
+  }
+  .contact-layout .reveal-left > div[style*="display:flex"] {
+    max-width: 480px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    gap: 1.25rem !important;
+  }
+  .contact-layout .reveal-left > div[style*="display:flex"] > div {
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem !important;
+  }
+  .contact-layout .glass-card {
+    max-width: 580px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ---- Contact Info Cards (Tablet) ---- */
+  .grid-4 {
+    gap: 1.5rem !important;
+  }
+  .contact-info-card {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+  }
+  .contact-info-card .icon-box {
+    margin-inline: auto !important;
+  }
+  .contact-info-card .btn {
+    margin-inline: auto !important;
+    margin-top: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-layout {
+    gap: 2.5rem !important;
+  }
+  .contact-layout .reveal-left > div[style*="display:flex"] {
+    max-width: 100% !important;
+    gap: 1rem !important;
+  }
+  .contact-layout .reveal-left > div[style*="display:flex"] > div {
+    padding: 1.25rem !important;
+  }
+  .contact-layout .glass-card {
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  /* ---- Contact Info Cards (Mobile) ---- */
+  .grid-4 {
+    gap: 1.25rem !important;
+    max-width: 380px !important;
+    margin-inline: auto !important;
+  }
+  .contact-info-card {
+    max-width: 380px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .contact-layout .glass-card {
+    padding: 1.25rem !important;
+  }
+}
+
+/* =============================================================
+   9. PRIVACY POLICY PAGE RESPONSIVE OVERRIDES
+   ============================================================= */
+
+/* ---- Section 01: Information We Collect ---- */
+@media (max-width: 1023px) {
+  .legal-info-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .legal-info-card {
+    height: 100% !important;
+    box-sizing: border-box !important;
+    align-items: stretch !important;
+  }
+  .legal-info-card p {
+    word-break: break-word !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .legal-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .legal-info-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1.25rem !important;
+    height: auto !important;
+  }
+  .legal-info-icon {
+    margin-inline: auto !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .legal-info-card h5,
+  .legal-info-card p {
+    text-align: center !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+}
+
+/* =============================================================
+   10. MOBILE & TABLET NAVIGATION DRAWER OVERRIDES
+   ============================================================= */
+
+@media (max-width: 1023px) {
+  /* Make sure profile dropdown wrapper is visible in mobile/tablet navbar */
+  .navbar-profile-wrapper.desktop-profile {
+    display: flex !important;
+  }
+
+  /* Force equal spacing and same baseline for all elements in navbar actions */
+  .navbar-inner > div[style*="display:flex"] {
+    gap: 0.75rem !important;
+    align-items: center !important;
+  }
+
+  /* Center mobile nav links horizontally and vertically inside drawer */
+  .mobile-nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 1.25rem !important;
+    padding: 3rem 1.5rem !important;
+  }
+
+  .mobile-nav .nav-link {
+    position: relative !important;
+    display: inline-block !important;
+    width: fit-content !important;
+    text-align: center !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1.15rem !important;
+    transition: color var(--tr-base) !important;
+  }
+
+  /* Perfectly centered active underline below text width only */
+  .mobile-nav .nav-link.active::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: var(--clr-red-light) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Adjust dropdown alignment to prevent overflow on mobile screens */
+  .profile-dropdown {
+    right: -20px !important;
+    left: auto !important;
+  }
+}

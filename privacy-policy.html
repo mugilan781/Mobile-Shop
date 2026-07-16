@@ -251,18 +251,10 @@
         </ul>
         <!-- Navbar Right Actions -->
         <div style="display:flex;align-items:center;gap:0.5rem;">
-          <!-- RTL Toggle -->
         <button class="navbar-profile-btn" id="rtlToggle" aria-label="Switch to Right-to-Left layout" title="Switch to RTL" type="button">
           <span class="rtl-toggle-text">RTL</span>
         </button>
-        <!-- Theme Toggle -->          <button class="navbar-profile-btn" id="themeToggle" aria-label="Switch to light mode" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-
-          <!-- Profile Menu -->
-          <div class="navbar-profile-wrapper desktop-profile">
+        <div class="navbar-profile-wrapper desktop-profile">
           <button class="navbar-profile-btn" id="profileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
             <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -289,10 +281,17 @@
             </a>
           </div>
         </div>
+        <button class="navbar-profile-btn" id="themeToggle" aria-label="Switch to light mode" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
         </div>
 
         <!-- Mobile Toggle -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        
       </div>
     </nav>
     <nav class="mobile-nav" id="mobileNav">
@@ -303,40 +302,7 @@
       <a href="gallery.html" class="nav-link">Gallery</a>
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="contact.html" class="nav-link">Contact</a>
-      <div class="mobile-profile-section" style="padding: 1rem 0.5rem 0; border-top: 1px solid var(--clr-border); margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem;">
-        <!-- Mobile RTL Toggle -->
-      <button class="navbar-profile-btn" id="rtlToggleMobile" aria-label="Switch to Right-to-Left layout" title="Switch to RTL" type="button">
-        <span class="rtl-toggle-text">RTL</span>
-      </button>
-      <div class="navbar-profile-wrapper mobile-profile-wrapper">
-          <button class="navbar-profile-btn" id="mobileProfileMenuToggle" aria-label="Profile menu" aria-haspopup="true" aria-expanded="false">
-            <svg class="profile-icon-svg" viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </button>
-          <div class="profile-dropdown" id="mobileProfileDropdown">
-            <a href="login.html" class="profile-dropdown-item">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
-                <polyline points="10 17 15 12 10 7"></polyline>
-                <line x1="15" y1="12" x2="3" y2="12"></line>
-              </svg>
-              <span>Login</span>
-            </a>
-            <a href="signup.html" class="profile-dropdown-item">
-              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="8.5" cy="7" r="4"></circle>
-                <line x1="20" y1="8" x2="20" y2="14"></line>
-                <line x1="17" y1="11" x2="23" y2="11"></line>
-              </svg>
-              <span>Sign Up</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+      </nav>
   </header>
 
   <!-- ══ HERO ══ -->
