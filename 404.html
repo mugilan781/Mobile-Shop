@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
@@ -53,6 +53,12 @@
       margin-bottom: 1.5rem;
     }
 
+    .hero-404-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .nav-404-links {
       display: flex;
       flex-wrap: wrap;
@@ -104,14 +110,17 @@
 
 <main class="special-page bg-grid" role="main">
   <div class="special-content">
-    <!-- Error tag -->
-    <div class="error-code">
-      ● Error 404 — Page Not Found
-    </div>
+    <!-- Centered Hero Composition for Badge + 404 Number -->
+    <div class="hero-404-block">
+      <!-- Error tag -->
+      <div class="error-code">
+        ● Error 404 — Page Not Found
+      </div>
 
-    <!-- Glitch 404 -->
-    <div style="position:relative;display:inline-block;" aria-label="404">
-      <div class="glitch-number">404</div>
+      <!-- Glitch 404 -->
+      <div style="position:relative;display:inline-block;" aria-label="404">
+        <div class="glitch-number">404</div>
+      </div>
     </div>
 
     <h1 style="font-size:clamp(1.5rem,4vw,2.5rem);font-weight:800;margin:1.5rem 0 1rem;font-family:var(--font-display);">
