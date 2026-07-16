@@ -331,6 +331,14 @@ iframe {
     width: 100%;
   }
 
+  /* ---- SECTION PADDING (tablet) ---- */
+  .section {
+    padding-block: 3.5rem !important;
+  }
+  .section-sm {
+    padding-block: 2.25rem !important;
+  }
+
   /* ---- CONTACT PAGE ---- */
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1010,10 +1018,13 @@ iframe {
     overflow-x: hidden;
   }
   .section {
-    padding-block: var(--sp-12);
+    padding-block: var(--sp-12) !important;
   }
   .section-sm {
-    padding-block: var(--sp-8);
+    padding-block: var(--sp-8) !important;
+  }
+  .page-hero {
+    padding-block: calc(var(--navbar-h) + 2rem) 2rem !important;
   }
 
   /* ---- NEWSLETTER ---- */
@@ -1145,6 +1156,28 @@ iframe {
     padding: 2rem 1rem !important;
   }
 
+  /* ---- OVERFLOW SAFETY ---- */
+  .toast {
+    right: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  .checkout-modal-card {
+    max-width: calc(100vw - 2rem) !important;
+  }
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  .glow-red {
+    width: 250px !important;
+    height: 250px !important;
+    right: -60px !important;
+  }
+  .footer-newsletter-form input[style*="min-width"] {
+    min-width: 0 !important;
+  }
+
 } /* end 767px */
 
 
@@ -1163,10 +1196,13 @@ iframe {
     padding-inline: 0.75rem;
   }
   .section {
-    padding-block: 2.5rem;
+    padding-block: 2.5rem !important;
   }
   .section-sm {
-    padding-block: 1.5rem;
+    padding-block: 1.5rem !important;
+  }
+  .page-hero {
+    padding-block: calc(var(--navbar-h) + 1.5rem) 1.5rem !important;
   }
 
   /* ---- NAVBAR ---- */
@@ -1573,6 +1609,28 @@ iframe {
     padding: 1.5rem 0.75rem !important;
   }
 
+  /* ---- OVERFLOW SAFETY ---- */
+  .toast {
+    right: 0.75rem !important;
+    max-width: calc(100vw - 1.5rem) !important;
+  }
+  .checkout-modal-card {
+    max-width: calc(100vw - 1.5rem) !important;
+  }
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .glow-red {
+    width: 150px !important;
+    height: 150px !important;
+    right: -40px !important;
+  }
+  .footer-newsletter-form input[style*="min-width"] {
+    min-width: 0 !important;
+  }
+
 } /* end 479px */
 
 
@@ -1805,3 +1863,201 @@ iframe {
     display: flex !important;
   }
 }
+
+
+/* =============================================================
+   8. TABLET & MOBILE AUTOMATIC CENTERING OVERRIDES
+      Only affects content sections (not hero sections) when single-column.
+   ============================================================= */
+
+@media (max-width: 1023px) {
+  /* 1. Collapse all split/two-column content layouts to single-column on Tablet */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"][style*="0.8fr"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"][style*="1.2fr"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1.2fr"][style*="0.8fr"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 2.3fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Target stacked content layout wrappers on Tablet */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .featured-product > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .contact-grid > div {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Center headings, subheadings, paragraphs, lists, and spans inside single column wrappers */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div h1,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div h2,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div h3,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div h4,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div p,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div span,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div li,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div h1,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div h2,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div h3,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div h4,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div p,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div span,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div li,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div h1,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div h2,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div h3,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div h4,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div p,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div span,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div li,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .featured-product-info *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .newsletter-section *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .contact-layout * {
+    text-align: center !important;
+  }
+
+  /* Center section badges/tags */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div .section-tag,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div .section-tag,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div .section-tag {
+    margin-inline: auto !important;
+    display: table !important;
+  }
+
+  /* Center buttons and button wrapper flex groups */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .featured-product-info .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .newsletter-section .btn {
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div div[style*="display:flex"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div div[style*="display:flex"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div div[style*="display:flex"] {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Center icons/icon-boxes */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] > div .icon-box,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] > div .icon-box,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] > div .icon-box {
+    margin-inline: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Center images */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] img,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] img,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] img,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .featured-product img {
+    margin-inline: auto !important;
+    display: block !important;
+  }
+
+  /* Center cards or boxes stacked inside column wrappers */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:"][style*="1fr"] .glass-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns: 1fr 1fr"] .glass-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) [style*="grid-template-columns:1fr 1fr"] .glass-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .newsletter-section {
+    margin-inline: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 2. Target stacked grid/flex column content sections on Mobile (when standard columns collapse to 1fr) */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-2 > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-3 > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-4 > div,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .article-layout > div {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Center align headings, subheadings, paragraphs, lists, and spans inside Mobile stacked cards and columns */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-2 > div *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-3 > div *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-4 > div *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .article-layout > div * {
+    text-align: center !important;
+  }
+
+  /* Center buttons inside Mobile stacked layout columns */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-2 > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-3 > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-4 > div .btn,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .article-layout > div .btn {
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-2 > div div[style*="display:flex"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-3 > div div[style*="display:flex"],
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .grid-4 > div div[style*="display:flex"] {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Transform row-based feature cards into vertical centered layout on Mobile */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .feature-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .feature-card .icon-box,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .feature-card .feature-body {
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  /* Center align content inside other service/warranty/pricing/step cards on Mobile */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .service-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .warranty-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .pricing-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .step-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .value-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .review-card {
+    text-align: center !important;
+    align-items: center !important;
+    margin-inline: auto !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .service-card *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .warranty-card *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .pricing-card *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .step-card *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .value-card *,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .review-card * {
+    text-align: center !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .pricing-features {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Center icons, badges, images, and content elements inside cards and layouts on Mobile */
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .icon-box,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .service-icon,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .step-icon-wrap {
+    margin-inline: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) img {
+    margin-inline: auto !important;
+    display: block !important;
+  }
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .product-card,
+  section:not(.hero-slider):not(.video-hero):not(.page-hero):not(.blog-hero):not(.article-hero):not(.legal-hero):not(.stats-hero) .service-card {
+    margin-inline: auto !important;
+  }
+}
+
