@@ -181,16 +181,49 @@ function initNoiseOverlay() {
   document.body.appendChild(overlay);
 }
 
-/* ── Toast Notification ───────────────────────────────────────── */
 function showToast(message, type = 'success', duration = 3000) {
   const existing = document.querySelector('.toast');
   if (existing) existing.remove();
 
+  // Vector SVG definitions
+  const icons = {
+    success: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>`,
+    error: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg>`,
+    party: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M5.8 11.3 2 22l10.7-3.8"></path><path d="M11 11h.01"></path><path d="M15 7h.01"></path><path d="M19 11h.01"></path><path d="M15 3h.01"></path><path d="M19 15h.01"></path><path d="m3 2 2.2 2.2"></path><path d="m15 15 2.2 2.2"></path><path d="m19 7 2.2 2.2"></path><path d="m11 19 2.2 2.2"></path><path d="m22 2-2.2 2.2"></path><path d="m22 22-2.2-2.2"></path></svg>`,
+    camera: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>`,
+    clipboard: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>`
+  };
+
+  // Determine icon based on message content or type
+  let selectedIcon = type === 'success' ? icons.success : icons.error;
+  if (message.includes('🎉') || message.includes('Party') || message.includes('placed') || message.includes('Subscribed')) {
+    selectedIcon = icons.party;
+  } else if (message.includes('📸') || message.includes('Instagram')) {
+    selectedIcon = icons.camera;
+  } else if (message.includes('📋') || message.includes('clipboard') || message.includes('copy') || message.includes('Copied')) {
+    selectedIcon = icons.clipboard;
+  } else if (message.includes('❌') || message.includes('Failed')) {
+    selectedIcon = icons.error;
+  }
+
+  // Strip emojis from message
+  let cleanMessage = message;
+  try {
+    cleanMessage = message
+      .replace(/\p{Extended_Pictographic}/gu, '')
+      .replace(/[\u{1F300}-\u{1F9FF}\u{2700}-\u{27BF}\u{2600}-\u{26FF}\u{274C}\u{2705}📸📋🎉✅❌]/gu, '')
+      .trim();
+  } catch (e) {
+    cleanMessage = message
+      .replace(/[\u{1F300}-\u{1F9FF}\u{2700}-\u{27BF}\u{2600}-\u{26FF}\u{274C}\u{2705}📸📋🎉✅❌]/gu, '')
+      .trim();
+  }
+
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
   toast.innerHTML = `
-    <span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span>
-    <span class="toast-text">${message}</span>
+    <span class="toast-icon" style="display: inline-flex; align-items: center; justify-content: center; color: ${type === 'success' ? 'var(--clr-success)' : 'var(--clr-error)'};">${selectedIcon}</span>
+    <span class="toast-text">${cleanMessage}</span>
   `;
   document.body.appendChild(toast);
 
@@ -459,7 +492,7 @@ function initCheckoutModal() {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Confirm Order';
       
-      showToast(`🎉 Order placed! ID: #${orderId}. Executive will call you in 15 mins.`, 'success');
+      showToast(`Order placed! ID: #${orderId}. Executive will call you in 15 mins.`, 'success');
     }, 1200);
   });
 }
