@@ -134,10 +134,6 @@
   flex-direction: row-reverse;
 }
 
-[dir="rtl"] .section-tag::before {
-  /* dot stays — no change needed since we reversed the flex direction */
-}
-
 /* ================================================================
    SECTION 6 — SCROLL REVEAL ANIMATIONS
    ================================================================ */
