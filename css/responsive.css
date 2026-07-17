@@ -2765,8 +2765,12 @@ iframe {
   }
 
   /* ---- Contact Form Fields (Tablet) ---- */
+  #contactForm > div[style*="display:flex"] {
+    align-items: stretch !important;
+    width: 100% !important;
+  }
   #contactForm .form-row {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 1.25rem !important;
   }
   #contactForm .form-input,
@@ -2825,6 +2829,10 @@ iframe {
   }
 
   /* ---- Contact Form Fields (Mobile) ---- */
+  #contactForm > div[style*="display:flex"] {
+    align-items: stretch !important;
+    width: 100% !important;
+  }
   #contactForm .form-row {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
