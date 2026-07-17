@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
@@ -194,7 +194,12 @@
       transform: scale(1.05);
     }
 
-
+    /* Dark Mode specific native calendar icon color fix */
+    html:not([data-theme="light"]) #repairDate::-webkit-calendar-picker-indicator,
+    html[data-theme="dark"] #repairDate::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
