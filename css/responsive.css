@@ -2063,7 +2063,53 @@ iframe {
     max-width: 200px !important;
     justify-content: center !important;
   }
-  .earbuds-grid { grid-template-columns: 1fr; }
+  /* ---- HOME2: Premium Earbuds (Mobile) ---- */
+  .earbuds-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .earbud-card {
+    padding: 1.5rem 1.25rem !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .earbud-visual {
+    height: 150px !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .earbud-visual img {
+    object-fit: contain !important;
+  }
+  .earbud-card h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .earbud-card p {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  .earbud-card div[style*="font-size:1.4rem"] {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* ---- HOME2: Stats Hero Grid (Mobile) ---- */
+  .stats-hero .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .stats-hero .stat-card {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem 1.25rem !important;
+  }
   .brand-grid-alt {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.75rem !important;
