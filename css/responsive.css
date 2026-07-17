@@ -623,6 +623,24 @@ iframe {
     width: 100% !important;
     margin-inline: auto !important;
   }
+  #enquiry form > div[style*="display:flex"] {
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+  #enquiry .form-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.25rem !important;
+  }
+  #enquiry .form-group {
+    width: 100% !important;
+  }
+  #enquiry .form-input,
+  #enquiry .form-select,
+  #enquiry .form-textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
 } /* end 1023px */
 
@@ -1425,7 +1443,22 @@ iframe {
     gap: 1rem !important;
   }
   #enquiry form > div[style*="display:flex"] {
+    align-items: stretch !important;
+    width: 100% !important;
     gap: 1rem !important;
+  }
+  #enquiry .form-group {
+    width: 100% !important;
+  }
+  #enquiry .form-input,
+  #enquiry .form-select,
+  #enquiry .form-textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #enquiry .form-textarea {
+    min-height: 120px !important;
   }
 
 } /* end 767px */
