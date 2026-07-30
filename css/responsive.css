@@ -111,7 +111,9 @@ iframe {
     display: flex !important;
   }
   .navbar-inner > div[style*="display:flex"] > a.btn,
-  .navbar-inner > div[style*="display:flex"] > .btn {
+  .navbar-inner > div[style*="display:flex"] > .btn,
+  .navbar-inner .navbar-cta-primary,
+  .navbar-inner .navbar-cta-secondary {
     display: none !important;
   }
   .navbar-profile-btn {
