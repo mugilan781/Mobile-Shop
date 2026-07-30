@@ -765,6 +765,25 @@
 [data-theme="light"] .navbar:not(.scrolled) .menu-toggle span {
   background: #fafafa !important;
 }
+[data-theme="light"] .navbar:not(.scrolled) .navbar-cta-secondary {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+[data-theme="light"] .navbar:not(.scrolled) .navbar-cta-secondary:hover {
+  border-color: var(--clr-red-light) !important;
+  background: rgba(239, 68, 68, 0.2) !important;
+}
+[data-theme="light"] .navbar.scrolled .navbar-cta-secondary {
+  color: #0d0d11 !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+[data-theme="light"] .navbar.scrolled .navbar-cta-secondary:hover {
+  border-color: var(--clr-red-light) !important;
+  background: rgba(239, 68, 68, 0.06) !important;
+  color: var(--clr-red-light) !important;
+}
 
 /* ── BLOG — Stay Informed (Newsletter Input Light Theme Overrides) ── */
 [data-theme="light"] .footer-newsletter-form input {
