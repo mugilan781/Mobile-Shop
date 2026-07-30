@@ -1450,6 +1450,25 @@
   display: flex; gap: var(--sp-2);
   font-size: var(--fs-sm); color: var(--clr-silver);
   margin-bottom: var(--sp-2); align-items: flex-start;
+  text-decoration: none;
+  transition: all var(--tr-base);
+}
+
+a.footer-contact-item:hover {
+  color: var(--clr-white);
+}
+
+a.footer-contact-item:hover span {
+  color: var(--clr-white);
+}
+
+a.footer-contact-item svg {
+  transition: transform var(--tr-base), color var(--tr-base);
+}
+
+a.footer-contact-item:hover svg {
+  color: var(--clr-red-light) !important;
+  transform: scale(1.15);
 }
 
 .footer-contact-item .icon { color: var(--clr-red-light); flex-shrink: 0; }
