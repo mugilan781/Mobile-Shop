@@ -86,11 +86,22 @@ iframe {
   }
 
   /* ---- STATS / PRICING ---- */
-  .stats-grid {
+  .stats-grid,
+  .stats-grid-3 {
     gap: 1.25rem;
   }
-
 } /* end 1439px */
+
+@media (max-width: 1023px) {
+  .stats-highlights-banner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 1.5rem;
+  }
+  .stats-highlight-divider {
+    display: none;
+  }
+
 
 
 /* =============================================================
@@ -672,6 +683,14 @@ iframe {
   .card,
   .product-card,
   .service-card,
+  .stat-glass-card-lg {
+    max-width: 100%;
+  }
+
+  .stats-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
   .pricing-card,
   .testimonial-slide,
   .review-card,

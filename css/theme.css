@@ -529,8 +529,57 @@
 [data-theme="light"] .carousel-arrow:hover { background: #ffffff; color: var(--clr-red-light); }
 
 /* ── STAT GLASS CARDS — light bg in light mode ────────────────── */
-[data-theme="light"] .stat-glass-card { background: rgba(255,255,255,0.85); border-color: rgba(0,0,0,0.06); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-[data-theme="light"] .stat-glass-card:hover { background: rgba(240,240,242,0.9); border-color: var(--clr-border-glow); }
+[data-theme="light"] .stat-glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .stat-glass-card-lg {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .stat-glass-card-lg:hover {
+  background: #ffffff !important;
+  border-color: var(--clr-red) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .stat-number-lg {
+  color: #0d0d11 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+[data-theme="light"] .stat-label-lg {
+  color: #6b7280 !important;
+}
+
+[data-theme="light"] .stat-pill-tag {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .stats-highlights-banner {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .highlight-value {
+  color: #0d0d11;
+}
+[data-theme="light"] .highlight-desc {
+  color: #5c5c66;
+}
+[data-theme="light"] .stats-highlight-divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 
 /* ── SERVICE ICONS — keep visible on light bg ─────────────────── */
 [data-theme="light"] .service-icon { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
