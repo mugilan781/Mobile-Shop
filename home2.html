@@ -132,19 +132,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--clr-large-visual-bg);
+      background: #0d0d11;
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       overflow: hidden;
-      height: 220px;
+      height: 290px;
       padding: 0;
       position: relative;
     }
 
     .large-product-card.featured-hero-card .visual {
       height: 100%;
-      min-height: 280px;
+      min-height: 380px;
       border-bottom: none;
       border-right: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 0;
     }
 
     .large-product-card .visual img {
@@ -374,49 +375,51 @@
     .brand-grid-alt {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
     .brand-card-alt {
       background: var(--clr-bg-card);
       border: 1px solid var(--clr-border);
       border-radius: var(--r-lg);
-      padding: 1.5rem 1rem;
+      padding: 1.75rem 1.25rem;
+      min-height: 150px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.65rem;
+      gap: 0.85rem;
       transition: all 0.35s ease;
       cursor: pointer;
     }
 
     .brand-card-alt:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-6px) scale(1.03);
       border-color: var(--clr-red-light);
-      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.12);
-      background: linear-gradient(145deg, rgba(239,68,68,0.03), var(--clr-bg-card));
+      box-shadow: 0 12px 35px rgba(239, 68, 68, 0.15);
+      background: linear-gradient(145deg, rgba(239,68,68,0.04), var(--clr-bg-card));
     }
 
-    .brand-card-alt svg {
-      width: 32px;
-      height: 32px;
-      fill: currentColor;
-      color: var(--clr-white);
-      transition: color var(--tr-base), transform var(--tr-base);
+    .brand-card-img {
+      height: 62px !important;
+      width: auto !important;
+      max-width: 150px !important;
+      object-fit: contain !important;
+      border: none !important;
+      border-radius: 8px !important;
+      transition: transform var(--tr-base);
     }
 
-    .brand-card-alt:hover svg {
-      color: var(--clr-red-light);
-      transform: scale(1.1);
+    .brand-card-alt:hover .brand-card-img {
+      transform: scale(1.08);
     }
 
     .brand-card-alt .b-name {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: var(--clr-silver-light);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       transition: color var(--tr-base);
     }
 
@@ -634,24 +637,55 @@
           <div style="position: absolute; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(239,68,68,0.2) 0%, transparent 70%); filter: blur(15px); z-index: 0;"></div>
           <img src="images/case-magsafe.png" alt="NanoShield MagSafe Case" />
         </div>
-        <div class="card-body-p" style="justify-content:center;">
-          <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
-            <span class="badge badge-red">★ BEST SELLER</span>
-            <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--clr-red-light);">MagSafe Series</span>
-          </div>
-          <h3 style="font-family:var(--font-head); font-size:1.35rem; font-weight:800; color:var(--clr-white); margin-bottom:0.5rem;">NanoShield MagSafe Armor Case</h3>
-          <p style="color:var(--clr-silver); font-size:0.85rem; line-height:1.6; margin-bottom:1.25rem;">Ultra-thin 0.35mm engineering with military grade N52 magnets for 100% loss-less wireless charging speed and supreme impact deflection.</p>
-          <div style="display:flex; gap:1.25rem; margin-bottom:1.5rem; font-size:0.78rem; color:var(--clr-silver-light);">
-            <span>✓ Drop Certified</span>
-            <span>✓ Anti-Scratch</span>
-            <span>✓ N52 Magnets</span>
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:auto;">
-            <div>
-              <span style="font-size:0.72rem; color:var(--clr-silver); display:block;">Special Price</span>
-              <span style="font-family:var(--font-head); font-size:1.4rem; font-weight:800; color:var(--clr-white);">₹1,499</span>
+        <div class="card-body-p" style="justify-content:center; gap: 0.85rem;">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <span class="badge badge-red">★ BEST SELLER</span>
+              <span style="font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--clr-red-light);">MagSafe Series</span>
             </div>
-            <a href="gallery.html" class="btn btn-primary">Shop Now</a>
+            <span style="font-size:0.75rem; color:var(--clr-success); font-weight:600; display:flex; align-items:center; gap:0.25rem;">● In Stock</span>
+          </div>
+
+          <h3 style="font-family:var(--font-head); font-size:1.35rem; font-weight:800; color:var(--clr-white); margin:0;">NanoShield MagSafe Armor Case</h3>
+          
+          <p style="color:var(--clr-silver); font-size:0.82rem; line-height:1.6; margin:0;">Precision-engineered 0.35mm ultra-thin hybrid case with integrated N52 neodymium magnetic ring. Designed for maximum 12ft drop protection without adding bulk.</p>
+
+          <!-- Key Highlights Grid -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; padding:0.75rem 0.85rem; background:rgba(255,255,255,0.03); border:1px solid var(--clr-border); border-radius:var(--r-md);">
+            <div style="display:flex; align-items:center; gap:0.45rem; font-size:0.76rem; color:var(--clr-silver-light);">
+              <svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2.5" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>12ft Drop Protection</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.45rem; font-size:0.76rem; color:var(--clr-silver-light);">
+              <svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2.5" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              <span>15W MagSafe Speed</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.45rem; font-size:0.76rem; color:var(--clr-silver-light);">
+              <svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2.5" fill="none"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Anti-Yellowing Tech</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.45rem; font-size:0.76rem; color:var(--clr-silver-light);">
+              <svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2.5" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+              <span>1.5mm Camera Lip</span>
+            </div>
+          </div>
+
+          <!-- Extra perks bar -->
+          <div style="display:flex; align-items:center; gap:1.25rem; font-size:0.74rem; color:var(--clr-silver); border-top:1px dashed var(--clr-border); padding-top:0.5rem; flex-wrap:wrap;">
+            <span style="display:flex; align-items:center; gap:0.35rem;"><svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> 6-Month Warranty</span>
+            <span style="display:flex; align-items:center; gap:0.35rem;"><svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2" fill="none"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Free Shipping</span>
+            <span style="display:flex; align-items:center; gap:0.35rem;"><svg viewBox="0 0 24 24" width="13" height="13" stroke="var(--clr-red-light)" stroke-width="2" fill="none"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg> 30-Day Returns</span>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-top:0.25rem;">
+            <div>
+              <span style="font-size:0.7rem; color:var(--clr-silver); display:block; text-transform:uppercase; letter-spacing:0.04em;">Special Price</span>
+              <div style="display:flex; align-items:baseline; gap:0.5rem;">
+                <span style="font-family:var(--font-head); font-size:1.45rem; font-weight:800; color:var(--clr-white);">₹1,499</span>
+                <span style="font-size:0.8rem; color:var(--clr-silver-dim); text-decoration:line-through;">₹2,499</span>
+              </div>
+            </div>
+            <a href="gallery.html" class="btn btn-primary" style="padding:0.65rem 1.5rem;">Shop Now</a>
           </div>
         </div>
       </article>
@@ -907,7 +941,7 @@
         <h3 class="model-repair-title">iPhone 15 / 14 Series</h3>
         <p class="model-repair-desc">OLED screen replacement, genuine battery health swap, rear glass repair & camera lens fix.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ 60-Min Express</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> 60-Min Express</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -921,7 +955,7 @@
         <h3 class="model-repair-title">Galaxy S24 / S23 Ultra</h3>
         <p class="model-repair-desc">Dynamic AMOLED 2X display, charging port flex, battery replacement & frame swap.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ 90-Min Service</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> 90-Min Service</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -935,7 +969,7 @@
         <h3 class="model-repair-title">OnePlus 12 / 11 / Open</h3>
         <p class="model-repair-desc">Fluid AMOLED display repair, green line screen fix, fast charging port & battery replacement.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ 60-Min Express</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> 60-Min Express</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -949,7 +983,7 @@
         <h3 class="model-repair-title">Pixel 8 / 7 Pro</h3>
         <p class="model-repair-desc">Original Actua display, Tensor processor thermal repaste, glass back & optical camera sensor repair.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ 90-Min Service</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> 90-Min Service</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -963,7 +997,7 @@
         <h3 class="model-repair-title">MacBook Pro & Air M-Series</h3>
         <p class="model-repair-desc">Liquid damage motherboard cleaning, Retina screen replacement, battery & keyboard fix.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ Same Day Repair</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Same Day Repair</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -977,7 +1011,7 @@
         <h3 class="model-repair-title">iPad Pro / Air / Mini</h3>
         <p class="model-repair-desc">Touch digitizer glass replacement, LCD assembly, Type-C charging port & battery replacement.</p>
         <div class="model-repair-footer">
-          <span class="repair-time-badge">⚡ 120-Min Service</span>
+          <span class="repair-time-badge"><svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" stroke-width="2.5" fill="none" style="margin-right:4px; vertical-align:middle; color:var(--clr-red-light);"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> 120-Min Service</span>
           <a href="services.html" class="btn btn-outline btn-sm">Book Repair</a>
         </div>
       </div>
@@ -997,61 +1031,61 @@
     <div class="brand-grid-alt">
       <!-- Apple -->
       <div class="brand-card-alt reveal delay-1">
-        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.67-.82 1.13-1.96.99-3.1-.98.04-2.17.65-2.87 1.47-.63.73-1.18 1.9-1.03 3.02 1.1.09 2.24-.56 2.91-1.39z"></path></svg>
+        <img src="images/brand-apple.png" alt="Apple Logo" class="brand-card-img" />
         <span class="b-name">Apple</span>
       </div>
 
       <!-- Samsung -->
       <div class="brand-card-alt reveal delay-2">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5h-2v-9h2v9zm4 0h-2v-9h2v9z"></path></svg>
+        <img src="images/brand-samsung.png" alt="Samsung Logo" class="brand-card-img" />
         <span class="b-name">Samsung</span>
       </div>
 
       <!-- Nothing -->
       <div class="brand-card-alt reveal delay-3">
-        <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="18" cy="6" r="2"></circle><circle cx="6" cy="12" r="2"></circle><circle cx="18" cy="12" r="2"></circle><circle cx="6" cy="18" r="2"></circle><circle cx="12" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+        <img src="images/brand-nothing.png" alt="Nothing Logo" class="brand-card-img" />
         <span class="b-name">Nothing</span>
       </div>
 
       <!-- OnePlus -->
       <div class="brand-card-alt reveal delay-4">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"></rect><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2"></path></svg>
+        <img src="images/brand-oneplus.png" alt="OnePlus Logo" class="brand-card-img" />
         <span class="b-name">OnePlus</span>
       </div>
 
       <!-- Anker -->
       <div class="brand-card-alt reveal delay-5">
-        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        <img src="images/brand-anker.png" alt="Anker Logo" class="brand-card-img" />
         <span class="b-name">Anker</span>
       </div>
 
       <!-- Belkin -->
       <div class="brand-card-alt reveal delay-1">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"></circle><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="8" cy="18" r="2"></circle><circle cx="16" cy="18" r="2"></circle></svg>
+        <img src="images/brand-belkin.png" alt="Belkin Logo" class="brand-card-img" />
         <span class="b-name">Belkin</span>
       </div>
 
       <!-- Jabra -->
       <div class="brand-card-alt reveal delay-2">
-        <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+        <img src="images/brand-jabra.png" alt="Jabra Logo" class="brand-card-img" />
         <span class="b-name">Jabra</span>
       </div>
 
       <!-- JBL -->
       <div class="brand-card-alt reveal delay-3">
-        <svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="2"></rect><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="12" r="2"></circle></svg>
+        <img src="images/brand-jbl.png" alt="JBL Logo" class="brand-card-img" />
         <span class="b-name">JBL</span>
       </div>
 
       <!-- Spigen -->
       <div class="brand-card-alt reveal delay-4">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <img src="images/brand-spigen.png" alt="Spigen Logo" class="brand-card-img" />
         <span class="b-name">Spigen</span>
       </div>
 
       <!-- Xiaomi -->
       <div class="brand-card-alt reveal delay-5">
-        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"></rect><path d="M9 16V10M12 16V10M15 16V12a2 2 0 0 0-2-2"></path></svg>
+        <img src="images/brand-xiaomi.png" alt="Xiaomi Logo" class="brand-card-img" />
         <span class="b-name">Xiaomi</span>
       </div>
     </div>
