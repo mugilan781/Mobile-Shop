@@ -1728,13 +1728,11 @@
   letter-spacing: 0.03em;
 }
 
-/* ── STATS / ACHIEVEMENTS SECTION ───────────────────────────── */
 .stats-section {
   position: relative;
   background: var(--clr-bg-1);
-  padding: 5.5rem 0 6rem 0;
+  padding: var(--section-py) 0;
   border-bottom: 1px solid var(--clr-border);
-  margin-bottom: 2.5rem;
 }
 
 .stats-grid-3 {
