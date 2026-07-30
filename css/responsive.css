@@ -1290,6 +1290,11 @@ iframe {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* ---- ACHIEVEMENT GRID ---- */
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
   /* ---- TEAM ---- */
   .team-card {
     padding: var(--sp-4);
@@ -1803,7 +1808,12 @@ iframe {
 
   /* ---- CERT GRID ---- */
   .cert-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---- ACHIEVEMENT GRID ---- */
+  .achievement-grid {
+    grid-template-columns: 1fr;
   }
 
   /* ---- BRAND FILTER ---- */

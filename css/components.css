@@ -557,7 +557,7 @@
 }
 
 .product-img-wrap img {
-  width: 85%; height: 85%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: cover;
   transition: transform var(--tr-slow);
   border-radius: 0;
   border: none;
@@ -779,27 +779,72 @@
 }
 
 .brand-item {
-  display: flex; align-items: center; gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
   background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-xs);
+  border-radius: var(--r-md);
   white-space: nowrap;
   transition: all var(--tr-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .brand-item:hover {
-  border-color: var(--clr-border-md);
-  background: rgba(255,255,255,0.02);
+  border-color: var(--clr-red-light);
+  background: rgba(239, 68, 68, 0.04);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08);
 }
 
 .brand-name {
-  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-xs);
-  color: var(--clr-silver); letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1;
+  color: var(--clr-silver);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color var(--tr-base);
 }
 
-.brand-item:hover .brand-name { color: var(--clr-red-light); }
+.brand-item:hover .brand-name { color: var(--clr-white); }
+
+.brand-item svg {
+  height: 18px !important;
+  width: 18px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  color: var(--clr-silver);
+  transition: color var(--tr-base);
+}
+.brand-item:hover svg {
+  color: var(--clr-red-light);
+}
+
+/* Light mode overrides for brand logo contrast */
+[data-theme="light"] .brand-item {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+[data-theme="light"] .brand-item:hover {
+  background: rgba(239, 68, 68, 0.03);
+  border-color: var(--clr-red);
+}
+[data-theme="light"] .brand-name {
+  color: #475569;
+}
+[data-theme="light"] .brand-item:hover .brand-name {
+  color: var(--clr-red);
+}
+[data-theme="light"] .brand-item svg {
+  color: #64748b;
+}
+[data-theme="light"] .brand-item:hover svg {
+  color: var(--clr-red);
+}
 
 /* ── FAQ ACCORDION ────────────────────────────────────────────── */
 .faq-item {
