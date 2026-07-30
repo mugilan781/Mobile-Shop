@@ -3055,3 +3055,39 @@ iframe {
     left: auto !important;
   }
 }
+
+/* ── HOME 2 SPECIFIC RESPONSIVE OVERRIDES ────────────────────────────── */
+@media (max-width: 1023px) {
+  .large-product-card.featured-hero-card {
+    grid-column: span 1 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .large-product-card.featured-hero-card .visual {
+    height: 220px !important;
+    min-height: 220px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .protection-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .protection-visual-wrap {
+    min-height: 260px !important;
+    max-height: 320px !important;
+  }
+
+  .brand-grid-alt {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .brand-grid-alt {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
