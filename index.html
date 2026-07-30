@@ -763,77 +763,55 @@
       <p class="section-subtitle reveal delay-2">Real feedback from verified clients. Transparent reviews, honest tech care.</p>
     </div>
 
-    <!-- Responsive slider container wrapper -->
-    <div class="testimonials-carousel-wrapper reveal-scale">
-      <!-- Navigation Arrows -->
-      <button class="carousel-arrow prev" id="revPrev" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-      </button>
-      <button class="carousel-arrow next" id="revNext" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </button>
-
-      <!-- Slider overflow viewport -->
-      <div class="testimonials-slider">
-        <div class="testimonials-track" id="reviewsTrack">
-          <!-- Review 1 -->
-          <div class="testimonial-slide">
-            <div class="review-card">
-              <div class="review-card-header">
-                <div class="reviewer-avatar">RS</div>
-                <div class="reviewer-meta">
-                  <h4 class="reviewer-name">Rahul Sharma</h4>
-                  <p class="reviewer-role">Verified Client • iPhone Repair</p>
-                </div>
-                <div class="review-quote-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
-                </div>
-              </div>
-              <div class="review-rating-stars">★★★★★</div>
-              <p class="review-text">Replaced my iPhone 14 Pro Max screen here. Highly impressed by the fast service and clean work. Color balance is identical to the original screen!</p>
-            </div>
+    <!-- 3-Column Grid for Testimonials -->
+    <div class="grid-3">
+      <!-- Review 1 -->
+      <div class="review-card reveal delay-1">
+        <div class="review-card-header">
+          <div class="reviewer-avatar">RS</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Rahul Sharma</h4>
+            <p class="reviewer-role">Verified Client • iPhone Repair</p>
           </div>
-
-          <!-- Review 2 -->
-          <div class="testimonial-slide">
-            <div class="review-card">
-              <div class="review-card-header">
-                <div class="reviewer-avatar">NR</div>
-                <div class="reviewer-meta">
-                  <h4 class="reviewer-name">Nisha Ram</h4>
-                  <p class="reviewer-role">Verified Client • Tech Shop</p>
-                </div>
-                <div class="review-quote-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
-                </div>
-              </div>
-              <div class="review-rating-stars">★★★★★</div>
-              <p class="review-text">Finally, an accessory shop that carries authentic Spigen cases and Anker chargers. Excellent collection and helpful store advice.</p>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="testimonial-slide">
-            <div class="review-card">
-              <div class="review-card-header">
-                <div class="reviewer-avatar">VK</div>
-                <div class="reviewer-meta">
-                  <h4 class="reviewer-name">Vikram Kumar</h4>
-                  <p class="reviewer-role">Verified Client • Water Recovery</p>
-                </div>
-                <div class="review-quote-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
-                </div>
-              </div>
-              <div class="review-rating-stars">★★★★★</div>
-              <p class="review-text">My phone slipped in water and wouldn't charge. The engineers diagnostic tool caught the corroded dock pin immediately. Repaired in 1.5 hours.</p>
-            </div>
+          <div class="review-quote-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
           </div>
         </div>
+        <div class="review-rating-stars">★★★★★</div>
+        <p class="review-text">Replaced my iPhone 14 Pro Max screen here. Highly impressed by the fast service and clean work. Color balance is identical to the original screen!</p>
       </div>
 
-      <!-- Pagination indicators -->
-      <div class="carousel-dots" id="revDots"></div>
+      <!-- Review 2 -->
+      <div class="review-card reveal delay-2">
+        <div class="review-card-header">
+          <div class="reviewer-avatar">NR</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Nisha Ram</h4>
+            <p class="reviewer-role">Verified Client • Tech Shop</p>
+          </div>
+          <div class="review-quote-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
+          </div>
+        </div>
+        <div class="review-rating-stars">★★★★★</div>
+        <p class="review-text">Finally, an accessory shop that carries authentic Spigen cases and Anker chargers. Excellent collection and helpful store advice.</p>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card reveal delay-3">
+        <div class="review-card-header">
+          <div class="reviewer-avatar">VK</div>
+          <div class="reviewer-meta">
+            <h4 class="reviewer-name">Vikram Kumar</h4>
+            <p class="reviewer-role">Verified Client • Water Recovery</p>
+          </div>
+          <div class="review-quote-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.609 9-10v3c-3.737.348-5 2.508-5 4.5v3h5v6.891h-9zm-14 0v-7.391c0-5.704 3.748-9.609 9-10v3c-3.76.348-5 2.508-5 4.5v3h5v6.891h-9z"/></svg>
+          </div>
+        </div>
+        <div class="review-rating-stars">★★★★★</div>
+        <p class="review-text">My phone slipped in water and wouldn't charge. The engineers diagnostic tool caught the corroded dock pin immediately. Repaired in 1.5 hours.</p>
+      </div>
     </div>
 
     <!-- Bottom Trust Indicator -->

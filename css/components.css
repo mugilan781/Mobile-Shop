@@ -1111,15 +1111,13 @@
 
 /* Glassmorphism card */
 .review-card {
-  background: var(--clr-review-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--r-md);
-  padding: 2.25rem 2rem;
+  padding: 1.85rem 1.6rem;
   height: 100%;
   transition: all var(--tr-base);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1128,9 +1126,19 @@
 }
 .review-card:hover {
   transform: translateY(-4px);
-  background: var(--clr-review-card-hover);
-  border-color: rgba(239, 68, 68, 0.2);
-  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.05), 0 0 1px rgba(239, 68, 68, 0.25) inset;
+  border-color: rgba(239, 68, 68, 0.3);
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.08);
+}
+
+[data-theme="light"] .review-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+[data-theme="light"] .review-card:hover {
+  background: #ffffff;
+  border-color: var(--clr-red);
+  box-shadow: 0 12px 28px rgba(239, 68, 68, 0.08);
 }
 
 .review-card-header {
