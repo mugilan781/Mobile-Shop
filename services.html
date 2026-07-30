@@ -425,43 +425,86 @@
       <p class="section-subtitle reveal delay-2">Premium accessories with professional installation. Guaranteed to fit perfectly.</p>
     </div>
 
-    <div class="grid-4">
-      <div class="feature-card reveal delay-1">
-        <div class="icon-box icon-box-zinc icon-box-lg">
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+    <!-- Category Filters -->
+    <div class="filter-container reveal delay-2" id="accessoriesFilterGroup" style="display:flex; justify-content:center; gap:0.75rem; margin-bottom:3rem; flex-wrap:wrap;">
+      <button class="filter-btn active" data-filter="all">All Accessories</button>
+      <button class="filter-btn" data-filter="phone">Phone Repairs</button>
+      <button class="filter-btn" data-filter="laptop">Laptop Repairs</button>
+      <button class="filter-btn" data-filter="tablet">Tablet Repairs</button>
+      <button class="filter-btn" data-filter="other">Other Tech Repairs</button>
+    </div>
+
+    <div class="grid-4" id="accessoriesGrid">
+      <!-- Card 1: Cases & Covers -->
+      <div class="accessory-card reveal delay-1" data-categories="phone">
+        <div class="accessory-card-img-wrap">
+          <img src="images/accessory-cases.png" alt="Cases & Covers" class="accessory-card-img" />
         </div>
-        <div class="feature-body">
-          <h3 class="feature-title">Cases & Covers</h3>
+        <div class="accessory-card-body">
+          <div class="accessory-card-header">
+            <div class="icon-box icon-box-zinc">
+              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3 class="feature-title">Cases & Covers</h3>
+          </div>
           <p class="feature-desc">Hundreds of case options. We help you find the perfect fit for your device and lifestyle.</p>
         </div>
       </div>
-      <div class="feature-card reveal delay-2">
-        <div class="icon-box icon-box-red icon-box-lg">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+
+      <!-- Card 2: Screen Protectors -->
+      <div class="accessory-card reveal delay-2" data-categories="phone">
+        <div class="accessory-card-img-wrap">
+          <img src="images/accessory-screens.png" alt="Screen Protectors" class="accessory-card-img" />
         </div>
-        <div class="feature-body">
-          <h3 class="feature-title">Screen Protectors</h3>
+        <div class="accessory-card-body">
+          <div class="accessory-card-header">
+            <div class="icon-box icon-box-zinc">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="feature-title">Screen Protectors</h3>
+          </div>
           <p class="feature-desc">Professional dust-free installation. Bubble-free guaranteed or we redo it free.</p>
         </div>
       </div>
-      <div class="feature-card reveal delay-3">
-        <div class="icon-box icon-box-zinc icon-box-lg">
-          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+
+      <!-- Card 3: Chargers & Cables -->
+      <div class="accessory-card reveal delay-3" data-categories="phone laptop">
+        <div class="accessory-card-img-wrap">
+          <img src="images/accessory-chargers.png" alt="Chargers & Cables" class="accessory-card-img" />
         </div>
-        <div class="feature-body">
-          <h3 class="feature-title">Chargers & Cables</h3>
+        <div class="accessory-card-body">
+          <div class="accessory-card-header">
+            <div class="icon-box icon-box-zinc">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <h3 class="feature-title">Chargers & Cables</h3>
+          </div>
           <p class="feature-desc">GaN chargers, MagSafe, USB-C, Lightning cables. Genuine brands only.</p>
         </div>
       </div>
-      <div class="feature-card reveal delay-4">
-        <div class="icon-box icon-box-red icon-box-lg">
-          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+
+      <!-- Card 4: Earbuds & Audio -->
+      <div class="accessory-card reveal delay-4" data-categories="phone other">
+        <div class="accessory-card-img-wrap">
+          <img src="images/accessory-audio.png" alt="Earbuds & Audio" class="accessory-card-img" />
         </div>
-        <div class="feature-body">
-          <h3 class="feature-title">Earbuds & Audio</h3>
+        <div class="accessory-card-body">
+          <div class="accessory-card-header">
+            <div class="icon-box icon-box-zinc">
+              <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            </div>
+            <h3 class="feature-title">Earbuds & Audio</h3>
+          </div>
           <p class="feature-desc">TWS earbuds, wired headphones, Bluetooth speakers from top brands.</p>
         </div>
       </div>
+    </div>
+    
+    <!-- No Accessories Found Message -->
+    <div id="noAccessoriesMessage" style="display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:4rem 2rem; background:rgba(255,255,255,0.02); border:1px dashed var(--clr-border); border-radius:var(--r-xl); margin-top:2rem; width:100%;">
+      <svg viewBox="0 0 24 24" width="48" height="48" stroke="var(--clr-red-light)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:1rem; opacity:0.8;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      <h4 style="color:var(--clr-white); font-family:var(--font-display); font-size:1.2rem; font-weight:700; margin-bottom:0.5rem;">No Accessories Available</h4>
+      <p style="color:var(--clr-silver); font-size:0.9rem; max-width:400px; margin:0; line-height:1.5;">We currently don't offer accessories in this category. Our team is working to bring them to you soon!</p>
     </div>
   </div>
 </section>
@@ -905,5 +948,55 @@
 <script src="js/form.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/rtl.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('#accessoriesFilterGroup .filter-btn');
+  const cards = document.querySelectorAll('.accessory-card');
+  const noResultsMsg = document.getElementById('noAccessoriesMessage');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active classes
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const categories = card.getAttribute('data-categories') ? card.getAttribute('data-categories').split(' ') : [];
+
+        if (filterValue === 'all' || categories.includes(filterValue)) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96) translateY(4px)';
+          
+          void card.offsetWidth; // Trigger reflow
+          
+          card.style.transition = 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1) translateY(0)';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Show/Hide no results empty state
+      if (visibleCount === 0) {
+        noResultsMsg.style.display = 'flex';
+        noResultsMsg.style.opacity = '0';
+        noResultsMsg.style.transform = 'translateY(8px)';
+        void noResultsMsg.offsetWidth;
+        noResultsMsg.style.transition = 'all 0.4s ease';
+        noResultsMsg.style.opacity = '1';
+        noResultsMsg.style.transform = 'translateY(0)';
+      } else {
+        noResultsMsg.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
