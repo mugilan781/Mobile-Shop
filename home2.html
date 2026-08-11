@@ -298,6 +298,12 @@
     }
 
     /* Popular Models We Repair Cards */
+    .model-repair-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
     .model-repair-card {
       background: var(--clr-bg-card);
       border: 1px solid var(--clr-border);
@@ -905,7 +911,7 @@
       <p class="section-subtitle reveal delay-2">Genuine OEM replacement parts, certified technicians, and express same-day turnaround.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+    <div class="model-repair-grid">
       <!-- Model 1 -->
       <div class="model-repair-card reveal delay-1">
         <div class="model-repair-header">

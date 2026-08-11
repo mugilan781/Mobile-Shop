@@ -3104,6 +3104,18 @@ iframe {
   .brand-store-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  .model-repair-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .cert-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -3113,6 +3125,77 @@ iframe {
   .brand-store-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Service Card Spacing Fix (Home & Services Pages) */
+  .service-card {
+    padding: 1.25rem !important;
+  }
+  .service-img-wrap {
+    aspect-ratio: 16/10 !important;
+    max-height: 180px !important;
+    margin-bottom: 1rem !important;
+  }
+  .service-price {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.5rem !important;
+    margin-top: auto !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+  }
+  .price-from {
+    font-size: 0.75rem !important;
+    color: var(--clr-silver-dim) !important;
+    letter-spacing: 0.05em !important;
+  }
+  .price-amount {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: var(--clr-red-light) !important;
+  }
+
+  /* Popular Models We Repair (Home 2 Page) */
+  .model-repair-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .model-repair-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Achievements & Certifications Sections (About Page) */
+  .achievement-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .achievement-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+  .achievement-stat {
+    font-size: 2.25rem !important;
+    min-width: 65px !important;
+  }
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important;
+  }
+  .cert-item {
+    padding: 1.15rem 0.65rem 1rem !important;
+    min-height: 110px !important;
+    gap: 0.4rem !important;
+  }
+  .cert-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.15rem !important;
   }
 }
 
