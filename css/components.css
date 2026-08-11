@@ -2140,13 +2140,15 @@ a.footer-contact-item:hover svg {
 }
 
 .spotlight-visual {
-  aspect-ratio: 16/10;
-  background: linear-gradient(135deg, #141010, #08080c);
+  aspect-ratio: 4/3;
+  width: 100%;
+  background: var(--clr-bg-surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 0;
   position: relative;
+  overflow: hidden;
 }
 
 [data-theme="light"] .spotlight-visual {
@@ -2154,9 +2156,10 @@ a.footer-contact-item:hover svg {
 }
 
 .spotlight-visual img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform var(--tr-base);
 }
 
@@ -2168,6 +2171,7 @@ a.footer-contact-item:hover svg {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 2;
 }
 
 [dir="rtl"] .spotlight-badge-tag {

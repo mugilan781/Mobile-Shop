@@ -1002,3 +1002,52 @@
   border: 1px solid #fecaca !important;
   box-shadow: 0 1px 3px rgba(239, 68, 68, 0.03) !important;
 }
+
+/* ── PRODUCT & SPOTLIGHT BADGES (Dark Theme Visibility Tuning) ──── */
+[data-theme="dark"] .badge-zinc,
+:root:not([data-theme="light"]) .badge-zinc {
+  background: #181820 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .badge-red,
+:root:not([data-theme="light"]) .badge-red {
+  background: rgba(239, 68, 68, 0.3) !important;
+  color: #ff7b7b !important;
+  border: 1px solid rgba(239, 68, 68, 0.6) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .badge-new,
+:root:not([data-theme="light"]) .badge-new {
+  background: rgba(16, 185, 129, 0.3) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .badge-hot,
+:root:not([data-theme="light"]) .badge-hot {
+  background: rgba(239, 68, 68, 0.3) !important;
+  color: #ff7b7b !important;
+  border: 1px solid rgba(239, 68, 68, 0.6) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Enhanced contrast & font sizing for image overlay badges */
+.spotlight-badge-tag,
+.product-badge .badge {
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.3rem 0.75rem !important;
+  border-radius: var(--r-xs) !important;
+  z-index: 5 !important;
+}
+
