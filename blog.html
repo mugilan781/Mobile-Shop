@@ -189,12 +189,14 @@
       flex-shrink: 0;
     }
     .blog-author-avatar {
-      width: 26px;
-      height: 26px;
-      min-width: 26px;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
       border-radius: 50%;
+      overflow: hidden;
+      padding: 0 !important;
       background: rgba(255, 75, 75, 0.1);
-      border: 1px solid rgba(255, 75, 75, 0.2);
+      border: 1.5px solid var(--clr-red-light);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -202,6 +204,18 @@
       font-weight: 700;
       font-size: 0.75rem;
       flex-shrink: 0;
+    }
+    .blog-author-avatar img {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 50% !important;
+      border: none !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     /* Category Cards */
@@ -673,7 +687,7 @@
             </p>
             <div style="display:flex; align-items:center; justify-content:space-between;">
               <div class="blog-author">
-                <div class="blog-author-avatar">${featured.author.name.charAt(0)}</div>
+                <div class="blog-author-avatar">${featured.author.avatar ? `<img src="${featured.author.avatar}" alt="${featured.author.name}" loading="lazy" />` : featured.author.name.charAt(0)}</div>
                 <span>By ${featured.author.name}</span>
               </div>
               <a href="blog-details.html?id=${featured.id}" class="btn btn-outline btn-sm">Read More</a>
@@ -704,7 +718,7 @@
               <p class="blog-card-excerpt">${post.excerpt}</p>
               <div class="blog-card-footer">
                 <div class="blog-author">
-                  <div class="blog-author-avatar">${post.author.name.charAt(0)}</div>
+                  <div class="blog-author-avatar">${post.author.avatar ? `<img src="${post.author.avatar}" alt="${post.author.name}" loading="lazy" />` : post.author.name.charAt(0)}</div>
                   <span>${post.author.name}</span>
                 </div>
                 <a href="blog-details.html?id=${post.id}" class="btn btn-outline btn-sm" style="padding:0.4rem 0.8rem; font-size:0.75rem;">Read More</a>
