@@ -20,58 +20,6 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/rtl.css" />
   <style>
-    .featured-product {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      background: var(--clr-bg-card);
-      border: 1px solid var(--clr-border);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-    }
-
-    .featured-product-visual {
-      aspect-ratio: 1;
-      background: linear-gradient(135deg, #141010, #08080c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .featured-product-visual img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
-      border-radius: 0;
-    }
-
-    .featured-product-info {
-      padding: 3rem 3rem 3rem 0;
-    }
-
-    .brand-filtered-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .brand-filter-card {
-      background: var(--clr-bg-card);
-      border: 1px solid var(--clr-border);
-      border-radius: var(--r-lg);
-      padding: 2rem 1rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .brand-filter-card:hover {
-      transform: translateY(-6px) scale(1.01);
-      border-color: var(--clr-border-glow);
-      box-shadow: 0 16px 40px rgba(239, 68, 68, 0.08);
-    }
-
     .customer-build-card {
       background: var(--clr-bg-card);
       border: 1px solid var(--clr-border);
@@ -403,86 +351,7 @@
   </div>
 </section>
 
-<!-- ══ SECTION 4 — FEATURED PRODUCT SPOTLIGHT ══ -->
-<section class="section" style="background:var(--clr-bg-2);" aria-label="Featured product">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag reveal">Spotlight</div>
-      <h2 class="section-title reveal delay-1">Featured <span class="grad-text">Product</span></h2>
-    </div>
-
-    <div class="featured-product reveal-scale">
-      <div class="featured-product-visual">
-        <img src="images/product-case.png" alt="Titanium MagSafe Case Showcase" />
-      </div>
-      <div class="featured-product-info">
-        <span class="badge badge-zinc" style="margin-bottom:1.25rem;">Editor's Pick</span>
-        <h3 style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--clr-white);margin-bottom:0.75rem;">Titanium MagSafe Case</h3>
-        <p style="color:var(--clr-cyan);font-size:0.875rem;font-weight:600;margin-bottom:1.25rem;">For iPhone 14 / 15 Pro Series</p>
-
-        <div style="display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;">
-          <div class="pricing-feature" style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:var(--clr-silver);">
-            <span style="color:var(--clr-cyan);">✓</span> Military-grade MIL-STD-810G drop protection
-          </div>
-          <div class="pricing-feature" style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:var(--clr-silver);">
-            <span style="color:var(--clr-cyan);">✓</span> N52 MagSafe magnets for perfect alignment
-          </div>
-          <div class="pricing-feature" style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:var(--clr-silver);">
-            <span style="color:var(--clr-cyan);">✓</span> Titanium textured matte finish
-          </div>
-          <div class="pricing-feature" style="display:flex;align-items:center;gap:0.75rem;font-size:0.875rem;color:var(--clr-silver);">
-            <span style="color:var(--clr-cyan);">✓</span> Wireless charging compatible
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;">
-          <div>
-            <div style="font-size:0.75rem;color:var(--clr-silver-dim);margin-bottom:0.25rem;">Price</div>
-            <div style="font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--clr-white);">₹1,299</div>
-          </div>
-          <a href="contact.html" class="btn btn-primary btn-lg">Order Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SECTION 5 — BRAND SHOWCASE GRID ══ -->
-<section class="section bg-grid" aria-label="Brand showcase">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag reveal">Brand Store</div>
-      <h2 class="section-title reveal delay-1">Shop by <span class="grad-text">Brand</span></h2>
-      <p class="section-subtitle reveal delay-2">Find accessories from your favorite brands — all in one place.</p>
-    </div>
-
-    <div class="brand-filtered-grid">
-      <div class="brand-filter-card reveal delay-1">
-        <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Apple</div>
-        <div style="font-size:0.78rem;color:var(--clr-silver-dim);">48 products</div>
-      </div>
-      <div class="brand-filter-card reveal delay-2">
-        <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Samsung</div>
-        <div style="font-size:0.78rem;color:var(--clr-silver-dim);">62 products</div>
-      </div>
-      <div class="brand-filter-card reveal delay-3">
-        <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Nothing</div>
-        <div style="font-size:0.78rem;color:var(--clr-silver-dim);">24 products</div>
-      </div>
-      <div class="brand-filter-card reveal delay-4">
-        <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Anker</div>
-        <div style="font-size:0.78rem;color:var(--clr-silver-dim);">36 products</div>
-      </div>
-      <div class="brand-filter-card reveal delay-5">
-        <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);margin-bottom:0.25rem;">Spigen</div>
-        <div style="font-size:0.78rem;color:var(--clr-silver-dim);">58 products</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ SECTION 6 — CUSTOMER BUILDS ══ -->
+<!-- ══ SECTION 4 — CUSTOMER BUILDS ══ -->
 <section class="section" style="background:var(--clr-bg-2);" aria-label="Customer builds">
   <div class="container">
     <div class="section-header">

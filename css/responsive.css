@@ -101,8 +101,7 @@ iframe {
   .stats-highlight-divider {
     display: none;
   }
-
-
+}
 
 /* =============================================================
    2. TABLET  (max-width: 1023px)
@@ -3095,9 +3094,26 @@ iframe {
   }
 }
 
+@media (max-width: 1023px) {
+  .brand-grid-alt {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .spotlight-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .brand-store-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
 @media (max-width: 767px) {
   .brand-grid-alt {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .brand-store-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
 }
+
 
