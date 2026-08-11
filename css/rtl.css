@@ -471,10 +471,127 @@
    SECTION 15 — RESPONSIVE OVERRIDES
    ================================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+  /* RTL Header Controls Alignment & Spacing on Mobile/Tablet */
+  [dir="rtl"] .navbar-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  [dir="rtl"] .navbar-logo {
+    order: 1 !important;
+    margin-right: 0 !important;
+  }
+
+  [dir="rtl"] .navbar-inner > div {
+    order: 3 !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    gap: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  [dir="rtl"] #rtlToggle {
+    order: 1 !important;
+  }
+
+  [dir="rtl"] #themeToggle {
+    order: 2 !important;
+  }
+
+  [dir="rtl"] .menu-toggle {
+    order: 3 !important;
+    margin-left: 0.25rem !important;
+  }
+
+  /* RTL Hero Section on Tablet (768px - 1023px) — Safe Arrow Padding & Natural Buttons */
+  [dir="rtl"] .slide-content,
+  [dir="rtl"] .video-hero .container > div:first-child {
+    padding-left: 4.5rem !important;
+    padding-right: 4.5rem !important;
+    max-width: 620px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    text-align: right !important;
+    align-items: flex-end !important;
+  }
+
+  [dir="rtl"] .slide-actions,
+  [dir="rtl"] .video-hero .container > div:first-child > div[style*="display:flex"] {
+    justify-content: flex-start !important;
+    flex-direction: row-reverse !important;
+    gap: 1rem !important;
+  }
+
+  /* Keep natural button sizing without forced stretching */
+  [dir="rtl"] .slide-actions .btn,
+  [dir="rtl"] .video-hero .container > div:first-child > div[style*="display:flex"] .btn {
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 767px) {
   /* Toast in mobile */
   [dir="rtl"] .toast {
     right: auto;
     left: 1rem;
+  }
+
+  /* On Mobile (<767px), center-align hero content in RTL mode to match LTR mobile layout */
+  [dir="rtl"] .hero-slider .container,
+  [dir="rtl"] .slide-content,
+  [dir="rtl"] .video-hero .container > div:first-child {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  [dir="rtl"] .slide-content h1,
+  [dir="rtl"] .slide-content p,
+  [dir="rtl"] .video-hero .container > div:first-child h1,
+  [dir="rtl"] .video-hero .container > div:first-child p {
+    text-align: center !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+
+  [dir="rtl"] .slide-content .section-tag,
+  [dir="rtl"] .video-hero .container > div:first-child .section-tag {
+    align-self: center !important;
+    margin-inline: auto !important;
+  }
+
+  [dir="rtl"] .slide-actions,
+  [dir="rtl"] .video-hero .container > div:first-child > div[style*="display:flex"] {
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  /* On mobile, allow buttons to have clean padding without forced stretching */
+  [dir="rtl"] .slide-actions .btn,
+  [dir="rtl"] .video-hero .container > div:first-child > div[style*="display:flex"] .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+
+  [dir="rtl"] .video-hero .container > div:first-child > div:last-child {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  [dir="rtl"] .video-hero .container > div:first-child > div:last-child > div {
+    text-align: center !important;
   }
 }
