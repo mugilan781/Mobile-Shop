@@ -1686,15 +1686,33 @@ a.footer-contact-item:hover svg {
 .timeline-desc  { font-size: var(--fs-sm); color: var(--clr-silver); line-height: 1.5; }
 
 /* ── CERT GRID ────────────────────────────────────────────────── */
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: var(--sp-3); }
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  gap: var(--sp-3);
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .cert-item {
-  aspect-ratio: 1.9; background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border); border-radius: var(--r-sm);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.72rem; font-weight: 600; color: var(--clr-silver);
-  transition: all var(--tr-base); padding: var(--sp-2); text-align: center;
-  text-transform: uppercase; letter-spacing: 0.02em;
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-silver);
+  transition: all var(--tr-base);
+  padding: var(--sp-3) var(--sp-2);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cert-item:hover { border-color: var(--clr-red-light); color: var(--clr-white); transform: scale(1.02); }
